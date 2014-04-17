@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8AB30FEE19008534008536DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB30FED19008534008536DB /* Foundation.framework */; };
+		8AB30FF019008534008536DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB30FEF19008534008536DB /* CoreGraphics.framework */; };
+		8AB30FF219008534008536DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB30FF119008534008536DB /* UIKit.framework */; };
+		8AB30FF819008534008536DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8AB30FF619008534008536DB /* InfoPlist.strings */; };
+		8AB30FFA19008534008536DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB30FF919008534008536DB /* main.m */; };
+		8AB30FFE19008534008536DB /* RZGDEVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB30FFD19008534008536DB /* RZGDEVAppDelegate.m */; };
+		8AB3100019008534008536DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AB30FFF19008534008536DB /* Images.xcassets */; };
+		8AB3100719008534008536DB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB3100619008534008536DB /* XCTest.framework */; };
+		8AB3100819008534008536DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB30FED19008534008536DB /* Foundation.framework */; };
+		8AB3100919008534008536DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB30FF119008534008536DB /* UIKit.framework */; };
+		8AB3101119008534008536DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8AB3100F19008534008536DB /* InfoPlist.strings */; };
+		8AB3101319008534008536DB /* RZOpenGLCoreDevelopmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3101219008534008536DB /* RZOpenGLCoreDevelopmentTests.m */; };
+		8AB310291900855D008536DB /* RZGOpenGLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB310221900855D008536DB /* RZGOpenGLManager.m */; };
+		8AB3102A1900855D008536DB /* RZGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB310281900855D008536DB /* RZGViewController.m */; };
+		8AB3102D19008599008536DB /* RZGAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3102C19008599008536DB /* RZGAssetManager.m */; };
+		8AB31030190085CF008536DB /* RZGModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3102F190085CF008536DB /* RZGModelController.m */; };
+		8AB31033190085FC008536DB /* RZGDefaultShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8AB31031190085FC008536DB /* RZGDefaultShader.fsh */; };
+		8AB31034190085FC008536DB /* RZGDefaultShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8AB31032190085FC008536DB /* RZGDefaultShader.vsh */; };
+		8AB31037190087D4008536DB /* RZGScreenToGLConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB31036190087D4008536DB /* RZGScreenToGLConverter.m */; };
+		8AB3103A1900929A008536DB /* RZGModelData.c in Sources */ = {isa = PBXBuildFile; fileRef = 8AB310391900929A008536DB /* RZGModelData.c */; };
+		8AB31040190097CD008536DB /* RZGVaoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3103F190097CD008536DB /* RZGVaoInfo.m */; };
+		8AB3104319009DAB008536DB /* RZGShaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3104219009DAB008536DB /* RZGShaderManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8AB3100A19008534008536DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AB30FE219008534008536DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8AB30FE919008534008536DB;
+			remoteInfo = RZOpenGLCoreDevelopment;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8AB30FEA19008534008536DB /* RZOpenGLCoreDevelopment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RZOpenGLCoreDevelopment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AB30FED19008534008536DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8AB30FEF19008534008536DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8AB30FF119008534008536DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8AB30FF519008534008536DB /* RZOpenGLCoreDevelopment-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RZOpenGLCoreDevelopment-Info.plist"; sourceTree = "<group>"; };
+		8AB30FF719008534008536DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8AB30FF919008534008536DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8AB30FFB19008534008536DB /* RZOpenGLCoreDevelopment-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RZOpenGLCoreDevelopment-Prefix.pch"; sourceTree = "<group>"; };
+		8AB30FFC19008534008536DB /* RZGDEVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZGDEVAppDelegate.h; sourceTree = "<group>"; };
+		8AB30FFD19008534008536DB /* RZGDEVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZGDEVAppDelegate.m; sourceTree = "<group>"; };
+		8AB30FFF19008534008536DB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8AB3100519008534008536DB /* RZOpenGLCoreDevelopmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RZOpenGLCoreDevelopmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AB3100619008534008536DB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8AB3100E19008534008536DB /* RZOpenGLCoreDevelopmentTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RZOpenGLCoreDevelopmentTests-Info.plist"; sourceTree = "<group>"; };
+		8AB3101019008534008536DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8AB3101219008534008536DB /* RZOpenGLCoreDevelopmentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZOpenGLCoreDevelopmentTests.m; sourceTree = "<group>"; };
+		8AB310211900855D008536DB /* RZGOpenGLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGOpenGLManager.h; sourceTree = "<group>"; };
+		8AB310221900855D008536DB /* RZGOpenGLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGOpenGLManager.m; sourceTree = "<group>"; };
+		8AB310271900855D008536DB /* RZGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGViewController.h; sourceTree = "<group>"; };
+		8AB310281900855D008536DB /* RZGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGViewController.m; sourceTree = "<group>"; };
+		8AB3102B19008599008536DB /* RZGAssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGAssetManager.h; sourceTree = "<group>"; };
+		8AB3102C19008599008536DB /* RZGAssetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGAssetManager.m; sourceTree = "<group>"; };
+		8AB3102E190085CF008536DB /* RZGModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGModelController.h; sourceTree = "<group>"; };
+		8AB3102F190085CF008536DB /* RZGModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGModelController.m; sourceTree = "<group>"; };
+		8AB31031190085FC008536DB /* RZGDefaultShader.fsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = RZGDefaultShader.fsh; sourceTree = "<group>"; };
+		8AB31032190085FC008536DB /* RZGDefaultShader.vsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = RZGDefaultShader.vsh; sourceTree = "<group>"; };
+		8AB31035190087D4008536DB /* RZGScreenToGLConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGScreenToGLConverter.h; sourceTree = "<group>"; };
+		8AB31036190087D4008536DB /* RZGScreenToGLConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGScreenToGLConverter.m; sourceTree = "<group>"; };
+		8AB3103819009284008536DB /* RZGModelData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZGModelData.h; sourceTree = "<group>"; };
+		8AB310391900929A008536DB /* RZGModelData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RZGModelData.c; sourceTree = "<group>"; };
+		8AB3103E190097CD008536DB /* RZGVaoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGVaoInfo.h; sourceTree = "<group>"; };
+		8AB3103F190097CD008536DB /* RZGVaoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGVaoInfo.m; sourceTree = "<group>"; };
+		8AB3104119009DAB008536DB /* RZGShaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGShaderManager.h; sourceTree = "<group>"; };
+		8AB3104219009DAB008536DB /* RZGShaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGShaderManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8AB30FE719008534008536DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AB30FF019008534008536DB /* CoreGraphics.framework in Frameworks */,
+				8AB30FF219008534008536DB /* UIKit.framework in Frameworks */,
+				8AB30FEE19008534008536DB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AB3100219008534008536DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AB3100719008534008536DB /* XCTest.framework in Frameworks */,
+				8AB3100919008534008536DB /* UIKit.framework in Frameworks */,
+				8AB3100819008534008536DB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8AB30FE119008534008536DB = {
+			isa = PBXGroup;
+			children = (
+				8AB3101C1900855D008536DB /* RZOpenGLCore */,
+				8AB30FF319008534008536DB /* RZOpenGLCoreDevelopment */,
+				8AB3100C19008534008536DB /* RZOpenGLCoreDevelopmentTests */,
+				8AB30FEC19008534008536DB /* Frameworks */,
+				8AB30FEB19008534008536DB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8AB30FEB19008534008536DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8AB30FEA19008534008536DB /* RZOpenGLCoreDevelopment.app */,
+				8AB3100519008534008536DB /* RZOpenGLCoreDevelopmentTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8AB30FEC19008534008536DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8AB30FED19008534008536DB /* Foundation.framework */,
+				8AB30FEF19008534008536DB /* CoreGraphics.framework */,
+				8AB30FF119008534008536DB /* UIKit.framework */,
+				8AB3100619008534008536DB /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8AB30FF319008534008536DB /* RZOpenGLCoreDevelopment */ = {
+			isa = PBXGroup;
+			children = (
+				8AB30FFC19008534008536DB /* RZGDEVAppDelegate.h */,
+				8AB30FFD19008534008536DB /* RZGDEVAppDelegate.m */,
+				8AB30FFF19008534008536DB /* Images.xcassets */,
+				8AB30FF419008534008536DB /* Supporting Files */,
+			);
+			path = RZOpenGLCoreDevelopment;
+			sourceTree = "<group>";
+		};
+		8AB30FF419008534008536DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8AB30FF519008534008536DB /* RZOpenGLCoreDevelopment-Info.plist */,
+				8AB30FF619008534008536DB /* InfoPlist.strings */,
+				8AB30FF919008534008536DB /* main.m */,
+				8AB30FFB19008534008536DB /* RZOpenGLCoreDevelopment-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8AB3100C19008534008536DB /* RZOpenGLCoreDevelopmentTests */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3101219008534008536DB /* RZOpenGLCoreDevelopmentTests.m */,
+				8AB3100D19008534008536DB /* Supporting Files */,
+			);
+			path = RZOpenGLCoreDevelopmentTests;
+			sourceTree = "<group>";
+		};
+		8AB3100D19008534008536DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3100E19008534008536DB /* RZOpenGLCoreDevelopmentTests-Info.plist */,
+				8AB3100F19008534008536DB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8AB3101C1900855D008536DB /* RZOpenGLCore */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3101D1900855D008536DB /* Asset Management */,
+				8AB3101E1900855D008536DB /* Commands */,
+				8AB3101F1900855D008536DB /* Models */,
+				8AB310201900855D008536DB /* OpenGLManagement */,
+				8AB310231900855D008536DB /* ShaderManagement */,
+				8AB310241900855D008536DB /* Shaders */,
+				8AB310251900855D008536DB /* Utilities */,
+				8AB310261900855D008536DB /* ViewControllers */,
+			);
+			name = RZOpenGLCore;
+			path = ../../RZOpenGLCore;
+			sourceTree = "<group>";
+		};
+		8AB3101D1900855D008536DB /* Asset Management */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3102B19008599008536DB /* RZGAssetManager.h */,
+				8AB3102C19008599008536DB /* RZGAssetManager.m */,
+				8AB3103819009284008536DB /* RZGModelData.h */,
+				8AB310391900929A008536DB /* RZGModelData.c */,
+				8AB3103E190097CD008536DB /* RZGVaoInfo.h */,
+				8AB3103F190097CD008536DB /* RZGVaoInfo.m */,
+			);
+			path = "Asset Management";
+			sourceTree = "<group>";
+		};
+		8AB3101E1900855D008536DB /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		8AB3101F1900855D008536DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3102E190085CF008536DB /* RZGModelController.h */,
+				8AB3102F190085CF008536DB /* RZGModelController.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8AB310201900855D008536DB /* OpenGLManagement */ = {
+			isa = PBXGroup;
+			children = (
+				8AB310211900855D008536DB /* RZGOpenGLManager.h */,
+				8AB310221900855D008536DB /* RZGOpenGLManager.m */,
+			);
+			path = OpenGLManagement;
+			sourceTree = "<group>";
+		};
+		8AB310231900855D008536DB /* ShaderManagement */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3104119009DAB008536DB /* RZGShaderManager.h */,
+				8AB3104219009DAB008536DB /* RZGShaderManager.m */,
+			);
+			path = ShaderManagement;
+			sourceTree = "<group>";
+		};
+		8AB310241900855D008536DB /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				8AB31031190085FC008536DB /* RZGDefaultShader.fsh */,
+				8AB31032190085FC008536DB /* RZGDefaultShader.vsh */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		8AB310251900855D008536DB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8AB31035190087D4008536DB /* RZGScreenToGLConverter.h */,
+				8AB31036190087D4008536DB /* RZGScreenToGLConverter.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8AB310261900855D008536DB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8AB310271900855D008536DB /* RZGViewController.h */,
+				8AB310281900855D008536DB /* RZGViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8AB30FE919008534008536DB /* RZOpenGLCoreDevelopment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AB3101619008534008536DB /* Build configuration list for PBXNativeTarget "RZOpenGLCoreDevelopment" */;
+			buildPhases = (
+				8AB30FE619008534008536DB /* Sources */,
+				8AB30FE719008534008536DB /* Frameworks */,
+				8AB30FE819008534008536DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RZOpenGLCoreDevelopment;
+			productName = RZOpenGLCoreDevelopment;
+			productReference = 8AB30FEA19008534008536DB /* RZOpenGLCoreDevelopment.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8AB3100419008534008536DB /* RZOpenGLCoreDevelopmentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AB3101919008534008536DB /* Build configuration list for PBXNativeTarget "RZOpenGLCoreDevelopmentTests" */;
+			buildPhases = (
+				8AB3100119008534008536DB /* Sources */,
+				8AB3100219008534008536DB /* Frameworks */,
+				8AB3100319008534008536DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8AB3100B19008534008536DB /* PBXTargetDependency */,
+			);
+			name = RZOpenGLCoreDevelopmentTests;
+			productName = RZOpenGLCoreDevelopmentTests;
+			productReference = 8AB3100519008534008536DB /* RZOpenGLCoreDevelopmentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8AB30FE219008534008536DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RZGDEV;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "John Stricker";
+				TargetAttributes = {
+					8AB3100419008534008536DB = {
+						TestTargetID = 8AB30FE919008534008536DB;
+					};
+				};
+			};
+			buildConfigurationList = 8AB30FE519008534008536DB /* Build configuration list for PBXProject "RZOpenGLCoreDevelopment" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8AB30FE119008534008536DB;
+			productRefGroup = 8AB30FEB19008534008536DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8AB30FE919008534008536DB /* RZOpenGLCoreDevelopment */,
+				8AB3100419008534008536DB /* RZOpenGLCoreDevelopmentTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8AB30FE819008534008536DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AB31033190085FC008536DB /* RZGDefaultShader.fsh in Resources */,
+				8AB31034190085FC008536DB /* RZGDefaultShader.vsh in Resources */,
+				8AB30FF819008534008536DB /* InfoPlist.strings in Resources */,
+				8AB3100019008534008536DB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AB3100319008534008536DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AB3101119008534008536DB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8AB30FE619008534008536DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AB3102A1900855D008536DB /* RZGViewController.m in Sources */,
+				8AB31040190097CD008536DB /* RZGVaoInfo.m in Sources */,
+				8AB310291900855D008536DB /* RZGOpenGLManager.m in Sources */,
+				8AB30FFE19008534008536DB /* RZGDEVAppDelegate.m in Sources */,
+				8AB31030190085CF008536DB /* RZGModelController.m in Sources */,
+				8AB3102D19008599008536DB /* RZGAssetManager.m in Sources */,
+				8AB3104319009DAB008536DB /* RZGShaderManager.m in Sources */,
+				8AB3103A1900929A008536DB /* RZGModelData.c in Sources */,
+				8AB31037190087D4008536DB /* RZGScreenToGLConverter.m in Sources */,
+				8AB30FFA19008534008536DB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AB3100119008534008536DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AB3101319008534008536DB /* RZOpenGLCoreDevelopmentTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8AB3100B19008534008536DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8AB30FE919008534008536DB /* RZOpenGLCoreDevelopment */;
+			targetProxy = 8AB3100A19008534008536DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8AB30FF619008534008536DB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8AB30FF719008534008536DB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8AB3100F19008534008536DB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8AB3101019008534008536DB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8AB3101419008534008536DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8AB3101519008534008536DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8AB3101719008534008536DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RZOpenGLCoreDevelopment/RZOpenGLCoreDevelopment-Prefix.pch";
+				INFOPLIST_FILE = "RZOpenGLCoreDevelopment/RZOpenGLCoreDevelopment-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8AB3101819008534008536DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RZOpenGLCoreDevelopment/RZOpenGLCoreDevelopment-Prefix.pch";
+				INFOPLIST_FILE = "RZOpenGLCoreDevelopment/RZOpenGLCoreDevelopment-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8AB3101A19008534008536DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RZOpenGLCoreDevelopment.app/RZOpenGLCoreDevelopment";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RZOpenGLCoreDevelopment/RZOpenGLCoreDevelopment-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RZOpenGLCoreDevelopmentTests/RZOpenGLCoreDevelopmentTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8AB3101B19008534008536DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RZOpenGLCoreDevelopment.app/RZOpenGLCoreDevelopment";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RZOpenGLCoreDevelopment/RZOpenGLCoreDevelopment-Prefix.pch";
+				INFOPLIST_FILE = "RZOpenGLCoreDevelopmentTests/RZOpenGLCoreDevelopmentTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8AB30FE519008534008536DB /* Build configuration list for PBXProject "RZOpenGLCoreDevelopment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AB3101419008534008536DB /* Debug */,
+				8AB3101519008534008536DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8AB3101619008534008536DB /* Build configuration list for PBXNativeTarget "RZOpenGLCoreDevelopment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AB3101719008534008536DB /* Debug */,
+				8AB3101819008534008536DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8AB3101919008534008536DB /* Build configuration list for PBXNativeTarget "RZOpenGLCoreDevelopmentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AB3101A19008534008536DB /* Debug */,
+				8AB3101B19008534008536DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8AB30FE219008534008536DB /* Project object */;
+}
