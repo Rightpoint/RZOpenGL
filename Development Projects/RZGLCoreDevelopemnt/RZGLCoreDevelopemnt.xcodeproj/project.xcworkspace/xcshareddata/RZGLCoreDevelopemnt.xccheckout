@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BD4E27C9-A76B-4ABF-AE07-630E21314E66</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RZGLCoreDevelopemnt</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7AC906F8-05F8-4CE2-8C3E-D40F79C98D08</key>
+		<string>https://github.com/Raizlabs/RZOpenGL.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Development Projects/Core Development/RZGLCoreDevelopemnt/RZGLCoreDevelopemnt.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7AC906F8-05F8-4CE2-8C3E-D40F79C98D08</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Raizlabs/RZOpenGL.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7AC906F8-05F8-4CE2-8C3E-D40F79C98D08</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7AC906F8-05F8-4CE2-8C3E-D40F79C98D08</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RZOpenGL</string>
+		</dict>
+	</array>
+</dict>
+</plist>
