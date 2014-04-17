@@ -1,14 +1,14 @@
 //
-//  RZDEVAppDelegate.m
-//  RZGLCoreDevelopemnt
+//  RZGDEVAppDelegate.m
+//  RZOpenGLCoreDevelopment
 //
 //  Created by John Stricker on 4/17/14.
 //  Copyright (c) 2014 John Stricker. All rights reserved.
 //
 
-#import "RZDEVAppDelegate.h"
+#import "RZGDEVAppDelegate.h"
 
-@implementation RZDEVAppDelegate
+@implementation RZGDEVAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

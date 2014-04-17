@@ -10,4 +10,6 @@
 
 @interface RZGViewController : UIViewController
 
+@property (assign, nonatomic, readonly) CFTimeInterval *timeSinceLastUpdate;
+
 @end

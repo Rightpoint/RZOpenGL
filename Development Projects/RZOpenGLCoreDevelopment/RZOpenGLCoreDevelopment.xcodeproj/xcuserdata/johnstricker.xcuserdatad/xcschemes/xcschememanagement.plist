@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>RZGLCoreDevelopemnt.xcscheme</key>
+		<key>RZOpenGLCoreDevelopment.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8AD5A51A1900008F00EEC884</key>
+		<key>8AB30FE919008534008536DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8AD5A5351900008F00EEC884</key>
+		<key>8AB3100419008534008536DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

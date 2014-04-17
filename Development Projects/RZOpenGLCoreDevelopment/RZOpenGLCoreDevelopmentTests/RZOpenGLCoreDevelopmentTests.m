@@ -1,6 +1,6 @@
 //
-//  RZGLCoreDevelopemntTests.m
-//  RZGLCoreDevelopemntTests
+//  RZOpenGLCoreDevelopmentTests.m
+//  RZOpenGLCoreDevelopmentTests
 //
 //  Created by John Stricker on 4/17/14.
 //  Copyright (c) 2014 John Stricker. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface RZGLCoreDevelopemntTests : XCTestCase
+@interface RZOpenGLCoreDevelopmentTests : XCTestCase
 
 @end
 
-@implementation RZGLCoreDevelopemntTests
+@implementation RZOpenGLCoreDevelopmentTests
 
 - (void)setUp
 {

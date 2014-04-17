@@ -7,17 +7,30 @@
 //
 
 #import "RZGViewController.h"
+#import <GLKit/GLKit.h>
 
-@interface RZGViewController ()
+@interface RZGViewController () <GLKViewDelegate>
+
+@property (assign, nonatomic, readwrite) CFTimeInterval *timeSinceLastUpdate;
+@property (nonatomic, assign) CFTimeInterval lastTimeStamp;
+@property (nonatomic, strong) CADisplayLink *displayLink;
 
 @end
 
 @implementation RZGViewController
+
+- (void)loadView
+{
+    GLKView *glkview = [[GLKView alloc] initWithFrame:self.view.frame];
+    glkview.delegate = self;
+    self.view  = glkview;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
 
 @end
