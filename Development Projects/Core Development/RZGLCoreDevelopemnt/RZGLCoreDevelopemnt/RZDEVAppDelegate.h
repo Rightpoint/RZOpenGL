@@ -1,5 +1,5 @@
 //
-//  RZGViewController.h
+//  RZDEVAppDelegate.h
 //  RZGLCoreDevelopemnt
 //
 //  Created by John Stricker on 4/17/14.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RZGViewController : UIViewController
+@interface RZDEVAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
 
 @end
