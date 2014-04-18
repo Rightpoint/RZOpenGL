@@ -11,7 +11,7 @@
 
 @interface RZGViewController () <GLKViewDelegate>
 
-@property (assign, nonatomic, readwrite) CFTimeInterval *timeSinceLastUpdate;
+@property (assign, nonatomic, readwrite) CFTimeInterval timeSinceLastUpdate;
 @property (nonatomic, assign) CFTimeInterval lastTimeStamp;
 @property (nonatomic, strong) CADisplayLink *displayLink;
 
@@ -21,16 +21,44 @@
 
 - (void)loadView
 {
-    GLKView *glkview = [[GLKView alloc] initWithFrame:self.view.frame];
-    glkview.delegate = self;
-    self.view  = glkview;
+    self.glkView = [[GLKView alloc] init];
+    self.glkView.delegate = self;
+    self.glkView.drawableMultisample = GLKViewDrawableMultisample4X;
+    self.glkView.enableSetNeedsDisplay = NO;
+    
+    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render:)];
+    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    self.timeSinceLastUpdate = 0.0;
+    
+    self.modelController = [[RZGModelController alloc] init];
+    
+    self.view = self.glkView;
 }
 
-- (void)viewDidLoad
+- (void)setPaused:(BOOL)paused
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _paused = paused;
+    _isPaused = paused;
+    
+    self.displayLink.paused = paused;
 }
 
+- (void)render:(CADisplayLink *)displayLink
+{
+    [self update];
+    self.timeSinceLastUpdate = displayLink.timestamp - self.lastTimeStamp;
+    [self.glkView display];
+    self.lastTimeStamp = displayLink.timestamp;
+}
+
+- (void)update
+{
+    [self.modelController updateWithTime:self.timeSinceLastUpdate];
+}
+
+-(void)glkView:(GLKView *)view drawInRect:(CGRect)rect
+{
+    [self.modelController draw];
+}
 
 @end
