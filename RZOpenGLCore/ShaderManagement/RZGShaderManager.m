@@ -33,7 +33,7 @@ static GLuint lastProgramUsed; // Keeps track of last program used to minimize p
 
 +(unsigned int) loadModelDefaultShader
 {
-    return [self loadProgram:@"ModelDefault" :@"ModelDefault",3,0,"a_position",1,"a_normal",2,"a_texCoord"];
+    return [self loadProgram:@"RZGDefaultShader" :@"RZGDefaultShader",3,0,"a_position",1,"a_normal",2,"a_texCoord"];
 }
 
 

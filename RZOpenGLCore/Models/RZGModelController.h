@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RZGOpenGLManager.h"
+
+@class RZGModel;
+@class RZGCommand;
 
 @interface RZGModelController : NSObject
+
+- (void)addModel:(RZGModel *)model;
+- (void)addCommandToAllModels:(RZGCommand *)command;
+- (void)updateWithTime:(CFTimeInterval)time;
+- (void)draw;
 
 @end
