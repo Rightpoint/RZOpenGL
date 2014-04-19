@@ -19,4 +19,7 @@
 @property (assign, nonatomic, readonly) BOOL isPaused;
 @property (assign, nonatomic) BOOL paused;
 
+- (void)update;
+- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect;
+
 @end
