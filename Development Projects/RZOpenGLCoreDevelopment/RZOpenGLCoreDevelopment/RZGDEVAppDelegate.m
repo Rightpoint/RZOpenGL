@@ -9,6 +9,7 @@
 #import "RZGDEVAppDelegate.h"
 #import "RZGDEVGLViewController.h"
 #import "RZGDEVNormalViewController.h"
+#import "RZGDEVViewControllerFight.h"
 
 @implementation RZGDEVAppDelegate
 
