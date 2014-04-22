@@ -26,8 +26,9 @@
 		8A0F10E819016E79006A1142 /* RZGMathUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F10D519016E79006A1142 /* RZGMathUtils.m */; };
 		8A0F10E919016E79006A1142 /* RZGScreenToGLConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F10D719016E79006A1142 /* RZGScreenToGLConverter.m */; };
 		8A0F10EA19016E79006A1142 /* RZGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F10DA19016E79006A1142 /* RZGViewController.m */; };
-		8A0F10ED19017066006A1142 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0F10EC19017066006A1142 /* OpenGLES.framework */; };
 		8A0F10EF19019569006A1142 /* rzUnicorn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F10EE19019569006A1142 /* rzUnicorn.png */; };
+		8AA4E67819072AE10016CCF3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA4E67719072AE10016CCF3 /* OpenGLES.framework */; };
+		8AA4E67919072FB80016CCF3 /* rzUni2.model in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB45FB19019F0000500B5A /* rzUni2.model */; };
 		8AB30FEE19008534008536DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB30FED19008534008536DB /* Foundation.framework */; };
 		8AB30FF019008534008536DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB30FEF19008534008536DB /* CoreGraphics.framework */; };
 		8AB30FF219008534008536DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB30FF119008534008536DB /* UIKit.framework */; };
@@ -106,8 +107,8 @@
 		8A0F10D919016E79006A1142 /* RZGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGViewController.h; sourceTree = "<group>"; };
 		8A0F10DA19016E79006A1142 /* RZGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGViewController.m; sourceTree = "<group>"; };
 		8A0F10EB19016EE5006A1142 /* RZGCoreHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZGCoreHeaders.h; sourceTree = "<group>"; };
-		8A0F10EC19017066006A1142 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		8A0F10EE19019569006A1142 /* rzUnicorn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rzUnicorn.png; sourceTree = "<group>"; };
+		8AA4E67719072AE10016CCF3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		8AB30FEA19008534008536DB /* RZOpenGLCoreDevelopment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RZOpenGLCoreDevelopment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB30FED19008534008536DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8AB30FEF19008534008536DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -152,7 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A0F10ED19017066006A1142 /* OpenGLES.framework in Frameworks */,
+				8AA4E67819072AE10016CCF3 /* OpenGLES.framework in Frameworks */,
 				8A0F10AF19016D35006A1142 /* GLKit.framework in Frameworks */,
 				8AB30FF019008534008536DB /* CoreGraphics.framework in Frameworks */,
 				8AB30FF219008534008536DB /* UIKit.framework in Frameworks */,
@@ -307,7 +308,7 @@
 		8AB30FEC19008534008536DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8A0F10EC19017066006A1142 /* OpenGLES.framework */,
+				8AA4E67719072AE10016CCF3 /* OpenGLES.framework */,
 				8A0F10AE19016D35006A1142 /* GLKit.framework */,
 				8AB30FED19008534008536DB /* Foundation.framework */,
 				8AB30FEF19008534008536DB /* CoreGraphics.framework */,
@@ -466,6 +467,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA4E67919072FB80016CCF3 /* rzUni2.model in Resources */,
 				8AEB463C1901BDC300500B5A /* gp10.png in Resources */,
 				8AEB46361901BDC300500B5A /* gp4.png in Resources */,
 				8AEB463D1901BDC300500B5A /* gp11.png in Resources */,

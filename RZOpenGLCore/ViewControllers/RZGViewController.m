@@ -14,6 +14,7 @@
 @property (assign, nonatomic, readwrite) CFTimeInterval timeSinceLastUpdate;
 @property (nonatomic, assign) CFTimeInterval lastTimeStamp;
 @property (nonatomic, strong) CADisplayLink *displayLink;
+@property (assign, nonatomic) BOOL resetTimeStamp;
 
 @end
 
@@ -28,11 +29,15 @@
     
     self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render:)];
     [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    
     self.timeSinceLastUpdate = 0.0;
+    self.lastTimeStamp = self.displayLink.timestamp;
     
     self.modelController = [[RZGModelController alloc] init];
     
     self.view = self.glkView;
+    
+    self.resetTimeStamp = YES;
 }
 
 - (void)setPaused:(BOOL)paused
@@ -46,7 +51,15 @@
 - (void)render:(CADisplayLink *)displayLink
 {
     [self update];
-    self.timeSinceLastUpdate = displayLink.timestamp - self.lastTimeStamp;
+    
+    if (self.resetTimeStamp) {
+        self.timeSinceLastUpdate = 0;
+        self.resetTimeStamp = NO;
+    }
+    else {
+        self.timeSinceLastUpdate = displayLink.timestamp - self.lastTimeStamp;
+    }
+    
     [self.glkView display];
     self.lastTimeStamp = displayLink.timestamp;
 }
