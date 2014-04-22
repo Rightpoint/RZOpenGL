@@ -39,6 +39,9 @@
     self.smallBall.prs.pz = mainZ;
     [self.smallBall.prs setRotationConstantToVector:GLKVector3Make(0.0f, 0.0f, 4.0f)];
     
+    self.smallBall.alpha = 0.0f;
+   [self.smallBall addCommand:[RZGCommand commandWithEnum:kRZGCommand_alpha Target:GLKVector4MakeWith1f(1.0f) Duration:2.0f IsAbsolute:YES Delay:5.0f]];
+    
     [self.modelController addModel:self.bigBall];
     [self.modelController addModel:self.smallBall];
 }
