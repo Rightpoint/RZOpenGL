@@ -1,23 +1,23 @@
 //
-//  SSGBMFontData.h
-//  SSGOGL
+//  RZGBMFontData.h
+//  RZGOGL
 //
-//  Created by John Stricker on 3/7/14.
-//  Copyright (c) 2014 Sway Software. All rights reserved.
+//  Created by John Stricker on 4/24/14.
+//  Copyright (c) 2014 Raizlabs. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKit.h>
 
-@class SSGBMFontCharData;
+@class RZGBMFontCharData;
 
-@interface SSGBMFontData : NSObject
+@interface RZGBMFontData : NSObject
 
 @property (nonatomic, assign) GLfloat scale;
 @property (nonatomic, assign) GLfloat lineHeight;
 
 -(instancetype)initWithFontFile:(NSString*)fontFile;
 -(NSArray*)getCharDataArr;
--(SSGBMFontCharData*)charDataFor:(char)c;
+-(RZGBMFontCharData*)charDataFor:(char)c;
 
 @end

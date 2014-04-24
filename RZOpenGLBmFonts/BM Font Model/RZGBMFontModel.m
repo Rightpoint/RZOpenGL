@@ -1,27 +1,28 @@
 //
-//  SSGBMFontModel.m
-//  SSGOGL
+//  RZGBMFontModel.m
+//  RZGOGL
 //
-//  Created by John Stricker on 3/7/14.
-//  Copyright (c) 2014 Sway Software. All rights reserved.
+//  Created by John Stricker on 4/24/14.
+//  Copyright (c) 2014 Raizlabs. All rights reserved.
 //
 
-#import "SSGBMFontModel.h"
-#import "SSGModelData.h"
-#import "SSGBMFontData.h"
-#import "SSGBMFontCharData.h"
-#import "SSGVaoInfo.h"
-#import "SSGShaderManager.h"
-#import "SSGBitmapFontShaderSettings.h"
-#import "SSGCommand.h"
+#import "RZGBMFontModel.h"
+#import "RZGModelData.h"
+#import "RZGBMFontData.h"
+#import "RZGBMFontCharData.h"
+#import "RZGVaoInfo.h"
+#import "RZGShaderManager.h"
+#import "RZGBitmapFontShaderSettings.h"
+#import "RZGCommand.h"
+#import "RZGOpenGLManager.h"
 
 #define kCharMax 1000
 #define kLineBreakChar '~'
-@interface SSGBMFontModel()
+@interface RZGBMFontModel()
 {
     GLfloat dataArr[kCharMax*30];
     const char *textCharPtr;
-    SSGModelData *modelData;
+    RZGModelData *modelData;
 }
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, assign) GLint charCount;
@@ -33,9 +34,9 @@
 
 @end
 
-@implementation SSGBMFontModel
+@implementation RZGBMFontModel
 
-- (instancetype)initWithName:(NSString *)name BMFontData:(SSGBMFontData *)bmfd
+- (instancetype)initWithName:(NSString *)name BMFontData:(RZGBMFontData *)bmfd
 {
     self = [super init];
     if(self)
@@ -49,10 +50,22 @@
     return self;
 }
 
+
+- (instancetype)initWithName:(NSString *)name BMfontData:(RZGBMFontData *)bmfd UseGLManager:(RZGOpenGLManager *)glmgr
+{
+    self = [self initWithName:name BMFontData: bmfd];
+    if(self) {
+        _shaderSettings = glmgr.bitmapFontShaderSettings;
+        self.projection = glmgr.projectionMatrix;
+    }
+    return self;
+}
+
+
 - (GLboolean)nextWordShouldWrapAtIndex:(int)currentIndex CurrentXpos:(GLfloat)xPos
 {
     char c;
-    SSGBMFontCharData *cd;
+    RZGBMFontCharData *cd;
     
     for(int i = self.currentIndex+1; i < [self.text length]; i++)
     {
@@ -137,7 +150,7 @@
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 20, (char*)NULL + 12);
     
-    self.vaoInfo = [[SSGVaoInfo alloc] initWithVaoIndex:vao vboIndex:vbo andNVerts:6*cMax];
+    self.vaoInfo = [[RZGVaoInfo alloc] initWithVaoIndex:vao vboIndex:vbo andNVerts:6*cMax];
 }
 
 - (void)updateWithText:(NSString *)str
@@ -175,7 +188,7 @@
         
         if(c != '~')
         {
-            SSGBMFontCharData *cd = [self.fontData charDataFor:c];
+            RZGBMFontCharData *cd = [self.fontData charDataFor:c];
             
             currY = currentLineY - cd.yOffset;
             dstY = currY - cd.height;
@@ -304,10 +317,10 @@
     }
 }
 
-- (void)processCommand:(SSGCommand*)command withTime:(GLfloat)time
+- (void)processCommand:(RZGCommand*)command withTime:(GLfloat)time
 {
     switch (command.commandEnum) {
-        case kSSGCommand_font_alternatingSplit:
+        case kRZGCommand_font_alternatingSplit:
             if(command.duration <= 0.0f)
             {
                 [self alternatingCharacterPositionAdjustmentX:command.target.x Y:command.target.y];
@@ -317,7 +330,7 @@
             {
                 if(!command.isStarted)
                 {
-                    command.step = command2float(command.target.x / command.duration, command.target.y / command.duration);
+                    command.step = GLKVector4MakeWith2f(command.target.x / command.duration, command.target.y / command.duration);
                     command.isStarted = YES;
                 }
                 command.duration -= time;
@@ -341,7 +354,7 @@
         return;
     }
     
-    [SSGShaderManager useProgram:self.shaderSettings.programId];
+    [RZGShaderManager useProgram:self.shaderSettings.programId];
     [self.shaderSettings setAlpha:self.alpha];
     [self.shaderSettings setModelViewProjectionMatrix:self.modelViewProjection];
     

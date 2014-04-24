@@ -1,17 +1,17 @@
 //
-//  SSGBMFontData.m
-//  SSGOGL
+//  RZGBMFontData.m
+//  RZGOGL
 //
-//  Created by John Stricker on 3/7/14.
-//  Copyright (c) 2014 Sway Software. All rights reserved.
+//  Created by John Stricker on 4/24/14.
+//  Copyright (c) 2014 Raizlabs. All rights reserved.
 //
 
-#import "SSGBMFontData.h"
-#import "SSGBMFontCharData.h"
+#import "RZGBMFontData.h"
+#import "RZGBMFontCharData.h"
 
 static NSMutableDictionary *dict;
 
-@interface SSGBMFontData()
+@interface RZGBMFontData()
 
 @property (nonatomic, strong) NSArray *charDataArr;
 
@@ -19,7 +19,7 @@ static NSMutableDictionary *dict;
 
 @end
 
-@implementation SSGBMFontData
+@implementation RZGBMFontData
 
 -(instancetype)initWithFontFile:(NSString*)fontFile
 {
@@ -32,7 +32,7 @@ static NSMutableDictionary *dict;
     
     if([dict objectForKey:fontFile])
     {
-        SSGBMFontData *loadedBmd = [dict objectForKey:fontFile];
+        RZGBMFontData *loadedBmd = [dict objectForKey:fontFile];
         self.charDataArr = [loadedBmd getCharDataArr];
         self.scale = loadedBmd.scale;
         self.lineHeight = loadedBmd.lineHeight;
@@ -62,7 +62,7 @@ static NSMutableDictionary *dict;
         //currently BMFont puts an extra \n at the end, so count - 1
         for(int i = 4; i < [lines count]-1; i++)
         {
-            [mutCharArr addObject:[[SSGBMFontCharData alloc] initWithBmGlyphLine:[lines objectAtIndex:i] andScale:self.scale]];
+            [mutCharArr addObject:[[RZGBMFontCharData alloc] initWithBmGlyphLine:[lines objectAtIndex:i] andScale:self.scale]];
         }
         
         self.charDataArr = [[NSArray alloc] initWithArray:mutCharArr];
@@ -73,10 +73,10 @@ static NSMutableDictionary *dict;
     return self;
 }
 
--(SSGBMFontCharData*)charDataFor:(char)c
+-(RZGBMFontCharData*)charDataFor:(char)c
 {
     int charInt = (int)c;
-    for(SSGBMFontCharData *cd in self.charDataArr)
+    for(RZGBMFontCharData *cd in self.charDataArr)
     {
         if(cd.charId == charInt)
             return cd;
@@ -92,7 +92,7 @@ static NSMutableDictionary *dict;
 
 -(void)logData
 {
-    for(SSGBMFontCharData *cd in self.charDataArr)
+    for(RZGBMFontCharData *cd in self.charDataArr)
     {
         NSLog(@"CharID: %i(%c): Pos:(%f,%f) W: %f  H: %f Os:(%f,%f)",cd.charId,(char)cd.charId,cd.xPos,cd.yPos,cd.width,cd.height,cd.xOffset,cd.yOffset);
     }

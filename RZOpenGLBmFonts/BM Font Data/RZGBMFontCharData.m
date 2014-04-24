@@ -1,14 +1,14 @@
 //
-//  SSGBMFontCharData.m
-//  SSGOGL
+//  RZGBMFontCharData.m
+//  RZGOGL
 //
-//  Created by John Stricker on 3/7/14.
-//  Copyright (c) 2014 Sway Software. All rights reserved.
+//  Created by John Stricker on 4/24/14.
+//  Copyright (c) 2014 Raizlabs. All rights reserved.
 //
 
-#import "SSGBMFontCharData.h"
+#import "RZGBMFontCharData.h"
 
-@implementation SSGBMFontCharData
+@implementation RZGBMFontCharData
 -(instancetype)initWithBmGlyphLine:(NSString *)line andScale:(GLfloat)scale
 {
     self = [super init];

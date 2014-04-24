@@ -1,15 +1,15 @@
 //
-//  SSGBMFontCharData.h
-//  SSGOGL
+//  RZGBMFontCharData.h
+//  RZGOGL
 //
-//  Created by John Stricker on 3/7/14.
-//  Copyright (c) 2014 Sway Software. All rights reserved.
+//  Created by John Stricker on 4/24/14.
+//  Copyright (c) 2014 Raizlabs. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKit.h>
 
-@interface SSGBMFontCharData : NSObject
+@interface RZGBMFontCharData : NSObject
 @property (nonatomic, assign, readonly) GLint charId;
 @property (nonatomic, assign, readonly) GLfloat xPos;
 @property (nonatomic, assign, readonly) GLfloat yPos;

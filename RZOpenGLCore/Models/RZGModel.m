@@ -31,6 +31,7 @@
         return nil;
     }
     _prs = [RZGPrs new];
+    _prs.pz = -50.0f;
     //for some subclasses a .model file will not be used on init
     if(modelFileName)
     {
@@ -41,6 +42,7 @@
     }
     _commands = [[NSMutableArray alloc] init];
     _finishedCommands = [[NSMutableArray alloc] init];
+    
     
     return self;
 }

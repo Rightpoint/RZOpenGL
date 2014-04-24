@@ -17,7 +17,7 @@
 @interface RZGShaderManager : NSObject
 
 + (GLuint)loadModelDefaultShader;
-
++ (GLuint)loadBitmapFontShader;
 + (void)useProgram:(GLuint)programId;
 
 @end
