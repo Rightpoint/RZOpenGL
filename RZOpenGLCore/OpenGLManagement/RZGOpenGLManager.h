@@ -11,17 +11,20 @@
 
 @class RZGDefaultShaderSettings;
 @class RZGScreenToGLConverter;
+@class RZGBitmapFontShaderSettings;
 
 @interface RZGOpenGLManager : NSObject
 @property (nonatomic, strong) RZGDefaultShaderSettings *defaultShaderSettings;
+@property (nonatomic, strong) RZGBitmapFontShaderSettings *bitmapFontShaderSettings;
 @property (nonatomic, strong) RZGScreenToGLConverter *zConverter;
 @property (nonatomic, assign) GLKMatrix4 projectionMatrix;
 
--(instancetype)initWithView:(GLKView*)glkView ScreenSize:(CGSize)size PerspectiveInRadians:(GLfloat)perspective NearZ:(GLfloat)nearZ FarZ:(GLfloat)farZ;
--(void)loadDefaultShaderAndSettings;
--(void)enableDepthTest;
--(void)disableDepthTest;
--(void)setClearColor:(GLKVector4)clearColor;
--(void)unload;
+- (instancetype)initWithView:(GLKView*)glkView ScreenSize:(CGSize)size PerspectiveInRadians:(GLfloat)perspective NearZ:(GLfloat)nearZ FarZ:(GLfloat)farZ;
+- (void)loadDefaultShaderAndSettings;
+- (void)loadBitmapFontShaderAndSettings;
+- (void)enableDepthTest;
+- (void)disableDepthTest;
+- (void)setClearColor:(GLKVector4)clearColor;
+- (void)unload;
 
 @end

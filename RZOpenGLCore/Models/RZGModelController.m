@@ -45,7 +45,7 @@
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     for (RZGModel *model in self.mainModelArray) {
-        if ( !model.isHidden ) {
+        if (!model.isHidden) {
             [model draw];
         }
     }

@@ -36,6 +36,10 @@ static GLuint lastProgramUsed; // Keeps track of last program used to minimize p
     return [self loadProgram:@"RZGDefaultShader" :@"RZGDefaultShader",3,0,"a_position",1,"a_normal",2,"a_texCoord"];
 }
 
++ (unsigned int) loadBitmapFontShader
+{
+    return [self loadProgram:@"RZGBitmapFont" :@"RZGBitmapFont",2,0,"a_position",1,"a_texCoord"];
+}
 
 +(GLuint) loadProgram:(NSString *)vertShaderName :(NSString *)fragShaderName, ...
 {

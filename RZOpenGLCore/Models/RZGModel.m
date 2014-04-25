@@ -31,13 +31,16 @@
         return nil;
     }
     _prs = [RZGPrs new];
+    _prs.pz = -50.0f;
+    _alpha = 1.0f;
+    _diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
+    _shadowMax = 0.5;
+    _useDepthTest = YES;
+    
     //for some subclasses a .model file will not be used on init
     if(modelFileName)
     {
         _vaoInfo = [RZGAssetManager loadVaoInfo:modelFileName];
-        _alpha = 1.0f;
-        _diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
-        _shadowMax = 0.5;
     }
     _commands = [[NSMutableArray alloc] init];
     _finishedCommands = [[NSMutableArray alloc] init];
@@ -51,6 +54,7 @@
     
     self.defaultShaderSettings = manager.defaultShaderSettings;
     self.projection = manager.projectionMatrix;
+    self.glmgr = manager;
     
     return self;
 }
@@ -338,7 +342,6 @@
 
 - (void)updateModelViewProjection
 {
-    
     GLKVector3 scale = _prs.scale;
     GLKMatrix4 transformationMatrix = GLKMatrix4Identity;
     GLKVector3 newPosition = _prs.position;
@@ -374,6 +377,15 @@
     if(self.isHidden)
     {
         return;
+    }
+    
+    if(self.glmgr){
+        if(self.useDepthTest){
+            [self.glmgr enableDepthTest];
+        }
+        else {
+            [self.glmgr disableDepthTest];
+        }
     }
     
     [RZGShaderManager useProgram:self.defaultShaderSettings.programId];
