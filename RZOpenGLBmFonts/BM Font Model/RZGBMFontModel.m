@@ -57,6 +57,8 @@
     if(self) {
         _shaderSettings = glmgr.bitmapFontShaderSettings;
         self.projection = glmgr.projectionMatrix;
+        self.glmgr = glmgr;
+        self.useDepthTest = NO;
     }
     return self;
 }

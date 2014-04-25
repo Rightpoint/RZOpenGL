@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8AF28D061908516F00BDB850"
-               BuildableName = "RZGBitMapFontDevelompent.app"
-               BlueprintName = "RZGBitMapFontDevelompent"
-               ReferencedContainer = "container:RZGBitMapFontDevelompent.xcodeproj">
+               BlueprintIdentifier = "8A1E6E31190AFA910089FFE2"
+               BuildableName = "RZGDevBMFont.app"
+               BlueprintName = "RZGDevBMFont"
+               ReferencedContainer = "container:RZGDevBMFont.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8AF28D211908516F00BDB850"
-               BuildableName = "RZGBitMapFontDevelompentTests.xctest"
-               BlueprintName = "RZGBitMapFontDevelompentTests"
-               ReferencedContainer = "container:RZGBitMapFontDevelompent.xcodeproj">
+               BlueprintIdentifier = "8A1E6E4C190AFA910089FFE2"
+               BuildableName = "RZGDevBMFontTests.xctest"
+               BlueprintName = "RZGDevBMFontTests"
+               ReferencedContainer = "container:RZGDevBMFont.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8AF28D061908516F00BDB850"
-            BuildableName = "RZGBitMapFontDevelompent.app"
-            BlueprintName = "RZGBitMapFontDevelompent"
-            ReferencedContainer = "container:RZGBitMapFontDevelompent.xcodeproj">
+            BlueprintIdentifier = "8A1E6E31190AFA910089FFE2"
+            BuildableName = "RZGDevBMFont.app"
+            BlueprintName = "RZGDevBMFont"
+            ReferencedContainer = "container:RZGDevBMFont.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +61,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8AF28D061908516F00BDB850"
-            BuildableName = "RZGBitMapFontDevelompent.app"
-            BlueprintName = "RZGBitMapFontDevelompent"
-            ReferencedContainer = "container:RZGBitMapFontDevelompent.xcodeproj">
+            BlueprintIdentifier = "8A1E6E31190AFA910089FFE2"
+            BuildableName = "RZGDevBMFont.app"
+            BlueprintName = "RZGDevBMFont"
+            ReferencedContainer = "container:RZGDevBMFont.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,10 +79,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8AF28D061908516F00BDB850"
-            BuildableName = "RZGBitMapFontDevelompent.app"
-            BlueprintName = "RZGBitMapFontDevelompent"
-            ReferencedContainer = "container:RZGBitMapFontDevelompent.xcodeproj">
+            BlueprintIdentifier = "8A1E6E31190AFA910089FFE2"
+            BuildableName = "RZGDevBMFont.app"
+            BlueprintName = "RZGDevBMFont"
+            ReferencedContainer = "container:RZGDevBMFont.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

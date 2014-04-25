@@ -1,13 +1,13 @@
 //
 //  RZGDEVAppDelegate.m
-//  RZGBitMapFontDevelompent
+//  RZGDevBMFont
 //
-//  Created by John Stricker on 4/23/14.
+//  Created by John Stricker on 4/25/14.
 //  Copyright (c) 2014 John Stricker. All rights reserved.
 //
 
 #import "RZGDEVAppDelegate.h"
-#import "RZGDEVViewController.h"
+#import "RZGDEVBMFontViewController.h"
 
 @implementation RZGDEVAppDelegate
 
@@ -15,7 +15,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.rootViewController = [[RZGDEVViewController alloc] init];
+    self.window.rootViewController = [[RZGDEVBMFontViewController alloc] init];
     [self.window makeKeyAndVisible];
     return YES;
 }

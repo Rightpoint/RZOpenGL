@@ -1,18 +1,18 @@
 //
-//  RZGBitMapFontDevelompentTests.m
-//  RZGBitMapFontDevelompentTests
+//  RZGDevBMFontTests.m
+//  RZGDevBMFontTests
 //
-//  Created by John Stricker on 4/23/14.
+//  Created by John Stricker on 4/25/14.
 //  Copyright (c) 2014 John Stricker. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface RZGBitMapFontDevelompentTests : XCTestCase
+@interface RZGDevBMFontTests : XCTestCase
 
 @end
 
-@implementation RZGBitMapFontDevelompentTests
+@implementation RZGDevBMFontTests
 
 - (void)setUp
 {

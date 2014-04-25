@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>RZGBitMapFontDevelompent.xcscheme</key>
+		<key>RZGDevBMFont.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8AF28D061908516F00BDB850</key>
+		<key>8A1E6E31190AFA910089FFE2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8AF28D211908516F00BDB850</key>
+		<key>8A1E6E4C190AFA910089FFE2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

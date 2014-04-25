@@ -17,9 +17,11 @@
 
 @interface RZGModel : NSObject
 
+@property (strong, nonatomic) RZGOpenGLManager *glmgr;
 @property (strong, nonatomic) RZGPrs *prs;
 @property (strong, nonatomic) RZGPrs *worldPrs;
 @property (assign, nonatomic) BOOL isHidden;
+@property (assign, nonatomic) BOOL useDepthTest;
 @property (assign, nonatomic) GLKVector4 diffuseColor;
 @property (assign, nonatomic) GLfloat alpha;
 @property (assign, nonatomic) GLfloat shadowMax;
