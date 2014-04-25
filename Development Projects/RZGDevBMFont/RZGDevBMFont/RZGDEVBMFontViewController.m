@@ -31,15 +31,9 @@
     [self.testFont setupWithCharMax:50.0f];
     [self.testFont updateWithText:@"WHAT"];
     
-    self.testFont.centerVertical = NO;
-    self.testFont.prs.pz = -3.0f;
-    self.testFont.prs.py = -0.25f;
-    self.testFont.prs.sxyz = 2.0f;
-    self.testFont.alpha = 1.0f;
-    self.testFont.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
-    self.testFont.shadowMax = 0.4f;
+    self.testFont.centerVertical = YES;
+    self.testFont.centerHorizontal = YES;
     
-    [self.glmgr disableDepthTest];
     [self.modelController addModel:self.testFont];
 }
 

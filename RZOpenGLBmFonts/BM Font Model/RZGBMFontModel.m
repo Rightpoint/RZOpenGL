@@ -15,6 +15,7 @@
 #import "RZGBitmapFontShaderSettings.h"
 #import "RZGCommand.h"
 #import "RZGOpenGLManager.h"
+#import "RZGPrs.h"
 
 #define kCharMax 1000
 #define kLineBreakChar '~'
@@ -45,6 +46,7 @@
         self = [self initWithModelFileName:nil];
         _applyLineHeightAdjWhenWrapping = YES;
         _fontData = bmfd;
+        self.prs.pz = -2.0f;
     }
     
     return self;
@@ -157,6 +159,10 @@
 
 - (void)updateWithText:(NSString *)str
 {
+    if(!self.vaoInfo) {
+        NSLog(@"WARNING: BMFont updated without first being setup (call setupWithCharMax:");
+    }
+    
     self.text = str;
     GLfloat currX = 0.0f;
     GLfloat currY;
@@ -354,6 +360,15 @@
     if(self.isHidden)
     {
         return;
+    }
+    
+    if(self.glmgr) {
+        if (self.useDepthTest) {
+            [self.glmgr enableDepthTest];
+        }
+        else {
+            [self.glmgr disableDepthTest];
+        }
     }
     
     [RZGShaderManager useProgram:self.shaderSettings.programId];
