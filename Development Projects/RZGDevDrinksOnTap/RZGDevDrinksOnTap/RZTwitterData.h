@@ -16,4 +16,6 @@
 @property (strong, nonatomic) NSMutableArray *loadedTweets;
 @property (strong, nonatomic) RZTweetData *currentTweet;
 
+- (RZTweetData*)nextTweet;
+
 @end

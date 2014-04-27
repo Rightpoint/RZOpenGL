@@ -53,7 +53,7 @@ static NSMutableDictionary *loadedVaos;
     return textureInfo.name;
 }
 
-+ (GLuint)loadTextureFromUrl:(NSURL *)url ofType:(NSString *)type shouldLoadWithMipMapping:(BOOL)mipMappingOn
++ (GLuint)loadTextureFromUrl:(NSURL *)url shouldLoadWithMipMapping:(BOOL)mipMappingOn
 {
     if((loadedTextures) && [loadedTextures objectForKey:url])
     {

@@ -44,6 +44,8 @@
 		8AFB2699190D94740022F6D9 /* RZGDevDOTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFB2698190D94740022F6D9 /* RZGDevDOTViewController.m */; };
 		8AFB26A3190D95410022F6D9 /* RZTwitterData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFB26A2190D95410022F6D9 /* RZTwitterData.m */; };
 		8AFB26A6190D95550022F6D9 /* RZTweetData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFB26A5190D95550022F6D9 /* RZTweetData.m */; };
+		8AFB26A8190D9C670022F6D9 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFB26A7190D9C670022F6D9 /* Accounts.framework */; };
+		8AFB26AA190D9C6D0022F6D9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFB26A9190D9C6D0022F6D9 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,8 @@
 		8AFB26A2190D95410022F6D9 /* RZTwitterData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZTwitterData.m; sourceTree = "<group>"; };
 		8AFB26A4190D95550022F6D9 /* RZTweetData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTweetData.h; sourceTree = "<group>"; };
 		8AFB26A5190D95550022F6D9 /* RZTweetData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZTweetData.m; sourceTree = "<group>"; };
+		8AFB26A7190D9C670022F6D9 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		8AFB26A9190D9C6D0022F6D9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AFB26AA190D9C6D0022F6D9 /* Social.framework in Frameworks */,
+				8AFB26A8190D9C670022F6D9 /* Accounts.framework in Frameworks */,
 				8AFB261C190D94050022F6D9 /* CoreGraphics.framework in Frameworks */,
 				8AFB261E190D94050022F6D9 /* UIKit.framework in Frameworks */,
 				8AFB261A190D94050022F6D9 /* Foundation.framework in Frameworks */,
@@ -171,6 +177,8 @@
 		8AFB2618190D94050022F6D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AFB26A9190D9C6D0022F6D9 /* Social.framework */,
+				8AFB26A7190D9C670022F6D9 /* Accounts.framework */,
 				8AFB2619190D94050022F6D9 /* Foundation.framework */,
 				8AFB261B190D94050022F6D9 /* CoreGraphics.framework */,
 				8AFB261D190D94050022F6D9 /* UIKit.framework */,
