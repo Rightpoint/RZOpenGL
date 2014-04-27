@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RZGOpenGLManager.h"
-#import "RZGModelController.h"
+#import "RZGCoreHeaders.h"
 
 @interface RZGViewController : UIViewController
 
