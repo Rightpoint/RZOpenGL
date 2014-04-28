@@ -46,6 +46,14 @@
 		8AFB26A6190D95550022F6D9 /* RZTweetData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFB26A5190D95550022F6D9 /* RZTweetData.m */; };
 		8AFB26A8190D9C670022F6D9 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFB26A7190D9C670022F6D9 /* Accounts.framework */; };
 		8AFB26AA190D9C6D0022F6D9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFB26A9190D9C6D0022F6D9 /* Social.framework */; };
+		8AFB26AD190DAC880022F6D9 /* goldHn.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 8AFB26AB190DAC880022F6D9 /* goldHn.fnt */; };
+		8AFB26AE190DAC880022F6D9 /* goldHn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AFB26AC190DAC880022F6D9 /* goldHn.png */; };
+		8AFB26B1190DADFD0022F6D9 /* whiteHn.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 8AFB26AF190DADFD0022F6D9 /* whiteHn.fnt */; };
+		8AFB26B2190DADFD0022F6D9 /* whiteHn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AFB26B0190DADFD0022F6D9 /* whiteHn.png */; };
+		8AFB26BB190DB3680022F6D9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFB26BA190DB3680022F6D9 /* OpenGLES.framework */; };
+		8AFB26C1190DBEA50022F6D9 /* rzUnicorn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AFB26BF190DBEA50022F6D9 /* rzUnicorn.png */; };
+		8AFB26C2190DBEA50022F6D9 /* rz3dLogo1.model in Resources */ = {isa = PBXBuildFile; fileRef = 8AFB26C0190DBEA50022F6D9 /* rz3dLogo1.model */; };
+		8AFB26C3190DC9130022F6D9 /* quad.model in Resources */ = {isa = PBXBuildFile; fileRef = 8AFB26B3190DAE730022F6D9 /* quad.model */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +133,15 @@
 		8AFB26A5190D95550022F6D9 /* RZTweetData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZTweetData.m; sourceTree = "<group>"; };
 		8AFB26A7190D9C670022F6D9 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		8AFB26A9190D9C6D0022F6D9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		8AFB26AB190DAC880022F6D9 /* goldHn.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = goldHn.fnt; sourceTree = "<group>"; };
+		8AFB26AC190DAC880022F6D9 /* goldHn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldHn.png; sourceTree = "<group>"; };
+		8AFB26AF190DADFD0022F6D9 /* whiteHn.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = whiteHn.fnt; sourceTree = "<group>"; };
+		8AFB26B0190DADFD0022F6D9 /* whiteHn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteHn.png; sourceTree = "<group>"; };
+		8AFB26B3190DAE730022F6D9 /* quad.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = quad.model; sourceTree = "<group>"; };
+		8AFB26B8190DB3590022F6D9 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		8AFB26BA190DB3680022F6D9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8AFB26BF190DBEA50022F6D9 /* rzUnicorn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rzUnicorn.png; sourceTree = "<group>"; };
+		8AFB26C0190DBEA50022F6D9 /* rz3dLogo1.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = rz3dLogo1.model; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AFB26BB190DB3680022F6D9 /* OpenGLES.framework in Frameworks */,
 				8AFB26AA190D9C6D0022F6D9 /* Social.framework in Frameworks */,
 				8AFB26A8190D9C670022F6D9 /* Accounts.framework in Frameworks */,
 				8AFB261C190D94050022F6D9 /* CoreGraphics.framework in Frameworks */,
@@ -177,6 +195,8 @@
 		8AFB2618190D94050022F6D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AFB26BA190DB3680022F6D9 /* OpenGLES.framework */,
+				8AFB26B8190DB3590022F6D9 /* GLKit.framework */,
 				8AFB26A9190D9C6D0022F6D9 /* Social.framework */,
 				8AFB26A7190D9C670022F6D9 /* Accounts.framework */,
 				8AFB2619190D94050022F6D9 /* Foundation.framework */,
@@ -190,6 +210,13 @@
 		8AFB261F190D94050022F6D9 /* RZGDevDrinksOnTap */ = {
 			isa = PBXGroup;
 			children = (
+				8AFB26BF190DBEA50022F6D9 /* rzUnicorn.png */,
+				8AFB26C0190DBEA50022F6D9 /* rz3dLogo1.model */,
+				8AFB26B3190DAE730022F6D9 /* quad.model */,
+				8AFB26AF190DADFD0022F6D9 /* whiteHn.fnt */,
+				8AFB26B0190DADFD0022F6D9 /* whiteHn.png */,
+				8AFB26AB190DAC880022F6D9 /* goldHn.fnt */,
+				8AFB26AC190DAC880022F6D9 /* goldHn.png */,
 				8AFB269A190D94F20022F6D9 /* Twitter */,
 				8AFB2628190D94050022F6D9 /* RZGDevAppDelegate.h */,
 				8AFB2629190D94050022F6D9 /* RZGDevAppDelegate.m */,
@@ -479,10 +506,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AFB26C3190DC9130022F6D9 /* quad.model in Resources */,
 				8AFB2624190D94050022F6D9 /* InfoPlist.strings in Resources */,
+				8AFB26AE190DAC880022F6D9 /* goldHn.png in Resources */,
 				8AFB2684190D94570022F6D9 /* RZGBitmapFont.fsh in Resources */,
+				8AFB26B2190DADFD0022F6D9 /* whiteHn.png in Resources */,
+				8AFB26AD190DAC880022F6D9 /* goldHn.fnt in Resources */,
+				8AFB26C2190DBEA50022F6D9 /* rz3dLogo1.model in Resources */,
 				8AFB2693190D94570022F6D9 /* RZGDefaultShader.vsh in Resources */,
+				8AFB26B1190DADFD0022F6D9 /* whiteHn.fnt in Resources */,
 				8AFB262C190D94050022F6D9 /* Images.xcassets in Resources */,
+				8AFB26C1190DBEA50022F6D9 /* rzUnicorn.png in Resources */,
 				8AFB2685190D94570022F6D9 /* RZGBitmapFont.vsh in Resources */,
 				8AFB2692190D94570022F6D9 /* RZGDefaultShader.fsh in Resources */,
 			);

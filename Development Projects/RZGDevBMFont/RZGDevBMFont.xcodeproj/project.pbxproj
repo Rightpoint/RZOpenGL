@@ -710,6 +710,7 @@
 				8A1E6E60190AFA910089FFE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A1E6E61190AFA910089FFE2 /* Build configuration list for PBXNativeTarget "RZGDevBMFontTests" */ = {
 			isa = XCConfigurationList;
@@ -718,6 +719,7 @@
 				8A1E6E63190AFA910089FFE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
