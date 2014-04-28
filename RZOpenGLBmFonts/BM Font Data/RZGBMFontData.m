@@ -81,7 +81,7 @@ static NSMutableDictionary *dict;
         if(cd.charId == charInt)
             return cd;
     }
-    NSLog(@"WARNING: Char '%c' not present in spritefont",c);
+   // NSLog(@"WARNING: Char '%c' not present in spritefont",c);
     return nil;
 }
 

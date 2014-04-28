@@ -33,7 +33,8 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
 @property (strong, nonatomic) RZGBMFontModel *tweetTextModel;
 @property (strong, nonatomic) RZGBMFontModel *tweetNameModel;
 @property (strong, nonatomic) RZGModel *tweetPicModel;
-@property (strong, nonatomic) RZGModel *rzLogoContainerModel;
+@property (strong, nonatomic) RZGModel *dotModel;
+@property (strong, nonatomic) RZGModel *dotModel2;
 
 @end
 
@@ -55,10 +56,16 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
     
     [self setupTweetModels];
     
-    self.rzLogoContainerModel = [[RZGModel alloc] initWithModelFileName:@"rz3dLogo1" UseDefaultSettingsInManager:self.glmgr];
-    self.rzLogoContainerModel.shadowMax = 0.5f;
-    [self.rzLogoContainerModel setTexture0Id:[RZGAssetManager loadTexture:@"rzUnicorn" ofType:@"png" shouldLoadWithMipMapping:YES]];
-  //  [self.modelController addModel:self.rzLogoContainerModel];
+    self.dotModel = [[RZGModel alloc] initWithModelFileName:@"dotHoneyComb2" UseDefaultSettingsInManager:self.glmgr];
+    self.dotModel.shadowMax = 0.5f;
+    self.dotModel.prs.pz = -5.5f;
+    self.dotModel.prs.py = 0.75f;
+    self.dotModel.prs.px = -0.0f;
+    self.dotModel.prs.rz = 0.5f;
+    self.dotModel.prs.ry = 0.5f;
+    [self.dotModel setTexture0Id:[RZGAssetManager loadTexture:@"dotImageSheet" ofType:@"png" shouldLoadWithMipMapping:YES]];
+    [self.modelController addModel:self.dotModel];
+
 }
 
 - (void)setupTweetModels
@@ -191,13 +198,12 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
         
         for (NSDictionary *status in statuses) {
             
-            NSLog(@"%@ - %@", [status objectForKey:@"text"], [[status objectForKey:@"user"] objectForKey:@"screen_name"]);
+        //    NSLog(@"%@ - %@", [status objectForKey:@"text"], [[status objectForKey:@"user"] objectForKey:@"screen_name"]);
             NSDictionary *userDict = [status objectForKey:@"user"];
             
             NSString *name = userDict[@"name"];
             NSString *screenName = userDict[@"screen_name"];
             NSString *text = status[@"text"];
-            //NSString *text = @"The quick bronw fox jumped over the lazy lazy dog and then he jumped again and again and again and again.";
             
             NSInteger imageId = [RZGAssetManager loadTextureFromUrl:[NSURL URLWithString:userDict[@"profile_image_url"]]  shouldLoadWithMipMapping:NO];
             
