@@ -13,9 +13,10 @@
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSString *screenName;
 @property (copy, nonatomic) NSString *statusText;
+@property (copy, nonatomic) NSString *profileImageUrlString;
 @property (assign, nonatomic) NSInteger profileImageTextureId;
 
-- (instancetype)initWithName:(NSString*)name screenName:(NSString *)screenName statusText:(NSString*)statusText profileImageTextureId:(NSInteger)textureId;
-+ (instancetype)tweetDataWithName:(NSString*)name screenName:(NSString *)screenName statusText:(NSString*)statusText profileImageTextureId:(NSInteger)textureId;
+- (instancetype)initWithName:(NSString*)name screenName:(NSString *)screenName statusText:(NSString*)statusText profileImageURLString:(NSString *)imageUrlString;
++ (instancetype)tweetDataWithName:(NSString*)name screenName:(NSString *)screenName statusText:(NSString*)statusText profileImageURLString:(NSString *)imageUrlString;
 
 @end

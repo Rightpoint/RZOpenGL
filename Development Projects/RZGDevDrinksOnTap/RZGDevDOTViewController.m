@@ -14,9 +14,9 @@
 #import "RZGBMFontHeaders.h"
 
 static const float kRZSecondsPerTweetRequest = 6.0f;
-static const float kRZSecondsBetweenDisplayedTweets = 5.0f;
+static const float kRZSecondsBetweenDisplayedTweets = 8.0f;
 static const float kRZFadeDuration = 0.2f;
-static NSString * const kRZHashtagToSearchFor = @"#twitter";
+static NSString * const kRZHashtagToSearchFor = @"#drinksontap";
 static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/search/tweets.json";
 
 @interface RZGDevDOTViewController ()<NSURLConnectionDataDelegate>
@@ -72,8 +72,8 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
 {
     [self.glmgr loadBitmapFontShaderAndSettings];
     
-    RZGBMFontData *goldFontData = [[RZGBMFontData alloc] initWithFontFile:@"goldHn"];
-    int goldTextureId = [RZGAssetManager loadTexture:@"goldHn" ofType:@"png" shouldLoadWithMipMapping:YES];
+    RZGBMFontData *goldFontData = [[RZGBMFontData alloc] initWithFontFile:@"dotRedFont"];
+    int goldTextureId = [RZGAssetManager loadTexture:@"dotRedFont" ofType:@"png" shouldLoadWithMipMapping:YES];
     
     RZGBMFontData *whiteFontData = [[RZGBMFontData alloc] initWithFontFile:@"whiteHn"];
     int whiteTextureId = [RZGAssetManager loadTexture:@"whiteHn" ofType:@"png" shouldLoadWithMipMapping:YES];
@@ -84,6 +84,7 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
     self.tweetPromptModel.centerVertical = YES;
     [self.tweetPromptModel setupWithCharMax:50];
     [self.tweetPromptModel updateWithText:[NSString stringWithFormat:@"tweet %@~to see your tweet here!",kRZHashtagToSearchFor]];
+
     self.tweetPromptModel.prs.pz = -2.0f;
     self.tweetPromptModel.prs.py = -0.5f;
     
@@ -91,17 +92,17 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
     [self.tweetTextModel setTexture0Id:goldTextureId];
     [self.tweetTextModel setupWithCharMax:200];
     self.tweetTextModel.isHidden = YES;
-    self.tweetTextModel.prs.sxyz = 0.8f;
+    self.tweetTextModel.prs.sxyz = 1.0f;
     self.tweetTextModel.prs.pz = -2.0f;
     self.tweetTextModel.prs.py = -0.4f;
     self.tweetTextModel.prs.px = -0.95f;
-    self.tweetTextModel.maxWidth = 2.8f;
+    self.tweetTextModel.maxWidth = 2.4f;
     
     self.tweetNameModel = [[RZGBMFontModel alloc] initWithName:@"tweetNameModel" BMfontData:whiteFontData UseGLManager:self.glmgr];
     [self.tweetNameModel setTexture0Id:whiteTextureId];
     [self.tweetNameModel setupWithCharMax:200];
     self.tweetNameModel.isHidden = YES;
-    self.tweetNameModel.prs.sxyz = 0.75f;
+    self.tweetNameModel.prs.sxyz = 1.2f;
     self.tweetNameModel.prs.pz = -2.0f;
     self.tweetNameModel.prs.py = -0.25f;
     self.tweetNameModel.prs.px = -1.4f;
@@ -204,10 +205,12 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
             NSString *name = userDict[@"name"];
             NSString *screenName = userDict[@"screen_name"];
             NSString *text = status[@"text"];
+            NSString *imageURL = userDict[@"profile_image_url"];
+            imageURL = [imageURL stringByReplacingOccurrencesOfString:@"_normal" withString:@"_bigger"];
             
-            NSInteger imageId = [RZGAssetManager loadTextureFromUrl:[NSURL URLWithString:userDict[@"profile_image_url"]]  shouldLoadWithMipMapping:NO];
             
-            [self.twitterData.loadedTweets addObject:[RZTweetData tweetDataWithName:name screenName:screenName statusText:text profileImageTextureId:imageId]];
+            
+            [self.twitterData.loadedTweets addObject:[RZTweetData tweetDataWithName:name screenName:screenName statusText:text profileImageURLString:imageURL]];
         }
     }
 }
@@ -217,7 +220,7 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
     RZTweetData *tweet = [self.twitterData nextTweet];
     
     if(tweet) {
-        [self.tweetPicModel setTexture0Id:(GLuint)tweet.profileImageTextureId];
+        [self.tweetPicModel setTexture0Id:[RZGAssetManager loadTextureFromUrl:[NSURL URLWithString:tweet.profileImageUrlString] shouldLoadWithMipMapping:NO]];
         [self.tweetTextModel updateWithText:tweet.statusText];
         [self.tweetNameModel updateWithText:tweet.screenName];
         self.tweetPromptModel.isHidden = YES;
@@ -231,6 +234,18 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
         self.tweetNameModel.isHidden = YES;
         self.tweetTextModel.isHidden = YES;
     }
+}
+
+- (void)fadePromptToAlpha:(GLfloat)alpha WithDelay:(GLfloat)delay
+{
+    [self.tweetPromptModel addCommand:[[RZGCommand alloc] initWithCommandEnum:kRZGCommand_alpha Target:GLKVector4MakeWith1f(alpha) Duration:kRZFadeDuration IsAbsolute:YES Delay:delay]];
+}
+
+- (void)fadeTweetToAlpha:(GLfloat)alpha WithDelay:(GLfloat)delay
+{
+    [self.tweetPicModel addCommand:[[RZGCommand alloc] initWithCommandEnum:kRZGCommand_alpha Target:GLKVector4MakeWith1f(alpha) Duration:kRZFadeDuration IsAbsolute:YES Delay:delay]];
+    [self.tweetNameModel addCommand:[[RZGCommand alloc] initWithCommandEnum:kRZGCommand_alpha Target:GLKVector4MakeWith1f(alpha) Duration:kRZFadeDuration IsAbsolute:YES Delay:delay]];
+    [self.tweetTextModel addCommand:[[RZGCommand alloc] initWithCommandEnum:kRZGCommand_alpha Target:GLKVector4MakeWith1f(alpha) Duration:kRZFadeDuration IsAbsolute:YES Delay:delay]];
 }
 
 - (void)update

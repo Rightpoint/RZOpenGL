@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A1E7F73190EFF400066CCFF /* dotRedFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 8A1E7F71190EFF400066CCFF /* dotRedFont.fnt */; };
+		8A1E7F74190EFF400066CCFF /* dotRedFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A1E7F72190EFF400066CCFF /* dotRedFont.png */; };
 		8AFB261A190D94050022F6D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFB2619190D94050022F6D9 /* Foundation.framework */; };
 		8AFB261C190D94050022F6D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFB261B190D94050022F6D9 /* CoreGraphics.framework */; };
 		8AFB261E190D94050022F6D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFB261D190D94050022F6D9 /* UIKit.framework */; };
@@ -67,6 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A1E7F71190EFF400066CCFF /* dotRedFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dotRedFont.fnt; sourceTree = "<group>"; };
+		8A1E7F72190EFF400066CCFF /* dotRedFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dotRedFont.png; sourceTree = "<group>"; };
 		8AFB2616190D94050022F6D9 /* RZGDevDrinksOnTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RZGDevDrinksOnTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFB2619190D94050022F6D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8AFB261B190D94050022F6D9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -210,6 +214,8 @@
 		8AFB261F190D94050022F6D9 /* RZGDevDrinksOnTap */ = {
 			isa = PBXGroup;
 			children = (
+				8A1E7F71190EFF400066CCFF /* dotRedFont.fnt */,
+				8A1E7F72190EFF400066CCFF /* dotRedFont.png */,
 				8AFB26CC190DF0D40022F6D9 /* dotHoneyComb2.model */,
 				8AFB26C4190DEA450022F6D9 /* dotImageSheet.png */,
 				8AFB26B3190DAE730022F6D9 /* quad.model */,
@@ -519,6 +525,8 @@
 				8AFB262C190D94050022F6D9 /* Images.xcassets in Resources */,
 				8AFB2685190D94570022F6D9 /* RZGBitmapFont.vsh in Resources */,
 				8AFB2692190D94570022F6D9 /* RZGDefaultShader.fsh in Resources */,
+				8A1E7F74190EFF400066CCFF /* dotRedFont.png in Resources */,
+				8A1E7F73190EFF400066CCFF /* dotRedFont.fnt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
