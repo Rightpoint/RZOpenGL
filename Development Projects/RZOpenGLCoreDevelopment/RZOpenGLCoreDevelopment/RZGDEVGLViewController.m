@@ -31,13 +31,14 @@
     
     self.bigBall = [[RZGModel alloc] initWithModelFileName:@"rzUni1" UseDefaultSettingsInManager:self.glmgr];
     [self.bigBall setTexture0Id:[RZGAssetManager loadTexture:@"rzUnicorn" ofType:@"png" shouldLoadWithMipMapping:YES]];
-    self.bigBall.prs.pz = mainZ;
-    [self.bigBall.prs setRotationConstantToVector:GLKVector3Make(2.0f, 2.0f, -1.0f)];
+    self.bigBall.prs.pz = -5.0f;
+    
+    [self.bigBall.prs setRotationConstantToVector:GLKVector3Make(0.0f, 16.0f, 0.0f)];
     
     self.smallBall = [[RZGModel alloc] initWithModelFileName:@"rzUni2" UseDefaultSettingsInManager:self.glmgr];
     [self.smallBall setTexture0Id:self.bigBall.texture0Id];
     self.smallBall.prs.pz = mainZ;
-    [self.smallBall.prs setRotationConstantToVector:GLKVector3Make(0.0f, 0.0f, 4.0f)];
+ //   [self.smallBall.prs setRotationConstantToVector:GLKVector3Make(0.0f, 0.0f, 4.0f)];
     
     self.smallBall.alpha = 0.0f;
    [self.smallBall addCommand:[RZGCommand commandWithEnum:kRZGCommand_alpha Target:GLKVector4MakeWith1f(1.0f) Duration:2.0f IsAbsolute:YES Delay:5.0f]];

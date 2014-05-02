@@ -71,13 +71,13 @@
     char c;
     RZGBMFontCharData *cd;
     
-    for(int i = self.currentIndex+1; i < [self.text length]; i++)
+    for(int i = currentIndex+1; i < [self.text length]; i++)
     {
         c = textCharPtr[i];
         if(c != ' ' && c != kLineBreakChar)
         {
             cd = [self.fontData charDataFor:c];
-            xPos = cd.xOffset + cd.width;
+            xPos += cd.xOffset + cd.width;
             if(xPos > self.maxWidth)
             {
                 return YES;

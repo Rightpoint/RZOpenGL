@@ -50,10 +50,38 @@ static NSMutableDictionary *loadedVaos;
         NSLog(@"ERROR LOADING TEXTURE: %@: %@",path,[error debugDescription]);
         return 0;
     }
-    
     return textureInfo.name;
-    
 }
+
++ (GLuint)loadTextureFromUrl:(NSURL *)url shouldLoadWithMipMapping:(BOOL)mipMappingOn
+{
+    if((loadedTextures) && [loadedTextures objectForKey:url])
+    {
+        return ((GLKTextureInfo*)[loadedTextures objectForKey:url]).name;
+    }
+    
+    if(!loadedTextures)
+    {
+        loadedTextures = [[NSMutableDictionary alloc] init];
+    }
+    
+    NSError *error;
+    NSMutableDictionary *options= [NSMutableDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:GLKTextureLoaderOriginBottomLeft];
+    
+    if(mipMappingOn)
+    {
+        [options setObject:[NSNumber numberWithBool:YES] forKey:GLKTextureLoaderGenerateMipmaps];
+    }
+    
+    GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithContentsOfURL:url options:options error:&error];
+    if(error != nil)
+    {
+        NSLog(@"ERROR LOADING TEXTURE: %@: %@",url,[error debugDescription]);
+        return 0;
+    }
+    return textureInfo.name;
+}
+
 
 + (RZGVaoInfo*)loadVaoInfo:(NSString*)name
 {
