@@ -81,9 +81,16 @@ static const GLfloat TWO_PI = M_PI * 2.0f;
 }
 -(void)updateConstantRotationWithTime:(GLfloat)time
 {
-    if(_rotationConstantVector.z != 0.0f) _rotationQuaternion = GLKQuaternionMultiply(GLKQuaternionMakeWithAngleAndAxis(_rotationConstantVector.z*time, 0.0f, 0.0f, 1.0f),_rotationQuaternion);
-    if(_rotationConstantVector.y != 0.0f) _rotationQuaternion = GLKQuaternionMultiply(GLKQuaternionMakeWithAngleAndAxis(_rotationConstantVector.y*time, 0.0f, 1.0f, 0.0f),_rotationQuaternion);
-    if(_rotationConstantVector.x != 0.0f) _rotationQuaternion = GLKQuaternionMultiply(GLKQuaternionMakeWithAngleAndAxis(_rotationConstantVector.x*time, 1.0f, 0.0f, 0.0f),_rotationQuaternion);
+    if(_rotationConstantVector.z != 0.0f) {
+        self.rz = self.rz + _rotationConstantVector.z * time;
+    }
+    if(_rotationConstantVector.y != 0.0f) {
+        self.ry = self.ry + _rotationConstantVector.y * time;
+    }
+    if(_rotationConstantVector.x != 0.0f) {
+        self.rx = self.rx + _rotationConstantVector.x * time;
+    }
+
 }
 
 #pragma mark scale methods
