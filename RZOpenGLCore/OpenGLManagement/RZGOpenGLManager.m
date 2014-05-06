@@ -58,7 +58,7 @@ static GLKVector4 lastClearColor;
 
     _projectionMatrix = GLKMatrix4MakePerspective(perspective, aspect, nearZ, farZ);
     
-    _zConverter = [[RZGScreenToGLConverter alloc] initWithScreenHeight:size.width ScreenWidth:size.height Fov:perspective];
+    _zConverter = [[RZGScreenToGLConverter alloc] initWithScreenHeight:size.height ScreenWidth:size.width Fov:perspective];
     
     return self;
 }

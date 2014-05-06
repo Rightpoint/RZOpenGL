@@ -30,7 +30,7 @@
         _fov = fov;
         _halfScreenSize.x = screenHeight / 2.0f;
         _halfScreenSize.y = screenWidth / 2.0f;
-        _screenToGLratio.y = fabsf(tanf(fov / 2.0f));
+        _screenToGLratio.y = fabsf(tanhf(fov / 2.0f));
         _screenToGLratio.x = fabsf(_screenToGLratio.y * _aspectRatio);
     }
     return self;
@@ -61,7 +61,7 @@
     GLfloat dx = model.dimensions2d.x/2.0f*scale.x;
     GLfloat dy = model.dimensions2d.y/2.0f*scale.y;
     
-    NSLog(@"transformed point (%f, %f)",transformedPoint.x, transformedPoint.y);
+   // NSLog(@"transformed point (%f, %f)",transformedPoint.x, transformedPoint.y);
     
     if(transformedPoint.x <= position.x + dx &&
        transformedPoint.x >= position.x - dx &&
