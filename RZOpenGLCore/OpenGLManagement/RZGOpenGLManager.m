@@ -9,7 +9,7 @@
 #import "RZGOpenGLManager.h"
 #import "RZGShaderManager.h"
 #import "RZGDefaultShaderSettings.h"
-#import "RZGBitmapFontShaderSettings.h"
+//#import "RZGBitmapFontShaderSettings.h"
 #import "RZGScreenToGLConverter.h"
 
 static BOOL depthTestEnabled;
@@ -54,7 +54,7 @@ static GLKVector4 lastClearColor;
         size = [UIScreen mainScreen].bounds.size;
     }
     
-    GLfloat aspect = fabsf(size.height / size.width);
+    GLfloat aspect = fabsf(size.width / size.height);
 
     _projectionMatrix = GLKMatrix4MakePerspective(perspective, aspect, nearZ, farZ);
     
@@ -71,8 +71,8 @@ static GLKVector4 lastClearColor;
 
 -(void)loadBitmapFontShaderAndSettings
 {
-    GLuint programId = [RZGShaderManager loadBitmapFontShader];
-    self.bitmapFontShaderSettings = [[RZGBitmapFontShaderSettings alloc] initWithProgramId:programId];
+ //   GLuint programId = [RZGShaderManager loadBitmapFontShader];
+//    self.bitmapFontShaderSettings = [[RZGBitmapFontShaderSettings alloc] initWithProgramId:programId];
 }
 
 //Assumes that depth testing is only changed via a manager class
