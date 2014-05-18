@@ -14,6 +14,7 @@
 @class RZGBitmapFontShaderSettings;
 
 @interface RZGOpenGLManager : NSObject
+
 @property (nonatomic, strong) RZGDefaultShaderSettings *defaultShaderSettings;
 @property (nonatomic, strong) RZGBitmapFontShaderSettings *bitmapFontShaderSettings;
 @property (nonatomic, strong) RZGScreenToGLConverter *zConverter;

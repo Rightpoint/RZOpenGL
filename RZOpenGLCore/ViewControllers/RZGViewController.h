@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) RZGOpenGLManager *glmgr;
 @property (strong, nonatomic) RZGModelController *modelController;
+@property (strong, nonatomic) EAGLContext *context;
 @property (strong, nonatomic) GLKView *glkView;
 @property (assign, nonatomic, readonly) CFTimeInterval timeSinceLastUpdate;
 @property (assign, nonatomic, readonly) BOOL isPaused;
