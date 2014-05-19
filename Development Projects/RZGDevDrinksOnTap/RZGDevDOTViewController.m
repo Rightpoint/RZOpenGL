@@ -19,7 +19,7 @@ static const float kRZFadeDuration = 0.2f;
 static NSString * const kRZHashtagToSearchFor = @"#twitter";
 static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/search/tweets.json";
 
-@interface RZGDevDOTViewController ()
+@interface RZGDevDOTViewController ()<NSURLConnectionDataDelegate>
 
 @property (strong, nonatomic) RZTwitterData *twitterData;
 @property (assign, nonatomic) double timeSinceLastTwitterCheck;
@@ -35,6 +35,17 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
 @property (strong, nonatomic) RZGModel *tweetPicModel;
 @property (strong, nonatomic) RZGModel *dotModel;
 @property (strong, nonatomic) RZGModel *dotModel2;
+@property (assign, nonatomic) GLKVector3 dotModelOffScreenPos;
+@property (assign, nonatomic) GLKVector3 dotModelOnScreenPos;
+@property (assign, nonatomic) GLKVector3 dotModelRotationConst;
+@property (assign, nonatomic) GLKVector3 promptOffScreenPos;
+@property (assign, nonatomic) GLKVector3 promptOnScreenPos;
+@property (assign, nonatomic) GLKVector3 tweetImageOffScreenPos;
+@property (assign, nonatomic) GLKVector3 tweetImageOnScreenPos;
+@property (assign, nonatomic) GLKVector3 tweetNameOffScreenPos;
+@property (assign, nonatomic) GLKVector3 tweetNameOnScreenPos;
+@property (assign, nonatomic) GLKVector3 tweetTextOffScreenPos;
+@property (assign, nonatomic) GLKVector3 tweetTextOnScreenPos;
 
 @end
 
@@ -56,18 +67,36 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
     
     [self setupTweetModels];
     
-    self.dotModel = [[RZGModel alloc] initWithModelFileName:@"dotHoneyComb2" UseDefaultSettingsInManager:self.glmgr];
+    self.dotModel = [[RZGModel alloc] initWithModelFileName:@"dotMarshmellow" UseDefaultSettingsInManager:self.glmgr];
     self.dotModel.shadowMax = 0.5f;
-    self.dotModel.prs.pz = -5.5f;
-    self.dotModel.prs.py = 0.75f;
-    self.dotModel.prs.px = -0.0f;
-    self.dotModel.prs.rz = 0.5f;
-    self.dotModel.prs.ry = 0.5f;
-    [self.dotModel setTexture0Id:[RZGAssetManager loadTexture:@"dotImageSheet" ofType:@"png" shouldLoadWithMipMapping:YES]];
+    
+    self.dotModelOnScreenPos = GLKVector3Make(0.0f, 0.15f, -2.0f);
+    self.dotModelOffScreenPos = GLKVector3Make(self.dotModelOnScreenPos.x, 2.0f,self.dotModelOnScreenPos.z);
+    self.dotModel.prs.position = self.dotModelOffScreenPos;
+    
+    self.dotModelRotationConst = GLKVector3Make(0.0f, -0.15f, 0.0f);
+
+    [self.dotModel setTexture0Id:[RZGAssetManager loadTexture:@"dotImages2" ofType:@"png" shouldLoadWithMipMapping:YES]];
     [self.modelController addModel:self.dotModel];
-    [self.dotModel.prs setRotationConstantToVector:GLKVector3Make(2.0f, 2.0f, 2.0f)];
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [self bringInDotModelAndPrompt];
+    });
 
 }
+
+- (void)bringInDotModelAndPrompt
+{
+    self.dotModel.prs.position = self.dotModelOffScreenPos;
+    self.dotModel.isHidden = NO;
+    [self.dotModel.prs removeRotationConstant];
+    [self.dotModel addCommand:[RZGCommand commandWithEnum:kRZGCommand_moveTo Target:GLKVector4MakeWithVec3(self.dotModelOnScreenPos) Duration:1.0f IsAbsolute:YES Delay:0.0f]];
+    [self.dotModel addCommand:[RZGCommand commandWithEnum:kRZGCommand_setConstantRotation Target:GLKVector4MakeWithVec3(self.dotModelRotationConst) Duration:0.0f IsAbsolute:YES Delay:2.0f]];
+    
+    self.tweetPromptModel.prs.position = self.promptOffScreenPos;
+    [self.tweetPromptModel addCommand:[RZGCommand commandWithEnum:kRZGCommand_moveTo Target:GLKVector4MakeWithVec3(self.promptOnScreenPos) Duration:1.0f IsAbsolute:YES Delay:0.0f]];
+}
+
 
 - (void)setupTweetModels
 {
@@ -85,9 +114,10 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
     self.tweetPromptModel.centerVertical = YES;
     [self.tweetPromptModel setupWithCharMax:50];
     [self.tweetPromptModel updateWithText:[NSString stringWithFormat:@"tweet %@~to see your tweet here!",kRZHashtagToSearchFor]];
-
-    self.tweetPromptModel.prs.pz = -2.0f;
-    self.tweetPromptModel.prs.py = -0.5f;
+    
+    self.promptOnScreenPos = GLKVector3Make(0.0f, -0.5f, -2.0f);
+    self.promptOffScreenPos = GLKVector3Make(0.0f, -2.0f, -2.0f);
+    self.tweetPromptModel.prs.position = self.promptOffScreenPos;
     
     self.tweetTextModel = [[RZGBMFontModel alloc] initWithName:@"tweetText" BMfontData:goldFontData UseGLManager:self.glmgr];
     [self.tweetTextModel setTexture0Id:goldTextureId];
@@ -118,9 +148,16 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
     [self.modelController addModel:self.tweetTextModel];
     [self.modelController addModel:self.tweetNameModel];
     [self.modelController addModel:self.tweetPicModel];
-    
-    
 }
+
+- (void)hideDotModelAndPrompt
+{
+    self.dotModel.isHidden = NO;
+    [self.dotModel addCommand:[RZGCommand commandWithEnum:kRZGCommand_moveTo Target:GLKVector4MakeWithVec3(self.dotModelOffScreenPos) Duration:1.0f IsAbsolute:YES Delay:0.0f]];
+    [self.tweetPromptModel addCommand:[RZGCommand commandWithEnum:kRZGCommand_moveTo Target:GLKVector4MakeWithVec3(self.promptOffScreenPos) Duration:1.0f IsAbsolute:YES Delay:0.0f]];
+}
+
+
 
 - (void)setupAccount
 {
@@ -136,13 +173,13 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
             
             if (accounts.count > 0) {
                 self.twitterAccount = [accounts objectAtIndex:0];
-                [self startStreamForHashtag2:@"twitter" withMinIntString:@"0"];
+                [self startStreamForHashtag:@"twitter" withMinIntString:@"0"];
             }
         }
     }];
 }
 
-- (void)startStreamForHashtag2:(NSString*)hashTag withMinIntString:(NSString*)minIntString
+- (void)startStreamForHashtag:(NSString*)hashTag withMinIntString:(NSString*)minIntString
 {
     self.requestInProgress = YES;
     
@@ -151,16 +188,14 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
     SLRequest *twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:kRZTwitterSearchString] parameters:params];
     [twitterInfoRequest setAccount:self.twitterAccount];
     
-    NSOperationQueue *bgq = [[NSOperationQueue alloc] init];
-    
-    [NSURLConnection sendAsynchronousRequest:[twitterInfoRequest preparedURLRequest] queue:bgq completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        [self connectionRecievedData:data];
-    }];
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.streamingConnection = [NSURLConnection connectionWithRequest:[twitterInfoRequest preparedURLRequest] delegate:self];
+        [self.streamingConnection start];
+    });
 }
 
 
-- (void)connectionRecievedData:(NSData *)data
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     if(data) {
         
@@ -170,6 +205,21 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
         
         [self.recievedData appendData:data];
     }
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    if(self.recievedData)
+    {
+        NSError *error;
+        NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:self.recievedData options:NSJSONReadingMutableLeaves error:&error];
+        
+        if(dataDict) {
+            [self generateTweetsFromDictionary:dataDict];
+        }
+    }
+    self.recievedData = nil;
+    self.requestInProgress = NO;
 }
 
 - (void)generateTweetsFromDictionary:(NSDictionary *)dataDict
@@ -198,8 +248,6 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
             NSString *imageURL = userDict[@"profile_image_url"];
             imageURL = [imageURL stringByReplacingOccurrencesOfString:@"_normal" withString:@"_bigger"];
             
-            
-            
             [self.twitterData.loadedTweets addObject:[RZTweetData tweetDataWithName:name screenName:screenName statusText:text profileImageURLString:imageURL]];
         }
     }
@@ -207,27 +255,23 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
 
 - (void)showNextTweet
 {
-    NSOperationQueue *bgq = [[NSOperationQueue alloc] init];
+    RZTweetData *tweet = [self.twitterData nextTweet];
     
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-        
-        RZTweetData *tweet = [self.twitterData nextTweet];
-        if(tweet) {
-          //  [self.tweetPicModel setTexture0Id:[RZGAssetManager loadTextureFromUrl:[NSURL URLWithString:tweet.profileImageUrlString] shouldLoadWithMipMapping:NO]];
-          //  [self.tweetTextModel updateWithText:tweet.statusText];
-          //  [self.tweetNameModel updateWithText:tweet.screenName];
-            self.tweetPromptModel.isHidden = YES;
-            self.tweetPicModel.isHidden = NO;
-            self.tweetNameModel.isHidden = NO;
-            self.tweetTextModel.isHidden = NO;
-        }
-        else {
-            self.tweetPromptModel.isHidden = NO;
-            self.tweetPicModel.isHidden = YES;
-            self.tweetNameModel.isHidden = YES;
-            self.tweetTextModel.isHidden = YES;
-        }
-    });
+    if(tweet) {
+        [self.tweetPicModel setTexture0Id:[RZGAssetManager loadTextureFromUrl:[NSURL URLWithString:tweet.profileImageUrlString] shouldLoadWithMipMapping:NO]];
+        [self.tweetTextModel updateWithText:tweet.statusText];
+        [self.tweetNameModel updateWithText:tweet.screenName];
+        self.tweetPromptModel.isHidden = YES;
+        self.tweetPicModel.isHidden = NO;
+        self.tweetNameModel.isHidden = NO;
+        self.tweetTextModel.isHidden = NO;
+    }
+    else {
+        self.tweetPromptModel.isHidden = NO;
+        self.tweetPicModel.isHidden = YES;
+        self.tweetNameModel.isHidden = YES;
+        self.tweetTextModel.isHidden = YES;
+    }
 }
 
 - (void)fadePromptToAlpha:(GLfloat)alpha WithDelay:(GLfloat)delay
@@ -249,13 +293,13 @@ static NSString * const kRZTwitterSearchString = @"https://api.twitter.com/1.1/s
     self.timeSinceLastTwitterCheck += self.timeSinceLastUpdate;
     if(self.timeSinceLastTwitterCheck >= kRZSecondsPerTweetRequest){
         self.timeSinceLastTwitterCheck = 0.0;
-    //    [self startStreamForHashtag2:kRZHashtagToSearchFor withMinIntString:self.twitterData.lastMaxIdIntAsString];
+        [self startStreamForHashtag:kRZHashtagToSearchFor withMinIntString:self.twitterData.lastMaxIdIntAsString];
     }
     
     self.timeCurrentTweetIsOnScreen += self.timeSinceLastUpdate;
     if(self.timeCurrentTweetIsOnScreen >= kRZSecondsBetweenDisplayedTweets){
         self.timeCurrentTweetIsOnScreen = 0.0;
-    //    [self showNextTweet];
+      //  [self showNextTweet];
     }
     
 }
