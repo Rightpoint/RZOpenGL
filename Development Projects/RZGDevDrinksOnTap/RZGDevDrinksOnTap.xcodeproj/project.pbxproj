@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8A1E7F73190EFF400066CCFF /* dotRedFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 8A1E7F71190EFF400066CCFF /* dotRedFont.fnt */; };
 		8A1E7F74190EFF400066CCFF /* dotRedFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A1E7F72190EFF400066CCFF /* dotRedFont.png */; };
+		8A3FD34D19620EA1000A6D9E /* dotImages3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3FD34B19620EA1000A6D9E /* dotImages3.png */; };
+		8A3FD34E19620EA1000A6D9E /* dotMarshmellow.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A3FD34C19620EA1000A6D9E /* dotMarshmellow.model */; };
 		8AFB261A190D94050022F6D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFB2619190D94050022F6D9 /* Foundation.framework */; };
 		8AFB261C190D94050022F6D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFB261B190D94050022F6D9 /* CoreGraphics.framework */; };
 		8AFB261E190D94050022F6D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFB261D190D94050022F6D9 /* UIKit.framework */; };
@@ -48,14 +50,10 @@
 		8AFB26A6190D95550022F6D9 /* RZTweetData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFB26A5190D95550022F6D9 /* RZTweetData.m */; };
 		8AFB26A8190D9C670022F6D9 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFB26A7190D9C670022F6D9 /* Accounts.framework */; };
 		8AFB26AA190D9C6D0022F6D9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFB26A9190D9C6D0022F6D9 /* Social.framework */; };
-		8AFB26AD190DAC880022F6D9 /* goldHn.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 8AFB26AB190DAC880022F6D9 /* goldHn.fnt */; };
-		8AFB26AE190DAC880022F6D9 /* goldHn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AFB26AC190DAC880022F6D9 /* goldHn.png */; };
 		8AFB26B1190DADFD0022F6D9 /* whiteHn.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 8AFB26AF190DADFD0022F6D9 /* whiteHn.fnt */; };
 		8AFB26B2190DADFD0022F6D9 /* whiteHn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AFB26B0190DADFD0022F6D9 /* whiteHn.png */; };
 		8AFB26BB190DB3680022F6D9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFB26BA190DB3680022F6D9 /* OpenGLES.framework */; };
 		8AFB26C3190DC9130022F6D9 /* quad.model in Resources */ = {isa = PBXBuildFile; fileRef = 8AFB26B3190DAE730022F6D9 /* quad.model */; };
-		8AFB26C5190DEA450022F6D9 /* dotImageSheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AFB26C4190DEA450022F6D9 /* dotImageSheet.png */; };
-		8AFB26CD190DF0D40022F6D9 /* dotHoneyComb2.model in Resources */ = {isa = PBXBuildFile; fileRef = 8AFB26CC190DF0D40022F6D9 /* dotHoneyComb2.model */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +69,8 @@
 /* Begin PBXFileReference section */
 		8A1E7F71190EFF400066CCFF /* dotRedFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dotRedFont.fnt; sourceTree = "<group>"; };
 		8A1E7F72190EFF400066CCFF /* dotRedFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dotRedFont.png; sourceTree = "<group>"; };
+		8A3FD34B19620EA1000A6D9E /* dotImages3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dotImages3.png; sourceTree = "<group>"; };
+		8A3FD34C19620EA1000A6D9E /* dotMarshmellow.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = dotMarshmellow.model; sourceTree = "<group>"; };
 		8AFB2616190D94050022F6D9 /* RZGDevDrinksOnTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RZGDevDrinksOnTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFB2619190D94050022F6D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8AFB261B190D94050022F6D9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -137,15 +137,11 @@
 		8AFB26A5190D95550022F6D9 /* RZTweetData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZTweetData.m; sourceTree = "<group>"; };
 		8AFB26A7190D9C670022F6D9 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		8AFB26A9190D9C6D0022F6D9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		8AFB26AB190DAC880022F6D9 /* goldHn.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = goldHn.fnt; sourceTree = "<group>"; };
-		8AFB26AC190DAC880022F6D9 /* goldHn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldHn.png; sourceTree = "<group>"; };
 		8AFB26AF190DADFD0022F6D9 /* whiteHn.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = whiteHn.fnt; sourceTree = "<group>"; };
 		8AFB26B0190DADFD0022F6D9 /* whiteHn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteHn.png; sourceTree = "<group>"; };
 		8AFB26B3190DAE730022F6D9 /* quad.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = quad.model; sourceTree = "<group>"; };
 		8AFB26B8190DB3590022F6D9 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		8AFB26BA190DB3680022F6D9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		8AFB26C4190DEA450022F6D9 /* dotImageSheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dotImageSheet.png; sourceTree = "<group>"; };
-		8AFB26CC190DF0D40022F6D9 /* dotHoneyComb2.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = dotHoneyComb2.model; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,15 +210,13 @@
 		8AFB261F190D94050022F6D9 /* RZGDevDrinksOnTap */ = {
 			isa = PBXGroup;
 			children = (
+				8A3FD34B19620EA1000A6D9E /* dotImages3.png */,
+				8A3FD34C19620EA1000A6D9E /* dotMarshmellow.model */,
 				8A1E7F71190EFF400066CCFF /* dotRedFont.fnt */,
 				8A1E7F72190EFF400066CCFF /* dotRedFont.png */,
-				8AFB26CC190DF0D40022F6D9 /* dotHoneyComb2.model */,
-				8AFB26C4190DEA450022F6D9 /* dotImageSheet.png */,
 				8AFB26B3190DAE730022F6D9 /* quad.model */,
 				8AFB26AF190DADFD0022F6D9 /* whiteHn.fnt */,
 				8AFB26B0190DADFD0022F6D9 /* whiteHn.png */,
-				8AFB26AB190DAC880022F6D9 /* goldHn.fnt */,
-				8AFB26AC190DAC880022F6D9 /* goldHn.png */,
 				8AFB269A190D94F20022F6D9 /* Twitter */,
 				8AFB2628190D94050022F6D9 /* RZGDevAppDelegate.h */,
 				8AFB2629190D94050022F6D9 /* RZGDevAppDelegate.m */,
@@ -484,6 +478,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Raizlabs;
 				TargetAttributes = {
+					8AFB2615190D94050022F6D9 = {
+						DevelopmentTeam = 336S848KQ4;
+					};
 					8AFB2630190D94050022F6D9 = {
 						TestTargetID = 8AFB2615190D94050022F6D9;
 					};
@@ -514,17 +511,15 @@
 			files = (
 				8AFB26C3190DC9130022F6D9 /* quad.model in Resources */,
 				8AFB2624190D94050022F6D9 /* InfoPlist.strings in Resources */,
-				8AFB26AE190DAC880022F6D9 /* goldHn.png in Resources */,
-				8AFB26C5190DEA450022F6D9 /* dotImageSheet.png in Resources */,
 				8AFB2684190D94570022F6D9 /* RZGBitmapFont.fsh in Resources */,
+				8A3FD34E19620EA1000A6D9E /* dotMarshmellow.model in Resources */,
 				8AFB26B2190DADFD0022F6D9 /* whiteHn.png in Resources */,
-				8AFB26AD190DAC880022F6D9 /* goldHn.fnt in Resources */,
 				8AFB2693190D94570022F6D9 /* RZGDefaultShader.vsh in Resources */,
-				8AFB26CD190DF0D40022F6D9 /* dotHoneyComb2.model in Resources */,
 				8AFB26B1190DADFD0022F6D9 /* whiteHn.fnt in Resources */,
 				8AFB262C190D94050022F6D9 /* Images.xcassets in Resources */,
 				8AFB2685190D94570022F6D9 /* RZGBitmapFont.vsh in Resources */,
 				8AFB2692190D94570022F6D9 /* RZGDefaultShader.fsh in Resources */,
+				8A3FD34D19620EA1000A6D9E /* dotImages3.png in Resources */,
 				8A1E7F74190EFF400066CCFF /* dotRedFont.png in Resources */,
 				8A1E7F73190EFF400066CCFF /* dotRedFont.fnt in Resources */,
 			);
@@ -686,10 +681,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RZGDevDrinksOnTap/RZGDevDrinksOnTap-Prefix.pch";
 				INFOPLIST_FILE = "RZGDevDrinksOnTap/RZGDevDrinksOnTap-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -699,10 +697,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RZGDevDrinksOnTap/RZGDevDrinksOnTap-Prefix.pch";
 				INFOPLIST_FILE = "RZGDevDrinksOnTap/RZGDevDrinksOnTap-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

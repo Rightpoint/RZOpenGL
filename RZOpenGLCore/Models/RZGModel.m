@@ -15,6 +15,7 @@
 #import "RZGCommand.h"
 #import "RZGCommandPath.h"
 #import "RZGOpenGLManager.h"
+#import "RZGScreenToGLConverter.h"
 
 @interface RZGModel()
 
@@ -77,25 +78,6 @@
 - (void)setDimensions2dX:(GLfloat)x andY:(GLfloat)y
 {
     _dimensions2d = CGPointMake(x, y);
-}
-
-//Assumes point is translated to model's z position
-//Currently not taking into account model rotation
-- (BOOL)isTransformedPointWithinModel2d:(CGPoint)point
-{
-    GLKVector3 scale = GLKVector3Make(1.0f, 1.0f, 1.0f);
-    GLKVector3 position = _prs.position;
-    GLfloat dx = _dimensions2d.x/2.0f*scale.x;
-    GLfloat dy = _dimensions2d.y/2.0f*scale.y;
-    
-    if(point.x <= position.x + dx &&
-       point.x >= position.x - dx &&
-       point.y <= position.y + dy &&
-       point.y >= position.y - dx)
-    {
-        return YES;
-    }
-    return NO;
 }
 
 - (void)addCommand:(RZGCommand *)command

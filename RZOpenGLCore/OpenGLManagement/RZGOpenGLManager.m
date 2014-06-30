@@ -54,11 +54,18 @@ static GLKVector4 lastClearColor;
         size = [UIScreen mainScreen].bounds.size;
     }
     
-    GLfloat aspect = fabsf(size.height / size.width);
+    CGSize screenSize = size;
+    
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    if (UIInterfaceOrientationIsLandscape(orientation)) {
+        screenSize = CGSizeMake(size.height, size.width);
+    }
+    
+    GLfloat aspect = fabsf(screenSize.width / screenSize.height);
 
     _projectionMatrix = GLKMatrix4MakePerspective(perspective, aspect, nearZ, farZ);
     
-    _zConverter = [[RZGScreenToGLConverter alloc] initWithScreenHeight:size.width ScreenWidth:size.height Fov:perspective];
+    _zConverter = [[RZGScreenToGLConverter alloc] initWithScreenHeight:screenSize.height ScreenWidth:screenSize.width Fov:perspective];
     
     return self;
 }

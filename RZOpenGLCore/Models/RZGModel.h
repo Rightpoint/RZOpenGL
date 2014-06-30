@@ -45,7 +45,6 @@
 - (void)setTexture0Id:(GLuint)texture0Id;
 - (void)setDefaultShaderSettings:(RZGDefaultShaderSettings*)defaultShaderSettings;
 - (void)setDimensions2dX:(GLfloat)x andY:(GLfloat)y;
-- (BOOL)isTransformedPointWithinModel2d:(CGPoint)point;
 - (void)addCommand:(RZGCommand*)command;
 - (void)clearAllCommands;
 - (void)clearCommandsOfTypes:(NSArray*)commandTypes;

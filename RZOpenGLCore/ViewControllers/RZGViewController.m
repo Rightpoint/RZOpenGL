@@ -40,6 +40,17 @@
     self.resetTimeStamp = YES;
 }
 
+- (CGSize)sizeForMainWindowOnLoad
+{
+    CGSize windowSize = [UIScreen mainScreen].bounds.size;
+    
+    if(UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+        windowSize = CGSizeMake(windowSize.height, windowSize.width);
+    }
+    
+    return windowSize;
+}
+
 - (void)setPaused:(BOOL)paused
 {
     _paused = paused;

@@ -55,6 +55,13 @@ static __inline__ GLKVector4 GLKVector4MakeWith3f(GLfloat x, GLfloat y, GLfloat 
     return v;
 }
 
+static __inline__ GLKVector4 GLKVector4MakeWithVec3(GLKVector3 vec3)
+{
+    GLKVector4 v = {vec3.x, vec3.y, vec3.z, 0.0f};
+    return v;
+}
+
+
 @interface RZGCommand : NSObject
 
 @property (nonatomic, assign) RZGCommandEnum commandEnum;
