@@ -5,20 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>9788B29F-F4AB-4BD9-A05B-76777EE42C2A</string>
-	<key>IDESourceControlProjectName</key>
-	<string>RZGPresentation</string>
+	<string>4410F8C4-A9CF-4491-8D4A-A71551A7C848</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>AE1724EA00CE65730262F34740ED3B93941D751F</key>
 		<string>https://github.com/Raizlabs/RZOpenGL.git</string>
 	</dict>
-	<key>IDESourceControlProjectPath</key>
-	<string>RZGPresentation/RZGPresentation.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>AE1724EA00CE65730262F34740ED3B93941D751F</key>
-		<string>../..</string>
+		<string>RZOpenGL</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Raizlabs/RZOpenGL.git</string>

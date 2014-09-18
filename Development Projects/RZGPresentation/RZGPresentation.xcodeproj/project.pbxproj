@@ -1,0 +1,754 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A51430019CA446000AC2703 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5142FF19CA446000AC2703 /* main.m */; };
+		8A51430319CA446000AC2703 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A51430219CA446000AC2703 /* AppDelegate.m */; };
+		8A51430B19CA446000AC2703 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A51430A19CA446000AC2703 /* Images.xcassets */; };
+		8A51430E19CA446000AC2703 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A51430C19CA446000AC2703 /* LaunchScreen.xib */; };
+		8A51431A19CA446000AC2703 /* RZGPresentationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A51431919CA446000AC2703 /* RZGPresentationTests.m */; };
+		8A7A376A19CA733A006EF326 /* RZGBMFontCharData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A372D19CA733A006EF326 /* RZGBMFontCharData.m */; };
+		8A7A376B19CA733A006EF326 /* RZGBMFontData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A372F19CA733A006EF326 /* RZGBMFontData.m */; };
+		8A7A376C19CA733A006EF326 /* RZGBMFontModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A373419CA733A006EF326 /* RZGBMFontModel.m */; };
+		8A7A376D19CA733A006EF326 /* RZGBitmapFont.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A7A373619CA733A006EF326 /* RZGBitmapFont.fsh */; };
+		8A7A376E19CA733A006EF326 /* RZGBitmapFont.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A7A373719CA733A006EF326 /* RZGBitmapFont.vsh */; };
+		8A7A376F19CA733A006EF326 /* RZGBitmapFontShaderSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A373919CA733A006EF326 /* RZGBitmapFontShaderSettings.m */; };
+		8A7A377019CA733A006EF326 /* RZGAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A373D19CA733A006EF326 /* RZGAssetManager.m */; };
+		8A7A377119CA733A006EF326 /* RZGModelData.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A373E19CA733A006EF326 /* RZGModelData.c */; };
+		8A7A377219CA733A006EF326 /* RZGVaoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A374119CA733A006EF326 /* RZGVaoInfo.m */; };
+		8A7A377319CA733A006EF326 /* RZGCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A374419CA733A006EF326 /* RZGCommand.m */; };
+		8A7A377419CA733A006EF326 /* RZGCommandPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A374619CA733A006EF326 /* RZGCommandPath.m */; };
+		8A7A377519CA733A006EF326 /* RZGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A374B19CA733A006EF326 /* RZGModel.m */; };
+		8A7A377619CA733A006EF326 /* RZGModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A374D19CA733A006EF326 /* RZGModelController.m */; };
+		8A7A377719CA733A006EF326 /* RZGOpenGLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A375019CA733A006EF326 /* RZGOpenGLManager.m */; };
+		8A7A377819CA733A006EF326 /* RZGPrs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A375219CA733A006EF326 /* RZGPrs.m */; };
+		8A7A377919CA733A006EF326 /* RZGDefaultShaderSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A375519CA733A006EF326 /* RZGDefaultShaderSettings.m */; };
+		8A7A377A19CA733A006EF326 /* RZGShaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A375719CA733A006EF326 /* RZGShaderManager.m */; };
+		8A7A377B19CA733A006EF326 /* RZGDefaultShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A7A375919CA733A006EF326 /* RZGDefaultShader.fsh */; };
+		8A7A377C19CA733A006EF326 /* RZGDefaultShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A7A375A19CA733A006EF326 /* RZGDefaultShader.vsh */; };
+		8A7A377D19CA733A006EF326 /* RZGMathUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A375D19CA733A006EF326 /* RZGMathUtils.m */; };
+		8A7A377E19CA733A006EF326 /* RZGScreenToGLConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A375F19CA733A006EF326 /* RZGScreenToGLConverter.m */; };
+		8A7A377F19CA733A006EF326 /* RZGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A376219CA733A006EF326 /* RZGViewController.m */; };
+		8A7A378019CA733A006EF326 /* RZGColoredPointSprite.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A7A376419CA733A006EF326 /* RZGColoredPointSprite.fsh */; };
+		8A7A378119CA733A006EF326 /* RZGColoredPointSprite.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A7A376519CA733A006EF326 /* RZGColoredPointSprite.vsh */; };
+		8A7A378219CA733A006EF326 /* RZGColoredPSShaderSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A376719CA733A006EF326 /* RZGColoredPSShaderSettings.m */; };
+		8A7A378319CA733A006EF326 /* RZGDrawableTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A376919CA733A006EF326 /* RZGDrawableTexture.m */; };
+		8AF1D9FD19CA48B100AAA819 /* RZGPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1D9FC19CA48B100AAA819 /* RZGPMainViewController.m */; };
+		8AF1DA0119CA4BDC00AAA819 /* RZGPSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1DA0019CA4BDC00AAA819 /* RZGPSlide.m */; };
+		8AF1DA0419CA506D00AAA819 /* redHNFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 8AF1DA0219CA506D00AAA819 /* redHNFont.fnt */; };
+		8AF1DA0519CA506D00AAA819 /* redHNFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AF1DA0319CA506D00AAA819 /* redHNFont.png */; };
+		8AF1DA0719CA507E00AAA819 /* cube16.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AF1DA0619CA507E00AAA819 /* cube16.png */; };
+		8AF1DA0919CA530200AAA819 /* cube.model in Resources */ = {isa = PBXBuildFile; fileRef = 8AF1DA0819CA530200AAA819 /* cube.model */; };
+		8AF1DA0D19CA56C000AAA819 /* rzMetal.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AF1DA0C19CA56C000AAA819 /* rzMetal.png */; };
+		8AF1DA0F19CA5E6D00AAA819 /* wwdc.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AF1DA0E19CA5E6D00AAA819 /* wwdc.png */; };
+		8AF1DA1219CA60D200AAA819 /* whiteHNFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 8AF1DA1019CA60D200AAA819 /* whiteHNFont.fnt */; };
+		8AF1DA1319CA60D200AAA819 /* whiteHNFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AF1DA1119CA60D200AAA819 /* whiteHNFont.png */; };
+		8AF1DA1519CA685400AAA819 /* quad.model in Resources */ = {isa = PBXBuildFile; fileRef = 8AF1DA1419CA685400AAA819 /* quad.model */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A51431419CA446000AC2703 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A5142F219CA446000AC2703 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A5142F919CA446000AC2703;
+			remoteInfo = RZGPresentation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8A5142FA19CA446000AC2703 /* RZGPresentation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RZGPresentation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A5142FE19CA446000AC2703 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A5142FF19CA446000AC2703 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8A51430119CA446000AC2703 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8A51430219CA446000AC2703 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8A51430A19CA446000AC2703 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8A51430D19CA446000AC2703 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		8A51431319CA446000AC2703 /* RZGPresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RZGPresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A51431819CA446000AC2703 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A51431919CA446000AC2703 /* RZGPresentationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZGPresentationTests.m; sourceTree = "<group>"; };
+		8A7A372C19CA733A006EF326 /* RZGBMFontCharData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGBMFontCharData.h; sourceTree = "<group>"; };
+		8A7A372D19CA733A006EF326 /* RZGBMFontCharData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGBMFontCharData.m; sourceTree = "<group>"; };
+		8A7A372E19CA733A006EF326 /* RZGBMFontData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGBMFontData.h; sourceTree = "<group>"; };
+		8A7A372F19CA733A006EF326 /* RZGBMFontData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGBMFontData.m; sourceTree = "<group>"; };
+		8A7A373119CA733A006EF326 /* RZGBMFontHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGBMFontHeaders.h; sourceTree = "<group>"; };
+		8A7A373319CA733A006EF326 /* RZGBMFontModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGBMFontModel.h; sourceTree = "<group>"; };
+		8A7A373419CA733A006EF326 /* RZGBMFontModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGBMFontModel.m; sourceTree = "<group>"; };
+		8A7A373619CA733A006EF326 /* RZGBitmapFont.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = RZGBitmapFont.fsh; sourceTree = "<group>"; };
+		8A7A373719CA733A006EF326 /* RZGBitmapFont.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = RZGBitmapFont.vsh; sourceTree = "<group>"; };
+		8A7A373819CA733A006EF326 /* RZGBitmapFontShaderSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGBitmapFontShaderSettings.h; sourceTree = "<group>"; };
+		8A7A373919CA733A006EF326 /* RZGBitmapFontShaderSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGBitmapFontShaderSettings.m; sourceTree = "<group>"; };
+		8A7A373C19CA733A006EF326 /* RZGAssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGAssetManager.h; sourceTree = "<group>"; };
+		8A7A373D19CA733A006EF326 /* RZGAssetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGAssetManager.m; sourceTree = "<group>"; };
+		8A7A373E19CA733A006EF326 /* RZGModelData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RZGModelData.c; sourceTree = "<group>"; };
+		8A7A373F19CA733A006EF326 /* RZGModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGModelData.h; sourceTree = "<group>"; };
+		8A7A374019CA733A006EF326 /* RZGVaoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGVaoInfo.h; sourceTree = "<group>"; };
+		8A7A374119CA733A006EF326 /* RZGVaoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGVaoInfo.m; sourceTree = "<group>"; };
+		8A7A374319CA733A006EF326 /* RZGCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGCommand.h; sourceTree = "<group>"; };
+		8A7A374419CA733A006EF326 /* RZGCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGCommand.m; sourceTree = "<group>"; };
+		8A7A374519CA733A006EF326 /* RZGCommandPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGCommandPath.h; sourceTree = "<group>"; };
+		8A7A374619CA733A006EF326 /* RZGCommandPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGCommandPath.m; sourceTree = "<group>"; };
+		8A7A374819CA733A006EF326 /* RZGCoreHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGCoreHeaders.h; sourceTree = "<group>"; };
+		8A7A374A19CA733A006EF326 /* RZGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGModel.h; sourceTree = "<group>"; };
+		8A7A374B19CA733A006EF326 /* RZGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGModel.m; sourceTree = "<group>"; };
+		8A7A374C19CA733A006EF326 /* RZGModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGModelController.h; sourceTree = "<group>"; };
+		8A7A374D19CA733A006EF326 /* RZGModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGModelController.m; sourceTree = "<group>"; };
+		8A7A374F19CA733A006EF326 /* RZGOpenGLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGOpenGLManager.h; sourceTree = "<group>"; };
+		8A7A375019CA733A006EF326 /* RZGOpenGLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGOpenGLManager.m; sourceTree = "<group>"; };
+		8A7A375119CA733A006EF326 /* RZGPrs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGPrs.h; sourceTree = "<group>"; };
+		8A7A375219CA733A006EF326 /* RZGPrs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGPrs.m; sourceTree = "<group>"; };
+		8A7A375419CA733A006EF326 /* RZGDefaultShaderSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGDefaultShaderSettings.h; sourceTree = "<group>"; };
+		8A7A375519CA733A006EF326 /* RZGDefaultShaderSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGDefaultShaderSettings.m; sourceTree = "<group>"; };
+		8A7A375619CA733A006EF326 /* RZGShaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGShaderManager.h; sourceTree = "<group>"; };
+		8A7A375719CA733A006EF326 /* RZGShaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGShaderManager.m; sourceTree = "<group>"; };
+		8A7A375919CA733A006EF326 /* RZGDefaultShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = RZGDefaultShader.fsh; sourceTree = "<group>"; };
+		8A7A375A19CA733A006EF326 /* RZGDefaultShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = RZGDefaultShader.vsh; sourceTree = "<group>"; };
+		8A7A375C19CA733A006EF326 /* RZGMathUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGMathUtils.h; sourceTree = "<group>"; };
+		8A7A375D19CA733A006EF326 /* RZGMathUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGMathUtils.m; sourceTree = "<group>"; };
+		8A7A375E19CA733A006EF326 /* RZGScreenToGLConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGScreenToGLConverter.h; sourceTree = "<group>"; };
+		8A7A375F19CA733A006EF326 /* RZGScreenToGLConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGScreenToGLConverter.m; sourceTree = "<group>"; };
+		8A7A376119CA733A006EF326 /* RZGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGViewController.h; sourceTree = "<group>"; };
+		8A7A376219CA733A006EF326 /* RZGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGViewController.m; sourceTree = "<group>"; };
+		8A7A376419CA733A006EF326 /* RZGColoredPointSprite.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = RZGColoredPointSprite.fsh; sourceTree = "<group>"; };
+		8A7A376519CA733A006EF326 /* RZGColoredPointSprite.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = RZGColoredPointSprite.vsh; sourceTree = "<group>"; };
+		8A7A376619CA733A006EF326 /* RZGColoredPSShaderSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGColoredPSShaderSettings.h; sourceTree = "<group>"; };
+		8A7A376719CA733A006EF326 /* RZGColoredPSShaderSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGColoredPSShaderSettings.m; sourceTree = "<group>"; };
+		8A7A376819CA733A006EF326 /* RZGDrawableTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGDrawableTexture.h; sourceTree = "<group>"; };
+		8A7A376919CA733A006EF326 /* RZGDrawableTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGDrawableTexture.m; sourceTree = "<group>"; };
+		8AF1D9FB19CA48B100AAA819 /* RZGPMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGPMainViewController.h; sourceTree = "<group>"; };
+		8AF1D9FC19CA48B100AAA819 /* RZGPMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGPMainViewController.m; sourceTree = "<group>"; };
+		8AF1D9FF19CA4BDC00AAA819 /* RZGPSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGPSlide.h; sourceTree = "<group>"; };
+		8AF1DA0019CA4BDC00AAA819 /* RZGPSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGPSlide.m; sourceTree = "<group>"; };
+		8AF1DA0219CA506D00AAA819 /* redHNFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = redHNFont.fnt; sourceTree = "<group>"; };
+		8AF1DA0319CA506D00AAA819 /* redHNFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redHNFont.png; sourceTree = "<group>"; };
+		8AF1DA0619CA507E00AAA819 /* cube16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cube16.png; sourceTree = "<group>"; };
+		8AF1DA0819CA530200AAA819 /* cube.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = cube.model; sourceTree = "<group>"; };
+		8AF1DA0C19CA56C000AAA819 /* rzMetal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rzMetal.png; sourceTree = "<group>"; };
+		8AF1DA0E19CA5E6D00AAA819 /* wwdc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wwdc.png; sourceTree = "<group>"; };
+		8AF1DA1019CA60D200AAA819 /* whiteHNFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = whiteHNFont.fnt; sourceTree = "<group>"; };
+		8AF1DA1119CA60D200AAA819 /* whiteHNFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteHNFont.png; sourceTree = "<group>"; };
+		8AF1DA1419CA685400AAA819 /* quad.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = quad.model; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A5142F719CA446000AC2703 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A51431019CA446000AC2703 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A5142F119CA446000AC2703 = {
+			isa = PBXGroup;
+			children = (
+				8A7A372919CA7328006EF326 /* RZGOpenGL */,
+				8A5142FC19CA446000AC2703 /* RZGPresentation */,
+				8A51431619CA446000AC2703 /* RZGPresentationTests */,
+				8A5142FB19CA446000AC2703 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A5142FB19CA446000AC2703 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A5142FA19CA446000AC2703 /* RZGPresentation.app */,
+				8A51431319CA446000AC2703 /* RZGPresentationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A5142FC19CA446000AC2703 /* RZGPresentation */ = {
+			isa = PBXGroup;
+			children = (
+				8AF1D9FE19CA49FD00AAA819 /* Assets */,
+				8A51430119CA446000AC2703 /* AppDelegate.h */,
+				8A51430219CA446000AC2703 /* AppDelegate.m */,
+				8AF1D9FB19CA48B100AAA819 /* RZGPMainViewController.h */,
+				8AF1D9FC19CA48B100AAA819 /* RZGPMainViewController.m */,
+				8AF1D9FF19CA4BDC00AAA819 /* RZGPSlide.h */,
+				8AF1DA0019CA4BDC00AAA819 /* RZGPSlide.m */,
+				8A51430A19CA446000AC2703 /* Images.xcassets */,
+				8A51430C19CA446000AC2703 /* LaunchScreen.xib */,
+				8A5142FD19CA446000AC2703 /* Supporting Files */,
+			);
+			path = RZGPresentation;
+			sourceTree = "<group>";
+		};
+		8A5142FD19CA446000AC2703 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A5142FE19CA446000AC2703 /* Info.plist */,
+				8A5142FF19CA446000AC2703 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A51431619CA446000AC2703 /* RZGPresentationTests */ = {
+			isa = PBXGroup;
+			children = (
+				8A51431919CA446000AC2703 /* RZGPresentationTests.m */,
+				8A51431719CA446000AC2703 /* Supporting Files */,
+			);
+			path = RZGPresentationTests;
+			sourceTree = "<group>";
+		};
+		8A51431719CA446000AC2703 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A51431819CA446000AC2703 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A7A372919CA7328006EF326 /* RZGOpenGL */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A372A19CA733A006EF326 /* RZOpenGLBmFonts */,
+				8A7A373A19CA733A006EF326 /* RZOpenGLCore */,
+				8A7A376319CA733A006EF326 /* RZOpenGLDrawableTexture */,
+			);
+			name = RZGOpenGL;
+			sourceTree = "<group>";
+		};
+		8A7A372A19CA733A006EF326 /* RZOpenGLBmFonts */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A372B19CA733A006EF326 /* BM Font Data */,
+				8A7A373019CA733A006EF326 /* BM Font Headers */,
+				8A7A373219CA733A006EF326 /* BM Font Model */,
+				8A7A373519CA733A006EF326 /* BM Font Shaders */,
+			);
+			name = RZOpenGLBmFonts;
+			path = ../../RZOpenGLBmFonts;
+			sourceTree = "<group>";
+		};
+		8A7A372B19CA733A006EF326 /* BM Font Data */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A372C19CA733A006EF326 /* RZGBMFontCharData.h */,
+				8A7A372D19CA733A006EF326 /* RZGBMFontCharData.m */,
+				8A7A372E19CA733A006EF326 /* RZGBMFontData.h */,
+				8A7A372F19CA733A006EF326 /* RZGBMFontData.m */,
+			);
+			path = "BM Font Data";
+			sourceTree = "<group>";
+		};
+		8A7A373019CA733A006EF326 /* BM Font Headers */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A373119CA733A006EF326 /* RZGBMFontHeaders.h */,
+			);
+			path = "BM Font Headers";
+			sourceTree = "<group>";
+		};
+		8A7A373219CA733A006EF326 /* BM Font Model */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A373319CA733A006EF326 /* RZGBMFontModel.h */,
+				8A7A373419CA733A006EF326 /* RZGBMFontModel.m */,
+			);
+			path = "BM Font Model";
+			sourceTree = "<group>";
+		};
+		8A7A373519CA733A006EF326 /* BM Font Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A373619CA733A006EF326 /* RZGBitmapFont.fsh */,
+				8A7A373719CA733A006EF326 /* RZGBitmapFont.vsh */,
+				8A7A373819CA733A006EF326 /* RZGBitmapFontShaderSettings.h */,
+				8A7A373919CA733A006EF326 /* RZGBitmapFontShaderSettings.m */,
+			);
+			path = "BM Font Shaders";
+			sourceTree = "<group>";
+		};
+		8A7A373A19CA733A006EF326 /* RZOpenGLCore */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A373B19CA733A006EF326 /* Asset Management */,
+				8A7A374219CA733A006EF326 /* Commands */,
+				8A7A374719CA733A006EF326 /* Headers */,
+				8A7A374919CA733A006EF326 /* Models */,
+				8A7A374E19CA733A006EF326 /* OpenGLManagement */,
+				8A7A375319CA733A006EF326 /* ShaderManagement */,
+				8A7A375819CA733A006EF326 /* Shaders */,
+				8A7A375B19CA733A006EF326 /* Utilities */,
+				8A7A376019CA733A006EF326 /* ViewControllers */,
+			);
+			name = RZOpenGLCore;
+			path = ../../RZOpenGLCore;
+			sourceTree = "<group>";
+		};
+		8A7A373B19CA733A006EF326 /* Asset Management */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A373C19CA733A006EF326 /* RZGAssetManager.h */,
+				8A7A373D19CA733A006EF326 /* RZGAssetManager.m */,
+				8A7A373E19CA733A006EF326 /* RZGModelData.c */,
+				8A7A373F19CA733A006EF326 /* RZGModelData.h */,
+				8A7A374019CA733A006EF326 /* RZGVaoInfo.h */,
+				8A7A374119CA733A006EF326 /* RZGVaoInfo.m */,
+			);
+			path = "Asset Management";
+			sourceTree = "<group>";
+		};
+		8A7A374219CA733A006EF326 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A374319CA733A006EF326 /* RZGCommand.h */,
+				8A7A374419CA733A006EF326 /* RZGCommand.m */,
+				8A7A374519CA733A006EF326 /* RZGCommandPath.h */,
+				8A7A374619CA733A006EF326 /* RZGCommandPath.m */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		8A7A374719CA733A006EF326 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A374819CA733A006EF326 /* RZGCoreHeaders.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		8A7A374919CA733A006EF326 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A374A19CA733A006EF326 /* RZGModel.h */,
+				8A7A374B19CA733A006EF326 /* RZGModel.m */,
+				8A7A374C19CA733A006EF326 /* RZGModelController.h */,
+				8A7A374D19CA733A006EF326 /* RZGModelController.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8A7A374E19CA733A006EF326 /* OpenGLManagement */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A374F19CA733A006EF326 /* RZGOpenGLManager.h */,
+				8A7A375019CA733A006EF326 /* RZGOpenGLManager.m */,
+				8A7A375119CA733A006EF326 /* RZGPrs.h */,
+				8A7A375219CA733A006EF326 /* RZGPrs.m */,
+			);
+			path = OpenGLManagement;
+			sourceTree = "<group>";
+		};
+		8A7A375319CA733A006EF326 /* ShaderManagement */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A375419CA733A006EF326 /* RZGDefaultShaderSettings.h */,
+				8A7A375519CA733A006EF326 /* RZGDefaultShaderSettings.m */,
+				8A7A375619CA733A006EF326 /* RZGShaderManager.h */,
+				8A7A375719CA733A006EF326 /* RZGShaderManager.m */,
+			);
+			path = ShaderManagement;
+			sourceTree = "<group>";
+		};
+		8A7A375819CA733A006EF326 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A375919CA733A006EF326 /* RZGDefaultShader.fsh */,
+				8A7A375A19CA733A006EF326 /* RZGDefaultShader.vsh */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		8A7A375B19CA733A006EF326 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A375C19CA733A006EF326 /* RZGMathUtils.h */,
+				8A7A375D19CA733A006EF326 /* RZGMathUtils.m */,
+				8A7A375E19CA733A006EF326 /* RZGScreenToGLConverter.h */,
+				8A7A375F19CA733A006EF326 /* RZGScreenToGLConverter.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8A7A376019CA733A006EF326 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A376119CA733A006EF326 /* RZGViewController.h */,
+				8A7A376219CA733A006EF326 /* RZGViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8A7A376319CA733A006EF326 /* RZOpenGLDrawableTexture */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A376419CA733A006EF326 /* RZGColoredPointSprite.fsh */,
+				8A7A376519CA733A006EF326 /* RZGColoredPointSprite.vsh */,
+				8A7A376619CA733A006EF326 /* RZGColoredPSShaderSettings.h */,
+				8A7A376719CA733A006EF326 /* RZGColoredPSShaderSettings.m */,
+				8A7A376819CA733A006EF326 /* RZGDrawableTexture.h */,
+				8A7A376919CA733A006EF326 /* RZGDrawableTexture.m */,
+			);
+			name = RZOpenGLDrawableTexture;
+			path = ../../RZOpenGLDrawableTexture;
+			sourceTree = "<group>";
+		};
+		8AF1D9FE19CA49FD00AAA819 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8AF1DA1419CA685400AAA819 /* quad.model */,
+				8AF1DA0219CA506D00AAA819 /* redHNFont.fnt */,
+				8AF1DA0319CA506D00AAA819 /* redHNFont.png */,
+				8AF1DA0619CA507E00AAA819 /* cube16.png */,
+				8AF1DA0819CA530200AAA819 /* cube.model */,
+				8AF1DA0C19CA56C000AAA819 /* rzMetal.png */,
+				8AF1DA0E19CA5E6D00AAA819 /* wwdc.png */,
+				8AF1DA1019CA60D200AAA819 /* whiteHNFont.fnt */,
+				8AF1DA1119CA60D200AAA819 /* whiteHNFont.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A5142F919CA446000AC2703 /* RZGPresentation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A51431D19CA446000AC2703 /* Build configuration list for PBXNativeTarget "RZGPresentation" */;
+			buildPhases = (
+				8A5142F619CA446000AC2703 /* Sources */,
+				8A5142F719CA446000AC2703 /* Frameworks */,
+				8A5142F819CA446000AC2703 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RZGPresentation;
+			productName = RZGPresentation;
+			productReference = 8A5142FA19CA446000AC2703 /* RZGPresentation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8A51431219CA446000AC2703 /* RZGPresentationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A51432019CA446000AC2703 /* Build configuration list for PBXNativeTarget "RZGPresentationTests" */;
+			buildPhases = (
+				8A51430F19CA446000AC2703 /* Sources */,
+				8A51431019CA446000AC2703 /* Frameworks */,
+				8A51431119CA446000AC2703 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A51431519CA446000AC2703 /* PBXTargetDependency */,
+			);
+			name = RZGPresentationTests;
+			productName = RZGPresentationTests;
+			productReference = 8A51431319CA446000AC2703 /* RZGPresentationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A5142F219CA446000AC2703 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Raizlabs;
+				TargetAttributes = {
+					8A5142F919CA446000AC2703 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					8A51431219CA446000AC2703 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 8A5142F919CA446000AC2703;
+					};
+				};
+			};
+			buildConfigurationList = 8A5142F519CA446000AC2703 /* Build configuration list for PBXProject "RZGPresentation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8A5142F119CA446000AC2703;
+			productRefGroup = 8A5142FB19CA446000AC2703 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A5142F919CA446000AC2703 /* RZGPresentation */,
+				8A51431219CA446000AC2703 /* RZGPresentationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A5142F819CA446000AC2703 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A7A377B19CA733A006EF326 /* RZGDefaultShader.fsh in Resources */,
+				8AF1DA1319CA60D200AAA819 /* whiteHNFont.png in Resources */,
+				8A7A377C19CA733A006EF326 /* RZGDefaultShader.vsh in Resources */,
+				8A7A376E19CA733A006EF326 /* RZGBitmapFont.vsh in Resources */,
+				8A7A378019CA733A006EF326 /* RZGColoredPointSprite.fsh in Resources */,
+				8AF1DA1519CA685400AAA819 /* quad.model in Resources */,
+				8AF1DA0719CA507E00AAA819 /* cube16.png in Resources */,
+				8A51430E19CA446000AC2703 /* LaunchScreen.xib in Resources */,
+				8A51430B19CA446000AC2703 /* Images.xcassets in Resources */,
+				8A7A378119CA733A006EF326 /* RZGColoredPointSprite.vsh in Resources */,
+				8AF1DA0519CA506D00AAA819 /* redHNFont.png in Resources */,
+				8AF1DA0F19CA5E6D00AAA819 /* wwdc.png in Resources */,
+				8A7A376D19CA733A006EF326 /* RZGBitmapFont.fsh in Resources */,
+				8AF1DA0919CA530200AAA819 /* cube.model in Resources */,
+				8AF1DA0D19CA56C000AAA819 /* rzMetal.png in Resources */,
+				8AF1DA0419CA506D00AAA819 /* redHNFont.fnt in Resources */,
+				8AF1DA1219CA60D200AAA819 /* whiteHNFont.fnt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A51431119CA446000AC2703 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A5142F619CA446000AC2703 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A7A377719CA733A006EF326 /* RZGOpenGLManager.m in Sources */,
+				8AF1D9FD19CA48B100AAA819 /* RZGPMainViewController.m in Sources */,
+				8A7A377519CA733A006EF326 /* RZGModel.m in Sources */,
+				8A7A377419CA733A006EF326 /* RZGCommandPath.m in Sources */,
+				8A7A376B19CA733A006EF326 /* RZGBMFontData.m in Sources */,
+				8A7A378319CA733A006EF326 /* RZGDrawableTexture.m in Sources */,
+				8A7A377E19CA733A006EF326 /* RZGScreenToGLConverter.m in Sources */,
+				8AF1DA0119CA4BDC00AAA819 /* RZGPSlide.m in Sources */,
+				8A51430319CA446000AC2703 /* AppDelegate.m in Sources */,
+				8A7A377D19CA733A006EF326 /* RZGMathUtils.m in Sources */,
+				8A7A377619CA733A006EF326 /* RZGModelController.m in Sources */,
+				8A7A377819CA733A006EF326 /* RZGPrs.m in Sources */,
+				8A7A376A19CA733A006EF326 /* RZGBMFontCharData.m in Sources */,
+				8A51430019CA446000AC2703 /* main.m in Sources */,
+				8A7A377A19CA733A006EF326 /* RZGShaderManager.m in Sources */,
+				8A7A376C19CA733A006EF326 /* RZGBMFontModel.m in Sources */,
+				8A7A377119CA733A006EF326 /* RZGModelData.c in Sources */,
+				8A7A376F19CA733A006EF326 /* RZGBitmapFontShaderSettings.m in Sources */,
+				8A7A377319CA733A006EF326 /* RZGCommand.m in Sources */,
+				8A7A377F19CA733A006EF326 /* RZGViewController.m in Sources */,
+				8A7A377919CA733A006EF326 /* RZGDefaultShaderSettings.m in Sources */,
+				8A7A378219CA733A006EF326 /* RZGColoredPSShaderSettings.m in Sources */,
+				8A7A377019CA733A006EF326 /* RZGAssetManager.m in Sources */,
+				8A7A377219CA733A006EF326 /* RZGVaoInfo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A51430F19CA446000AC2703 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A51431A19CA446000AC2703 /* RZGPresentationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A51431519CA446000AC2703 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A5142F919CA446000AC2703 /* RZGPresentation */;
+			targetProxy = 8A51431419CA446000AC2703 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8A51430C19CA446000AC2703 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A51430D19CA446000AC2703 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A51431B19CA446000AC2703 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8A51431C19CA446000AC2703 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A51431E19CA446000AC2703 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RZGPresentation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8A51431F19CA446000AC2703 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RZGPresentation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8A51432119CA446000AC2703 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RZGPresentationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RZGPresentation.app/RZGPresentation";
+			};
+			name = Debug;
+		};
+		8A51432219CA446000AC2703 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RZGPresentationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RZGPresentation.app/RZGPresentation";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A5142F519CA446000AC2703 /* Build configuration list for PBXProject "RZGPresentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A51431B19CA446000AC2703 /* Debug */,
+				8A51431C19CA446000AC2703 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A51431D19CA446000AC2703 /* Build configuration list for PBXNativeTarget "RZGPresentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A51431E19CA446000AC2703 /* Debug */,
+				8A51431F19CA446000AC2703 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A51432019CA446000AC2703 /* Build configuration list for PBXNativeTarget "RZGPresentationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A51432119CA446000AC2703 /* Debug */,
+				8A51432219CA446000AC2703 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A5142F219CA446000AC2703 /* Project object */;
+}
