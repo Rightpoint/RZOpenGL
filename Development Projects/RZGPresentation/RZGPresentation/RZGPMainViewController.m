@@ -54,7 +54,7 @@ static float const kSlideFadeDuration = 0.2f;
     
     [self.titleFontModel setupWithCharMax:50.0f];
     self.titleFontModel.centerHorizontal = YES;
-    [self.titleFontModel updateWithText:@"OpenGL & Metal"];
+    [self.titleFontModel updateWithText:@"Metal & OpenGL"];
     self.titleFontModel.prs.pz = -1.5f;
     self.titleFontModel.prs.py = 0.4f;
     [self.modelController addModel:self.titleFontModel];
