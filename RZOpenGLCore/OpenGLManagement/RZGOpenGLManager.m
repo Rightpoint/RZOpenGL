@@ -11,6 +11,7 @@
 #import "RZGDefaultShaderSettings.h"
 #import "RZGBitmapFontShaderSettings.h"
 #import "RZGScreenToGLConverter.h"
+#import "RZGColoredPSShaderSettings.h"
 
 static BOOL depthTestEnabled;
 static GLKVector4 lastClearColor;
@@ -42,7 +43,7 @@ static GLKVector4 lastClearColor;
     glEnable(GL_BLEND);
     glEnable(GL_DEPTH_TEST);
     depthTestEnabled = YES;
-
+    
     glkView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     glkView.drawableMultisample = GLKViewDrawableMultisample4X;
     glkView.multipleTouchEnabled = NO;
@@ -56,13 +57,8 @@ static GLKVector4 lastClearColor;
     
     CGSize screenSize = size;
     
-    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    if (UIInterfaceOrientationIsLandscape(orientation)) {
-        screenSize = CGSizeMake(size.height, size.width);
-    }
-    
     GLfloat aspect = fabsf(screenSize.width / screenSize.height);
-
+    
     _projectionMatrix = GLKMatrix4MakePerspective(perspective, aspect, nearZ, farZ);
     
     _zConverter = [[RZGScreenToGLConverter alloc] initWithScreenHeight:screenSize.height ScreenWidth:screenSize.width Fov:perspective];
@@ -80,6 +76,11 @@ static GLKVector4 lastClearColor;
 {
     GLuint programId = [RZGShaderManager loadBitmapFontShader];
     self.bitmapFontShaderSettings = [[RZGBitmapFontShaderSettings alloc] initWithProgramId:programId];
+}
+
+- (void)loadColoredPSShaderAndSettings {
+    GLuint programId = [RZGShaderManager loadColoredPointSpriteShader];
+    self.coloredPSShaderSettings = [[RZGColoredPSShaderSettings alloc] initWithProgramId:programId];
 }
 
 //Assumes that depth testing is only changed via a manager class

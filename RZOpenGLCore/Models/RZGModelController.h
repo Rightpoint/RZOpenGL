@@ -15,6 +15,7 @@
 @interface RZGModelController : NSObject
 
 - (void)addModel:(RZGModel *)model;
+- (void)removeModel:(RZGModel *)model;
 - (void)addCommandToAllModels:(RZGCommand *)command;
 - (void)updateWithTime:(CFTimeInterval)time;
 - (void)draw;

@@ -19,5 +19,4 @@
 + (RZGVaoInfo*)loadVaoInfoFromData:(RZGModelData)data AssignName:(NSString*)name;
 + (void)destroyVAO:(GLuint) vaoName;
 + (void)unload;
-
 @end

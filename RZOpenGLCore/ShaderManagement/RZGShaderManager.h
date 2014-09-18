@@ -12,12 +12,13 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <GLKit/GLKMathTypes.h>
+#import <GLKit/GLKit.h>
 
 @interface RZGShaderManager : NSObject
 
 + (GLuint)loadModelDefaultShader;
 + (GLuint)loadBitmapFontShader;
++ (GLuint)loadColoredPointSpriteShader;
 + (void)useProgram:(GLuint)programId;
 
 @end

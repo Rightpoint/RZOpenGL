@@ -10,6 +10,7 @@
 #import "RZGModelData.h"
 #import "RZGVaoInfo.h"
 #import <GLKit/GLKit.h>
+#import  <OpenGLES/ES2/glext.h>
 
 static NSMutableDictionary *loadedTextures;
 static NSMutableDictionary *loadedVaos;

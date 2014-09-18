@@ -16,6 +16,7 @@
 #import "RZGCommandPath.h"
 #import "RZGOpenGLManager.h"
 #import "RZGScreenToGLConverter.h"
+#import  <OpenGLES/ES2/glext.h>
 
 @interface RZGModel()
 
@@ -178,6 +179,9 @@
                 if(command.duration <= 0.0f)
                 {
                     self.alpha = command.target.x;
+                    if ( command.completionBlock ) {
+                        command.completionBlock();
+                    }
                     command.isFinished = YES;
                 }
             }
@@ -192,6 +196,9 @@
             else
             {
                 self.isHidden = NO;
+            }
+            if ( command.completionBlock ) {
+                command.completionBlock();
             }
             command.isFinished = YES;
             break;
@@ -218,12 +225,15 @@
                     command.step = GLKVector4Make((command.target.x - self.prs.px) / command.duration, (command.target.y - self.prs.py) / command.duration, (command.target.z - self.prs.pz) / command.duration, 0.0f);
                 }
             }
-            
+
             command.duration -= time;
             
             if(command.duration <= 0.0f)
             {
                 self.prs.position = GLKVector3Make(command.target.x, command.target.y, command.target.z);
+                if ( command.completionBlock ) {
+                    command.completionBlock();
+                }
                 command.isFinished = YES;
             }
             else
@@ -276,6 +286,9 @@
                 }
                 else
                 {
+                    if ( command.completionBlock ) {
+                        command.completionBlock();
+                    }
                     command.isFinished = YES;
                 }
             }
@@ -308,6 +321,9 @@
             if(command.duration <= 0.0f)
             {
                 [self.prs addVectorToRotation:GLKVector3Make(command.target.x, command.target.y, command.target.z)];
+                if ( command.completionBlock ) {
+                    command.completionBlock();
+                }
                 command.isFinished = YES;
             }
             else
@@ -316,6 +332,38 @@
             }
             break;
             
+        // SCALE
+        case kRZGCommand_scaleTo:
+            if(!command.isStarted)
+            {
+                command.isStarted = YES;
+                
+                if(!command.isAbsolute)
+                {
+                    command.step = GLKVector4Make(command.target.x / command.duration, command.target.y / command.duration, command.target.z / command.duration, 0.0f);
+                    command.target = GLKVector4Make(command.target.x + self.prs.px, command.target.y + self.prs.py, command.target.z + self.prs.pz, 0.0f);
+                }
+                else
+                {
+                    command.step = GLKVector4Make((command.target.x - self.prs.px) / command.duration, (command.target.y - self.prs.py) / command.duration, (command.target.z - self.prs.pz) / command.duration, 0.0f);
+                }
+            }
+            
+            command.duration -= time;
+            
+            if(command.duration <= 0.0f)
+            {
+                self.prs.scale = GLKVector3Make(command.target.x, command.target.y, command.target.z);
+                if ( command.completionBlock ) {
+                    command.completionBlock();
+                }
+                command.isFinished = YES;
+            }
+            else
+            {
+                self.prs.scale = GLKVector3Make(self.prs.px + command.step.x * time, self.prs.py + command.step.y * time, self.prs.pz + command.step.z * time);
+            }
+            break;
             
         default:
             break;

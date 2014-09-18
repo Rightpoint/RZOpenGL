@@ -17,6 +17,7 @@
 @end
 
 @implementation RZGBitmapFontShaderSettings
+
 - (instancetype)initWithProgramId:(GLuint)programId
 {
     self = [super init];

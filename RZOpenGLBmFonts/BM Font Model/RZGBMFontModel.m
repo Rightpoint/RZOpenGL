@@ -16,6 +16,7 @@
 #import "RZGCommand.h"
 #import "RZGOpenGLManager.h"
 #import "RZGPrs.h"
+#import  <OpenGLES/ES2/glext.h>
 
 #define kCharMax 1000
 #define kLineBreakChar '~'

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <GLKit/GLKMathTypes.h>
+#import <GLKit/GLKit.h>
 
 @interface RZGVaoInfo : NSObject
 

@@ -41,6 +41,11 @@ static GLuint lastProgramUsed; // Keeps track of last program used to minimize p
     return [self loadProgram:@"RZGBitmapFont" :@"RZGBitmapFont",2,0,"a_position",1,"a_texCoord"];
 }
 
++ (unsigned int) loadColoredPointSpriteShader
+{
+    return [self loadProgram:@"RZGColoredPointSprite" :@"RZGColoredPointSprite",1,0,"a_position"];
+}
+
 +(GLuint) loadProgram:(NSString *)vertShaderName :(NSString *)fragShaderName, ...
 {
     

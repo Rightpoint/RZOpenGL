@@ -26,6 +26,11 @@
     [self.mainModelArray addObject:model];
 }
 
+- (void)removeModel:(RZGModel *)model
+{
+    [self.mainModelArray removeObject:model];
+}
+
 - (void)addCommandToAllModels:(RZGCommand *)command
 {
     for(RZGModel *model in self.mainModelArray) {

@@ -38,6 +38,7 @@
     self.view = self.glkView;
     
     self.resetTimeStamp = YES;
+
 }
 
 - (CGSize)sizeForMainWindowOnLoad

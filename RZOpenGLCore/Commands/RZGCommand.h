@@ -11,6 +11,8 @@
 
 @class RZGCommandPath;
 
+typedef void (^RZGCommandCompletionBlockType)();
+
 typedef NS_ENUM(NSInteger, RZGCommandEnum)
 {
     kRZGCommand_alpha,
@@ -73,6 +75,7 @@ static __inline__ GLKVector4 GLKVector4MakeWithVec3(GLKVector3 vec3)
 @property (nonatomic, assign) BOOL isStarted;
 @property (nonatomic, assign) BOOL isFinished;
 @property (nonatomic, strong) RZGCommandPath *path;
+@property (nonatomic, copy) RZGCommandCompletionBlockType completionBlock;
 
 + (instancetype)commandWithEnum:(RZGCommandEnum) command Target:(GLKVector4)target Duration:(GLfloat)duration IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
 - (instancetype)initWithCommandEnum:(RZGCommandEnum) command Target:(GLKVector4)target Duration:(GLfloat)duration IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
