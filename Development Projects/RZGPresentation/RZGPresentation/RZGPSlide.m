@@ -24,13 +24,16 @@
     return self;
 }
 
-- (instancetype)initWithTitle:(NSString *)title pictureName:(NSString *)picture openGLManager:(RZGOpenGLManager *)glmgr
+
+- (instancetype)initWithTitle:(NSString *)title pictureName:(NSString *)picture imageZAdj:(float)zAdj imageYAdj:(float)yAdj openGLManager:(RZGOpenGLManager *)glmgr;
 {
     self = [super init];
     if ( self ) {
         self.titleText = title;
         self.textureId = [RZGAssetManager loadTexture:picture ofType:@"png" shouldLoadWithMipMapping:NO];
         self.isImageType = YES;
+        self.imageZAdj = zAdj;
+        self.imageYAdj = yAdj;
     }
     return self;
 }

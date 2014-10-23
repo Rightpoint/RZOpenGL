@@ -10,29 +10,29 @@
 	<string>RZOpenGLCoreDevelopment</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>622B583F-CC28-464D-8B85-A2272CE07EB1</key>
+		<key>AE1724EA00CE65730262F34740ED3B93941D751F</key>
 		<string>https://github.com/Raizlabs/RZOpenGL.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Development Projects/RZOpenGLCoreDevelopment/RZOpenGLCoreDevelopment.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>622B583F-CC28-464D-8B85-A2272CE07EB1</key>
+		<key>AE1724EA00CE65730262F34740ED3B93941D751F</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Raizlabs/RZOpenGL.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>622B583F-CC28-464D-8B85-A2272CE07EB1</string>
+	<string>AE1724EA00CE65730262F34740ED3B93941D751F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>622B583F-CC28-464D-8B85-A2272CE07EB1</string>
+			<string>AE1724EA00CE65730262F34740ED3B93941D751F</string>
 			<key>IDESourceControlWCCName</key>
 			<string>RZOpenGL</string>
 		</dict>

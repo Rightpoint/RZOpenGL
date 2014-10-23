@@ -9,6 +9,8 @@
 #import "RZGShaderManager.h"
 #import <GLKit/GLKit.h>
 
+
+
 static GLuint lastProgramUsed; // Keeps track of last program used to minimize program switching
 
 @interface RZGShaderManager()

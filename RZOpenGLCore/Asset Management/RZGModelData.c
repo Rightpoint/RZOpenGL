@@ -66,7 +66,10 @@ void generateVaoInfoFromModelAtPath(const char *filepath, GLuint *vaoIndex, GLui
 }
 
 // Create a VAO
-void generateVaoInfoFromModelData(RZGModelData *data, GLuint *vaoIndex, GLuint *vboIndex, GLuint *nVerts)
+void generateVaoInfoFromModelData(RZGModelData *data,
+                                  GLuint *vaoIndex,
+                                  GLuint *vboIndex,
+                                  GLuint *nVerts)
 {
     if(data)
     {

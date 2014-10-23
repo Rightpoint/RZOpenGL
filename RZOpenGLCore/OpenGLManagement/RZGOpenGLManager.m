@@ -9,9 +9,9 @@
 #import "RZGOpenGLManager.h"
 #import "RZGShaderManager.h"
 #import "RZGDefaultShaderSettings.h"
-#import "RZGBitmapFontShaderSettings.h"
+//#import "RZGBitmapFontShaderSettings.h"
 #import "RZGScreenToGLConverter.h"
-#import "RZGColoredPSShaderSettings.h"
+//#import "RZGColoredPSShaderSettings.h"
 
 static BOOL depthTestEnabled;
 static GLKVector4 lastClearColor;
@@ -74,13 +74,13 @@ static GLKVector4 lastClearColor;
 
 -(void)loadBitmapFontShaderAndSettings
 {
-    GLuint programId = [RZGShaderManager loadBitmapFontShader];
-    self.bitmapFontShaderSettings = [[RZGBitmapFontShaderSettings alloc] initWithProgramId:programId];
+ //   GLuint programId = [RZGShaderManager loadBitmapFontShader];
+ //   self.bitmapFontShaderSettings = [[RZGBitmapFontShaderSettings alloc] initWithProgramId:programId];
 }
 
 - (void)loadColoredPSShaderAndSettings {
-    GLuint programId = [RZGShaderManager loadColoredPointSpriteShader];
-    self.coloredPSShaderSettings = [[RZGColoredPSShaderSettings alloc] initWithProgramId:programId];
+//    GLuint programId = [RZGShaderManager loadColoredPointSpriteShader];
+ //    self.coloredPSShaderSettings = [[RZGColoredPSShaderSettings alloc] initWithProgramId:programId];
 }
 
 //Assumes that depth testing is only changed via a manager class

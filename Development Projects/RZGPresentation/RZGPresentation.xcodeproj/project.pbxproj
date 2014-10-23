@@ -38,6 +38,17 @@
 		8A7A378119CA733A006EF326 /* RZGColoredPointSprite.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A7A376519CA733A006EF326 /* RZGColoredPointSprite.vsh */; };
 		8A7A378219CA733A006EF326 /* RZGColoredPSShaderSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A376719CA733A006EF326 /* RZGColoredPSShaderSettings.m */; };
 		8A7A378319CA733A006EF326 /* RZGDrawableTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A376919CA733A006EF326 /* RZGDrawableTexture.m */; };
+		8A84388D19CB4DCB00C34D8B /* glShaders.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A84388C19CB4DCB00C34D8B /* glShaders.png */; };
+		8A84388F19CB4DD400C34D8B /* metalShaders.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A84388E19CB4DD400C34D8B /* metalShaders.png */; };
+		8AA687CD19CB524D00487596 /* control.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA687CC19CB524D00487596 /* control.png */; };
+		8AA687CF19CB542700487596 /* metalShaderSetup.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA687CE19CB542700487596 /* metalShaderSetup.png */; };
+		8AA687D119CB576500487596 /* openGLVAO.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA687D019CB576500487596 /* openGLVAO.png */; };
+		8AA687D519CB5ACC00487596 /* glDraw.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA687D419CB5ACC00487596 /* glDraw.png */; };
+		8AA687D719CB5B9300487596 /* metalBufferPrep.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA687D619CB5B9300487596 /* metalBufferPrep.png */; };
+		8AA687DB19CB63EF00487596 /* metalDrawing.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA687DA19CB63EF00487596 /* metalDrawing.png */; };
+		8AA687E119CB6D7A00487596 /* metalOverview.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA687E019CB6D7A00487596 /* metalOverview.png */; };
+		8AD4920A19CB770100723A60 /* metalCompute.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AD4920919CB770100723A60 /* metalCompute.png */; };
+		8AD4920C19CB7DFD00723A60 /* metalPrepareAndFireCompute.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AD4920B19CB7DFD00723A60 /* metalPrepareAndFireCompute.png */; };
 		8AF1D9FD19CA48B100AAA819 /* RZGPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1D9FC19CA48B100AAA819 /* RZGPMainViewController.m */; };
 		8AF1DA0119CA4BDC00AAA819 /* RZGPSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1DA0019CA4BDC00AAA819 /* RZGPSlide.m */; };
 		8AF1DA0419CA506D00AAA819 /* redHNFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 8AF1DA0219CA506D00AAA819 /* redHNFont.fnt */; };
@@ -120,6 +131,17 @@
 		8A7A376719CA733A006EF326 /* RZGColoredPSShaderSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGColoredPSShaderSettings.m; sourceTree = "<group>"; };
 		8A7A376819CA733A006EF326 /* RZGDrawableTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGDrawableTexture.h; sourceTree = "<group>"; };
 		8A7A376919CA733A006EF326 /* RZGDrawableTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGDrawableTexture.m; sourceTree = "<group>"; };
+		8A84388C19CB4DCB00C34D8B /* glShaders.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glShaders.png; sourceTree = "<group>"; };
+		8A84388E19CB4DD400C34D8B /* metalShaders.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metalShaders.png; sourceTree = "<group>"; };
+		8AA687CC19CB524D00487596 /* control.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = control.png; sourceTree = "<group>"; };
+		8AA687CE19CB542700487596 /* metalShaderSetup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metalShaderSetup.png; sourceTree = "<group>"; };
+		8AA687D019CB576500487596 /* openGLVAO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openGLVAO.png; sourceTree = "<group>"; };
+		8AA687D419CB5ACC00487596 /* glDraw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glDraw.png; sourceTree = "<group>"; };
+		8AA687D619CB5B9300487596 /* metalBufferPrep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metalBufferPrep.png; sourceTree = "<group>"; };
+		8AA687DA19CB63EF00487596 /* metalDrawing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metalDrawing.png; sourceTree = "<group>"; };
+		8AA687E019CB6D7A00487596 /* metalOverview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metalOverview.png; sourceTree = "<group>"; };
+		8AD4920919CB770100723A60 /* metalCompute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metalCompute.png; sourceTree = "<group>"; };
+		8AD4920B19CB7DFD00723A60 /* metalPrepareAndFireCompute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metalPrepareAndFireCompute.png; sourceTree = "<group>"; };
 		8AF1D9FB19CA48B100AAA819 /* RZGPMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGPMainViewController.h; sourceTree = "<group>"; };
 		8AF1D9FC19CA48B100AAA819 /* RZGPMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGPMainViewController.m; sourceTree = "<group>"; };
 		8AF1D9FF19CA4BDC00AAA819 /* RZGPSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGPSlide.h; sourceTree = "<group>"; };
@@ -298,8 +320,8 @@
 			children = (
 				8A7A373C19CA733A006EF326 /* RZGAssetManager.h */,
 				8A7A373D19CA733A006EF326 /* RZGAssetManager.m */,
-				8A7A373E19CA733A006EF326 /* RZGModelData.c */,
 				8A7A373F19CA733A006EF326 /* RZGModelData.h */,
+				8A7A373E19CA733A006EF326 /* RZGModelData.c */,
 				8A7A374019CA733A006EF326 /* RZGVaoInfo.h */,
 				8A7A374119CA733A006EF326 /* RZGVaoInfo.m */,
 			);
@@ -404,6 +426,7 @@
 		8AF1D9FE19CA49FD00AAA819 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8AD4920919CB770100723A60 /* metalCompute.png */,
 				8AF1DA1419CA685400AAA819 /* quad.model */,
 				8AF1DA0219CA506D00AAA819 /* redHNFont.fnt */,
 				8AF1DA0319CA506D00AAA819 /* redHNFont.png */,
@@ -413,6 +436,16 @@
 				8AF1DA0E19CA5E6D00AAA819 /* wwdc.png */,
 				8AF1DA1019CA60D200AAA819 /* whiteHNFont.fnt */,
 				8AF1DA1119CA60D200AAA819 /* whiteHNFont.png */,
+				8A84388C19CB4DCB00C34D8B /* glShaders.png */,
+				8A84388E19CB4DD400C34D8B /* metalShaders.png */,
+				8AA687CC19CB524D00487596 /* control.png */,
+				8AA687CE19CB542700487596 /* metalShaderSetup.png */,
+				8AA687D019CB576500487596 /* openGLVAO.png */,
+				8AA687D419CB5ACC00487596 /* glDraw.png */,
+				8AA687D619CB5B9300487596 /* metalBufferPrep.png */,
+				8AA687E019CB6D7A00487596 /* metalOverview.png */,
+				8AA687DA19CB63EF00487596 /* metalDrawing.png */,
+				8AD4920B19CB7DFD00723A60 /* metalPrepareAndFireCompute.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -498,22 +531,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A7A377B19CA733A006EF326 /* RZGDefaultShader.fsh in Resources */,
+				8AA687D119CB576500487596 /* openGLVAO.png in Resources */,
 				8AF1DA1319CA60D200AAA819 /* whiteHNFont.png in Resources */,
 				8A7A377C19CA733A006EF326 /* RZGDefaultShader.vsh in Resources */,
 				8A7A376E19CA733A006EF326 /* RZGBitmapFont.vsh in Resources */,
+				8AA687D519CB5ACC00487596 /* glDraw.png in Resources */,
 				8A7A378019CA733A006EF326 /* RZGColoredPointSprite.fsh in Resources */,
 				8AF1DA1519CA685400AAA819 /* quad.model in Resources */,
 				8AF1DA0719CA507E00AAA819 /* cube16.png in Resources */,
+				8AD4920C19CB7DFD00723A60 /* metalPrepareAndFireCompute.png in Resources */,
+				8AA687CF19CB542700487596 /* metalShaderSetup.png in Resources */,
+				8AA687CD19CB524D00487596 /* control.png in Resources */,
 				8A51430E19CA446000AC2703 /* LaunchScreen.xib in Resources */,
+				8AD4920A19CB770100723A60 /* metalCompute.png in Resources */,
+				8AA687E119CB6D7A00487596 /* metalOverview.png in Resources */,
+				8A84388F19CB4DD400C34D8B /* metalShaders.png in Resources */,
 				8A51430B19CA446000AC2703 /* Images.xcassets in Resources */,
 				8A7A378119CA733A006EF326 /* RZGColoredPointSprite.vsh in Resources */,
+				8A84388D19CB4DCB00C34D8B /* glShaders.png in Resources */,
 				8AF1DA0519CA506D00AAA819 /* redHNFont.png in Resources */,
 				8AF1DA0F19CA5E6D00AAA819 /* wwdc.png in Resources */,
+				8AA687D719CB5B9300487596 /* metalBufferPrep.png in Resources */,
 				8A7A376D19CA733A006EF326 /* RZGBitmapFont.fsh in Resources */,
 				8AF1DA0919CA530200AAA819 /* cube.model in Resources */,
 				8AF1DA0D19CA56C000AAA819 /* rzMetal.png in Resources */,
 				8AF1DA0419CA506D00AAA819 /* redHNFont.fnt in Resources */,
 				8AF1DA1219CA60D200AAA819 /* whiteHNFont.fnt in Resources */,
+				8AA687DB19CB63EF00487596 /* metalDrawing.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

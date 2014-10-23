@@ -11,6 +11,8 @@
 #import "RZGPSlide.h"
 
 static float const kSlideFadeDuration = 0.2f;
+static float const kDefaultImageZ = -2.0f;
+static float const kDefaultImageY = -0.2f;
 
 @interface RZGPMainViewController ()
 
@@ -46,7 +48,8 @@ static float const kSlideFadeDuration = 0.2f;
     
     self.imageQuad = [[RZGModel alloc] initWithModelFileName:@"quad" UseDefaultSettingsInManager:self.glmgr];
     self.imageQuad.isHidden = YES;
-    self.imageQuad.prs.pz = -2.0f;
+    self.imageQuad.prs.py = kDefaultImageY;
+    self.imageQuad.prs.pz = kDefaultImageZ;
     [self.modelController addModel:self.imageQuad];
     
     self.titleFontModel = [[RZGBMFontModel alloc] initWithName:@"redHNFont" BMfontData:[[RZGBMFontData alloc] initWithFontFile:@"redHNFont"] UseGLManager:self.glmgr];
@@ -60,17 +63,16 @@ static float const kSlideFadeDuration = 0.2f;
     [self.modelController addModel:self.titleFontModel];
     
     self.bodyFontModel = [[RZGBMFontModel alloc] initWithName:@"whiteHNFont" BMfontData:[[RZGBMFontData alloc] initWithFontFile:@"whiteHNFont"] UseGLManager:self.glmgr];
-    [self.bodyFontModel setupWithCharMax:300];
+    [self.bodyFontModel setupWithCharMax:500];
     [self.bodyFontModel setTexture0Id:[RZGAssetManager loadTexture:@"whiteHNFont" ofType:@"png" shouldLoadWithMipMapping:YES]];
     self.bodyFontModel.centerHorizontal = YES;
-    self.bodyFontModel.prs.py = 0.25f;
+    self.bodyFontModel.prs.py = 0.5f;
     self.bodyFontModel.prs.pz = -2.8f;
     self.bodyFontModel.alpha = 0.0f;
     [self.modelController addModel:self.bodyFontModel];
     
-
-    
     self.currentSlideIndex = -1;
+    
     [self setupSlides];
 }
 
@@ -100,9 +102,26 @@ static float const kSlideFadeDuration = 0.2f;
 - (void)setupSlides
 {
     self.slides = @[
-                    [[RZGPSlide alloc] initWithTitle:@"WWDC WTF?" pictureName:@"wwdc" openGLManager:self.glmgr],
-                    [[RZGPSlide alloc] initWithTitle:@"Some tips for starting out" body:@"start with Objective-C++~~Renderer-ViewController-View pattern~~Don't be confused by constants vs. uniforms~~Watch out for magic"],
-                    [[RZGPSlide alloc] initWithTitle:@"Thank you!" body:@"~john.stricker@raizlabs.com~~              @jatsway"]
+                    [[RZGPSlide alloc] initWithTitle:@"WWDC WTF?" pictureName:@"wwdc" imageZAdj:0.0f imageYAdj:0.0f openGLManager:self.glmgr],
+                    [[RZGPSlide alloc] initWithTitle:@"Control" pictureName:@"control" imageZAdj:-0.0f imageYAdj:0.0f openGLManager:self.glmgr],
+                    [[RZGPSlide alloc] initWithTitle:@"The CPU is the bottleneck" body:@"~shader compilation~~command validation~~translate commands to GPU~~process and move data to GPU"],
+                    [[RZGPSlide alloc] initWithTitle:@"The Data" pictureName:@"cube16" imageZAdj:-1.5f imageYAdj:0.0f openGLManager:self.glmgr],
+                    [[RZGPSlide alloc] initWithTitle:@"" pictureName:@"glShaders" imageZAdj:-0.5f imageYAdj:0.25f openGLManager:self.glmgr],
+                    [[RZGPSlide alloc] initWithTitle:@"" pictureName:@"metalShaders" imageZAdj:-0.5f  imageYAdj:0.2f  openGLManager:self.glmgr],
+                    [[RZGPSlide alloc] initWithTitle:@"GL Shader setup" body:@"~shader files are assets~~200+ lines of code (boilerplate)~~load, compile, configure, link"],
+                    [[RZGPSlide alloc] initWithTitle:@"Metal Shader setup" pictureName:@"metalShaderSetup" imageZAdj:0.0f imageYAdj:0.25f openGLManager:self.glmgr],
+                    [[RZGPSlide alloc] initWithTitle:@"GL Buffer prep" pictureName:@"openGLVAO" imageZAdj:0.0f imageYAdj:0.0f openGLManager:self.glmgr],
+                    [[RZGPSlide alloc] initWithTitle:@"Metal Buffer prep" pictureName:@"metalBufferPrep" imageZAdj:0.0f imageYAdj:0.25f openGLManager:self.glmgr],
+                    [[RZGPSlide alloc] initWithTitle:@"GL Drawing" pictureName:@"glDraw" imageZAdj:0.0f  imageYAdj:0.1f openGLManager:self.glmgr],
+                    [[RZGPSlide alloc] initWithTitle:@"Metal Drawing" pictureName:@"metalDrawing" imageZAdj:0.0f imageYAdj:0.2f openGLManager:self.glmgr],
+                    [[RZGPSlide alloc] initWithTitle:@"Metal Overview" pictureName:@"metalOverview" imageZAdj:-1.0f imageYAdj:0.0f openGLManager:self.glmgr],
+                    [[RZGPSlide alloc] initWithTitle:@"Some tips for starting out" body:@"start with Objective-C++~~coordinate systems~~Renderer-ViewController-View pattern~~Don't be confused by constants vs. uniforms~~Watch out for magic"],
+                    [[RZGPSlide alloc] initWithTitle:@"Computing with Metal" body:@""],
+                    [[RZGPSlide alloc] initWithTitle:@"Previously..." body:@"~OpenCL~~OpenGL ES 3.0~~CPU bottleneck"],
+                    [[RZGPSlide alloc] initWithTitle:@"The promise of Metal" body:@"~Work Items (like a fragment shader)~~Work groups can coordinate accross threads"],
+                    [[RZGPSlide alloc] initWithTitle:@"Compute Shader" pictureName:@"metalCompute" imageZAdj:0.0f imageYAdj:0.25f openGLManager:self.glmgr],
+                    [[RZGPSlide alloc] initWithTitle:@"Prep and fire" pictureName:@"metalPrepareAndFireCompute" imageZAdj:0.0f imageYAdj:0.0f openGLManager:self.glmgr],
+                    [[RZGPSlide alloc] initWithTitle:@"Thank you!" body:@"~~~john.stricker@raizlabs.com~~              RZOpenGL"]
                     ];
 }
 
@@ -123,6 +142,15 @@ static float const kSlideFadeDuration = 0.2f;
     return [[RZGCommand alloc] initWithCommandEnum:kRZGCommand_alpha Target:GLKVector4MakeWith1f(1.0f) Duration:kSlideFadeDuration IsAbsolute:YES Delay:0.0];
 }
 
+- (void)startCubeTimer
+{
+    RZGCommand *cubeCmd = [[RZGCommand alloc] initWithCommandEnum:kRZGCommand_moveTo Target:GLKVector4MakeWith3f(16.0f, -8.5f, -25.0f) Duration:0.2f IsAbsolute:YES Delay:0.0f];
+    
+    RZGCommand *timedMove = [[RZGCommand alloc] initWithCommandEnum:kRZGCommand_moveTo Target:GLKVector4MakeWith3f(0.0f, 17.0f, 0.0f) Duration:10 * 60.0f IsAbsolute:NO Delay:0.2f];
+    
+    [self.cube addCommand:cubeCmd];
+    [self.cube addCommand:timedMove];
+}
 
 - (void)transitionToSlide:(NSInteger)newSlideIndex
 {
@@ -130,8 +158,7 @@ static float const kSlideFadeDuration = 0.2f;
     
     if ( !firstTransition ) {
         firstTransition = YES;
-        RZGCommand *cubeCmd = [[RZGCommand alloc] initWithCommandEnum:kRZGCommand_moveTo Target:GLKVector4MakeWith3f(16.0f, -8.5f, -25.0f) Duration:0.2f IsAbsolute:YES Delay:0.0f];
-        [self.cube addCommand:cubeCmd];
+        [self startCubeTimer];
     }
     
     self.currentSlideIndex = newSlideIndex;
@@ -160,13 +187,14 @@ static float const kSlideFadeDuration = 0.2f;
         imageFadeCmd.completionBlock = ^{
             self.imageQuad.isHidden = NO;
             self.imageQuad.alpha = 0.0f;
+            self.imageQuad.prs.pz = kDefaultImageZ + nextSlide.imageZAdj;
+            self.imageQuad.prs.py = kDefaultImageY + nextSlide.imageYAdj;
             [self.imageQuad setTexture0Id:(GLuint)nextSlide.textureId];
             [self.imageQuad addCommand:[self fadeInCommand]];
         };
     }
     [self.imageQuad addCommand:imageFadeCmd];
 }
-
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {

@@ -17,9 +17,10 @@
 @property (nonatomic, copy) NSString *bodyText;
 @property (nonatomic, assign) NSInteger textureId;
 @property (nonatomic, assign) BOOL isImageType;
-@property (nonatomic, assign) float zAdj;
+@property (nonatomic, assign) float imageZAdj;
+@property (nonatomic, assign) float imageYAdj;
 
 - (instancetype)initWithTitle:(NSString *)title body:(NSString *)body;
-- (instancetype)initWithTitle:(NSString *)title pictureName:(NSString *)picture openGLManager:(RZGOpenGLManager *)glmgr;
+- (instancetype)initWithTitle:(NSString *)title pictureName:(NSString *)picture imageZAdj:(float)zAdj imageYAdj:(float)yAdj openGLManager:(RZGOpenGLManager *)glmgr;
 
 @end
