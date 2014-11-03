@@ -17,6 +17,7 @@
 @property (assign, nonatomic, readonly) CFTimeInterval timeSinceLastUpdate;
 @property (assign, nonatomic, readonly) BOOL isPaused;
 @property (assign, nonatomic) BOOL paused;
+@property (assign, nonatomic) NSInteger framesPerSecond;
 
 - (void)update;
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect;

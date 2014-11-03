@@ -38,7 +38,6 @@
     self.view = self.glkView;
     
     self.resetTimeStamp = YES;
-
 }
 
 - (CGSize)sizeForMainWindowOnLoad
@@ -50,6 +49,11 @@
     }
     
     return windowSize;
+}
+
+- (void)setFramesPerSecond:(NSInteger)framesPerSecond
+{
+    self.displayLink.frameInterval = 60 / framesPerSecond;
 }
 
 - (void)setPaused:(BOOL)paused
