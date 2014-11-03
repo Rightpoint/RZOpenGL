@@ -29,7 +29,7 @@
 }
 
 - (IBAction)firePressed:(id)sender {
-    
+    [self.confettiVC fireConfetti];
 }
 
 

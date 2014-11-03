@@ -7,6 +7,10 @@
 //
 
 #import "RZGConfettiViewController.h"
+#import "RZGconfettiSpeck.h"
+
+static int const kNSpecks = 1;
+
 
 @interface RZGConfettiViewController ()
 
@@ -16,55 +20,69 @@
 
 @implementation RZGConfettiViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     self.view.userInteractionEnabled = NO;
     
-    self.framesPerSecond = 30.0f;
+    self.framesPerSecond = 60.0f;
         
     self.glmgr = [[RZGOpenGLManager alloc] initWithView:self.glkView ScreenSize:[UIScreen mainScreen].bounds.size PerspectiveInRadians:GLKMathDegreesToRadians(45.0f) NearZ:0.1f FarZ:100.0f];
-    [self.glmgr setClearColor:GLKVector4Make(0.0f, 1.0f, 0.0f, 1.0f)];
+    [self.glmgr setClearColor:GLKVector4Make(0.0f, 0.0f, 0.0f, 0.0f)];
     
-    NSInteger nSpecks = 1000;
+    GLKVector3 speckStart = GLKVector3Make(-2.25f, -1.5f, -5.0f);
     
-    GLfloat xStart = -2.0f;
-    GLfloat yStart = 2.0f;
+    NSMutableArray *speckArray = [[NSMutableArray alloc] init];
     
-    GLfloat xIncrement = 0.05f;
-    GLfloat mainZ = -5.0f;
-    
-    NSInteger nPerRow = 60;
-    
-    GLfloat yIncrement = -0.1f;
-    NSInteger columnCount = 0;
-    NSInteger rowCount = 0;
-    
-    GLfloat xRot = 1.0f;
-    
-    NSMutableArray *mutableSpeckArray = [[NSMutableArray alloc]initWithCapacity:nSpecks];
-    for ( NSInteger i = 0; i < nSpecks; ++i) {
-        RZGModel *speck = [[RZGModel alloc] initWithModelFileName:@"confettiModel" UseDefaultSettingsInManager:self.glmgr];
-        [speck setTexture0Id:[RZGAssetManager loadTexture:@"confettiTexture" ofType:@"png" shouldLoadWithMipMapping:YES]];
-        speck.prs.position = GLKVector3Make(xStart + columnCount * xIncrement, yStart + rowCount * yIncrement, mainZ);
-        speck.prs.scale = GLKVector3Make(0.05f, 0.01f , 0.05f);
-        speck.shadowMax = 0.1f;
-        speck.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
-        [speck.prs setRotationConstantToVector:GLKVector3Make(xRot, 2.0f, 0.0f)];
+    for ( int i = 0; i < kNSpecks; ++i ) {
+        RZGModel *m = [[RZGModel alloc] initWithModelFileName:@"confettiModel" UseDefaultSettingsInManager:self.glmgr];
+        [m setTexture0Id:[RZGAssetManager loadTexture:@"confettiTexture" ofType:@"png" shouldLoadWithMipMapping:NO]];
+        m.prs.position = speckStart;
+        m.prs.scale = GLKVector3Make(0.1f, 0.2f , 0.1f);
+        m.shadowMax = 0.1f;
+        m.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
         
-        xRot = -xRot;
-        
-        [mutableSpeckArray addObject:speck];
-        [self.modelController addModel:speck];
-        
-        ++columnCount;
-        if ( columnCount > nPerRow ) {
-            columnCount = 0;
-            ++rowCount;
-        }
+        RZGConfettiSpeck *speck = [[RZGConfettiSpeck alloc] initWithModel:m xSpeed:1.0f ySpeed:1.0f FiredFromRight:NO];
+        [speckArray addObject:speck];
     }
     
-    self.specks = [NSArray arrayWithArray:mutableSpeckArray];
+    self.specks = [NSArray arrayWithArray:speckArray];
+    self.paused = YES;
+}
+
+- (void)resetConfetti
+{
+    GLKVector3 speckStart = GLKVector3Make(-2.25f, -1.5f, -5.0f);
+    
+    for ( RZGConfettiSpeck *speck in self.specks ) {
+        speck.xSpeed = 1.0f;
+        speck.ySpeed = 1.0f;
+        RZGModel *m = speck.speckModel;
+        m.prs.scale = GLKVector3Make(0.1f, 0.2f , 0.1f);
+        m.prs.position = speckStart;
+    }
+}
+
+- (void)fireConfetti
+{
+    [self.modelController removeAllModels];
+    [self resetConfetti];
+    
+    for ( RZGConfettiSpeck *speck in self.specks ) {
+        [self.modelController addModel:speck.speckModel];
+    }
+    
+    self.paused = NO;
+}
+
+- (void)update
+{
+    for ( RZGConfettiSpeck *speck in self.specks ) {
+        [speck updateWithTimeSinceLastUpdate:self.timeSinceLastUpdate];
+    }
+    
+    [self.modelController updateWithTime:self.timeSinceLastUpdate];
 }
 
 

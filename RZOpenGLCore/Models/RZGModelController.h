@@ -16,6 +16,7 @@
 
 - (void)addModel:(RZGModel *)model;
 - (void)removeModel:(RZGModel *)model;
+- (void)removeAllModels;
 - (void)addCommandToAllModels:(RZGCommand *)command;
 - (void)updateWithTime:(CFTimeInterval)time;
 - (void)draw;
