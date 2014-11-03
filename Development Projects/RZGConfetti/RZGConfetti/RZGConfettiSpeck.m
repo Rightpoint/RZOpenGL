@@ -10,19 +10,14 @@
 #import "RZGModel.h"
 #import "RZGPrs.h"
 
-static GLfloat const kXVelocityDelta = 0.2f;
-static GLfloat const kYVelocityDelta = 0.5f;
-static GLfloat const kYTerminalVelocity = -0.5f;
-
-@interface  RZGConfettiSpeck()
-
-@property (assign, nonatomic) BOOL firedFromRight;
-
-@end
+static GLfloat const kXVelocityDelta = 120.0f;
+static GLfloat const kYVelocityDelta = 20.0f;
+static GLfloat const kYTerminalVelocity = -5.0f;
+static GLfloat const kYSpinDeltaOnFall = M_PI * 8.0;
 
 @implementation RZGConfettiSpeck
 
-- (instancetype)initWithModel:(RZGModel *)model xSpeed:(GLfloat)xSpeed ySpeed:(GLfloat)ySpeed FiredFromRight:(BOOL)firedFromRight
+- (instancetype)initWithModel:(RZGModel *)model xSpeed:(GLfloat)xSpeed ySpeed:(GLfloat)ySpeed fireDelay:(GLfloat)fireDelay FiredFromRight:(BOOL)firedFromRight
 {
     self = [super init];
     if ( self ) {
@@ -30,35 +25,47 @@ static GLfloat const kYTerminalVelocity = -0.5f;
         _ySpeed = ySpeed;
         _firedFromRight = firedFromRight;
         _speckModel = model;
+        _fireDelay = fireDelay;
     }
     return self;
 }
 
 - (void)updateWithTimeSinceLastUpdate:(double)time
 {
-    if ( self.xSpeed != 0.0f ) {
-        self.xSpeed -= kXVelocityDelta * time;
-        if ( self.xSpeed < 0.0f ) {
-            self.xSpeed = 0.0f;
+    if ( self.fireDelay > 0.0 ) {
+        self.fireDelay -= time;
+    }
+    else {
+        if ( self.xSpeed != 0.0f ) {
+            self.xSpeed -= kXVelocityDelta * time;
+            if ( self.xSpeed < 0.0f ) {
+                self.xSpeed = 0.0f;
+            }
+            
+            if ( self.firedFromRight ) {
+                self.speckModel.prs.px -= time * self.xSpeed;
+            }
+            else {
+                self.speckModel.prs.px += time * self.xSpeed;
+            }
+            
+            self.speckModel.prs.rx += time * self.xSpeed;
         }
         
-        if ( self.firedFromRight ) {
-            self.speckModel.prs.px -= time * self.xSpeed;
+        if ( self.ySpeed > kYTerminalVelocity ) {
+            self.ySpeed -= time * kYVelocityDelta;
+            
+            if (self.ySpeed < kYTerminalVelocity ) {
+                self.ySpeed = kYTerminalVelocity;
+            }
         }
-        else {
-            self.speckModel.prs.px += time * self.xSpeed;
-        }
-    }
-    
-    if ( self.ySpeed > kYTerminalVelocity ) {
-        self.ySpeed -= time * kYVelocityDelta;
         
-        if (self.ySpeed < kYTerminalVelocity ) {
-            self.ySpeed = kYTerminalVelocity;
+        self.speckModel.prs.py += time * self.ySpeed;
+        
+        if ( self.ySpeed < 0) {
+            self.speckModel.prs.ry += kYSpinDeltaOnFall * time;
         }
     }
-    
-    self.speckModel.prs.py += time * self.ySpeed;
 }
 
 @end

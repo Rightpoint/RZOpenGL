@@ -15,8 +15,10 @@
 @property (nonatomic, strong) RZGModel *speckModel;
 @property (nonatomic, assign) GLfloat xSpeed;
 @property (nonatomic, assign) GLfloat ySpeed;
+@property (nonatomic, assign) GLfloat fireDelay;
+@property (nonatomic, assign) BOOL firedFromRight;
 
-- (instancetype)initWithModel:(RZGModel *)model xSpeed:(GLfloat)xSpeed ySpeed:(GLfloat)ySpeed FiredFromRight:(BOOL)firedFromRight;
+- (instancetype)initWithModel:(RZGModel *)model xSpeed:(GLfloat)xSpeed ySpeed:(GLfloat)ySpeed fireDelay:(GLfloat)fireDelay FiredFromRight:(BOOL)firedFromRight;
 
 - (void)updateWithTimeSinceLastUpdate:(double)time;
 
