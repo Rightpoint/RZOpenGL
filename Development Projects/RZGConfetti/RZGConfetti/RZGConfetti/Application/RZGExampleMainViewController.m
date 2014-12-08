@@ -12,25 +12,34 @@
 @interface RZGExampleMainViewController ()
 
 @property (nonatomic, strong) RZGConfettiViewController *confettiVC;
+@property (strong, nonatomic) IBOutlet UIView *confettiContainer;
 
 @end
 
 @implementation RZGExampleMainViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.confettiVC = [[RZGConfettiViewController alloc] init];
-    self.confettiVC.view.frame = self.view.bounds;
-    self.confettiVC.view.opaque = NO;
-    
-    [self addChildViewController:self.confettiVC];
-    [self.view addSubview:self.confettiVC.view];
-}
-
 - (IBAction)firePressed:(id)sender {
+    
     [self.confettiVC fireConfetti];
 }
 
+- (IBAction)unloadPressed:(id)sender {
+    
+    [self.confettiVC.view removeFromSuperview];
+    [self.confettiVC removeFromParentViewController];
+    
+    [self.confettiVC unload];
+    
+    self.confettiVC = nil;
+}
+
+- (IBAction)loadPressed:(id)sender {
+    self.confettiVC = [[RZGConfettiViewController alloc] init];
+    self.confettiVC.view.opaque = NO;
+    
+    [self addChildViewController:self.confettiVC];
+    [self.confettiContainer addSubview:self.confettiVC.view];
+    [self.confettiVC didMoveToParentViewController:self];
+}
 
 @end

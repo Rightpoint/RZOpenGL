@@ -321,8 +321,8 @@
 			children = (
 				8A1FC3B719F85E1B00A6560C /* RZGMathUtils.h */,
 				8A1FC3B819F85E1B00A6560C /* RZGMathUtils.m */,
-				8A1FC3B919F85E1B00A6560C /* RZGScreenToGLConverter.h */,
 				8A1FC3BA19F85E1B00A6560C /* RZGScreenToGLConverter.m */,
+				8A1FC3B919F85E1B00A6560C /* RZGScreenToGLConverter.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";

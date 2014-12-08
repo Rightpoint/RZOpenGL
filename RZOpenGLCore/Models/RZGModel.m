@@ -419,6 +419,7 @@
     }
     
     [RZGShaderManager useProgram:self.defaultShaderSettings.programId];
+    
     //set shader uniforms
     [self.defaultShaderSettings setAlpha:self.alpha];
     [self.defaultShaderSettings setDiffuseColor:self.diffuseColor];

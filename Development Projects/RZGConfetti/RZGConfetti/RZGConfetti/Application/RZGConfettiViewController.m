@@ -10,12 +10,13 @@
 #import "RZGconfettiSpeck.h"
 #import "RZGMathUtils.h"
 
-static int const kNSpecks = 350;
-
+static double const kConfettiMaxRunTime = 5.0;
 
 @interface RZGConfettiViewController ()
 
+@property (assign, nonatomic) NSInteger nSpecks;
 @property (strong, nonatomic) NSArray *specks;
+@property (assign, nonatomic) double confettiTotalRunTime;
 
 @end
 
@@ -28,15 +29,17 @@ static int const kNSpecks = 350;
     self.view.userInteractionEnabled = NO;
     
     self.framesPerSecond = 60;
-        
+    
     self.glmgr = [[RZGOpenGLManager alloc] initWithView:self.glkView ScreenSize:[UIScreen mainScreen].bounds.size PerspectiveInRadians:GLKMathDegreesToRadians(45.0f) NearZ:0.1f FarZ:100.0f];
     [self.glmgr setClearColor:GLKVector4Make(0.0f, 0.0f, 0.0f, 0.0f)];
+    
+    self.nSpecks = 350;
     
     GLKVector3 speckStart = GLKVector3Make(-2.25f, -1.5f, -5.0f);
     
     NSMutableArray *speckArray = [[NSMutableArray alloc] init];
-    
-    for ( int i = 0; i < kNSpecks; ++i ) {
+
+    for ( int i = 0; i < self.nSpecks; ++i ) {
         RZGModel *m = [[RZGModel alloc] initWithModelFileName:@"confettiModel" UseDefaultSettingsInManager:self.glmgr];
         [m setTexture0Id:[RZGAssetManager loadTexture:@"confettiTexture" ofType:@"png" shouldLoadWithMipMapping:NO]];
         m.prs.position = speckStart;
@@ -70,6 +73,7 @@ static int const kNSpecks = 350;
     BOOL odd = NO;
     
     for ( RZGConfettiSpeck *speck in self.specks ) {
+        
         GLfloat xSpeed = [RZGMathUtils randomGLfloatBetweenMin:xSpeedMin Max:xSpeedMax];
         GLfloat ySpeed = [RZGMathUtils randomGLfloatBetweenMin:ySpeedMin Max:ySpeedMax];
         GLfloat fireDelay = [RZGMathUtils randomGLfloatBetweenMin:0.0 Max:fireDelayMax];
@@ -78,11 +82,12 @@ static int const kNSpecks = 350;
         speck.fireDelay = fireDelay;
         RZGModel *m = speck.speckModel;
         
-    
+        m.isHidden = NO;
+        
         m.prs.scale = GLKVector3Make(xScale, yScale, xScale);
         
         m.prs.position = speckStart;
-       
+        
         if ( odd ) {
             m.prs.px = -m.prs.px;
             speck.firedFromRight = YES;
@@ -104,6 +109,10 @@ static int const kNSpecks = 350;
         [self.modelController addModel:speck.speckModel];
     }
     
+    self.confettiTotalRunTime = 0.0;
+    
+    [self resetTimeStamps];
+    
     self.paused = NO;
 }
 
@@ -114,7 +123,15 @@ static int const kNSpecks = 350;
     }
     
     [self.modelController updateWithTime:self.timeSinceLastUpdate];
+    
+    self.confettiTotalRunTime += self.timeSinceLastUpdate;
+    
+    if ( self.confettiTotalRunTime >= kConfettiMaxRunTime ) {
+        self.paused = YES;
+        for ( RZGConfettiSpeck *speck in self.specks ) {
+            speck.speckModel.isHidden = YES;
+        }
+    }
 }
-
 
 @end
