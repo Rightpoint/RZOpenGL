@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RZGExampleMainViewController">
             <connections>
+                <outlet property="confettiContainer" destination="wQ1-gG-wPP" id="op9-11-rqm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jq-UN-oBy">
-                    <rect key="frame" x="439" y="350" width="147" height="67"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jq-UN-oBy">
+                    <rect key="frame" x="227" y="21" width="147" height="67"/>
                     <color key="backgroundColor" red="0.83529411760000005" green="0.83137254900000002" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="147" id="4vA-bD-Qwz"/>
-                        <constraint firstAttribute="height" constant="67" id="7bo-bP-i9T"/>
-                    </constraints>
                     <state key="normal" title="Fire">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -28,14 +25,33 @@
                         <action selector="firePressed:" destination="-1" eventType="touchUpInside" id="a8d-nn-o8E"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Blq-8O-mmy">
+                    <rect key="frame" x="445" y="23" width="147" height="63"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Unload">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="unloadPressed:" destination="-1" eventType="touchUpInside" id="0gf-dA-ROX"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5i-k5-040">
+                    <rect key="frame" x="8" y="21" width="147" height="65"/>
+                    <color key="backgroundColor" red="0.83529411760000005" green="0.83137254900000002" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Load">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="loadPressed:" destination="-1" eventType="touchUpInside" id="oLT-Em-egr"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wQ1-gG-wPP">
+                    <rect key="frame" x="8" y="96" width="584" height="496"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="centerY" secondItem="3Jq-UN-oBy" secondAttribute="centerY" constant="0.5" id="HoY-H0-Sxi"/>
-                <constraint firstAttribute="centerX" secondItem="3Jq-UN-oBy" secondAttribute="centerX" constant="-0.5" id="Wfd-3b-SP2"/>
-            </constraints>
+            <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
         </view>
     </objects>
 </document>

@@ -22,5 +22,6 @@
 - (void)update;
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect;
 - (CGSize)sizeForMainWindowOnLoad;
-
+- (void)resetTimeStamps;
+- (void)unload;
 @end
