@@ -15,7 +15,7 @@
 @property (nonatomic, assign) CFTimeInterval lastTimeStamp;
 @property (nonatomic, strong) CADisplayLink *displayLink;
 @property (assign, nonatomic) BOOL resetTimeStamp;
-@property (assign, nonatomic) CGRect lastFrame;
+
 @end
 
 @implementation RZGViewController
@@ -38,10 +38,6 @@
     self.view = self.glkView;
     
     self.resetTimeStamp = YES;
-}
-
-- (void)viewWillLayoutSubviews {
-    [self.glmgr updateScreenRect:self.view.frame];
 }
 
 - (CGSize)sizeForMainWindowOnLoad
@@ -68,11 +64,6 @@
     self.displayLink.paused = paused;
 }
 
-- (void)resetTimeStamps
-{
-    self.resetTimeStamp = YES;
-}
-
 - (void)render:(CADisplayLink *)displayLink
 {
     [self update];
@@ -97,15 +88,6 @@
 -(void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     [self.modelController draw];
-}
-
-- (void)unload
-{
-    [self.displayLink removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
-    [RZGAssetManager unload];
-    [self.glmgr unload];
-    self.glkView.context = nil;
-    self.glkView = nil;
 }
 
 @end

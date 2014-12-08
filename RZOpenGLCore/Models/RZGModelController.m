@@ -11,7 +11,7 @@
 
 @interface RZGModelController()
 
-@property (nonatomic, strong) NSMutableArray *mainModelArray;
+@property NSMutableArray *mainModelArray;
 
 @end
 
@@ -29,13 +29,6 @@
 - (void)removeModel:(RZGModel *)model
 {
     [self.mainModelArray removeObject:model];
-}
-
-- (void)removeAllModels
-{
-    if ( self.mainModelArray ) {
-        [self.mainModelArray removeAllObjects];
-    }
 }
 
 - (void)addCommandToAllModels:(RZGCommand *)command

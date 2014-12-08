@@ -10,6 +10,4 @@
 
 @interface RZGConfettiViewController : RZGViewController
 
-- (void)fireConfetti;
-
 @end
