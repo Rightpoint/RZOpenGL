@@ -22,7 +22,6 @@
 @property (nonatomic, assign) GLKMatrix4 projectionMatrix;
 
 - (instancetype)initWithView:(GLKView*)glkView ScreenSize:(CGSize)size PerspectiveInRadians:(GLfloat)perspective NearZ:(GLfloat)nearZ FarZ:(GLfloat)farZ;
-- (void)updateScreenRect:(CGRect)newScreenRect;
 - (void)loadDefaultShaderAndSettings;
 - (void)loadBitmapFontShaderAndSettings;
 - (void)loadColoredPSShaderAndSettings;

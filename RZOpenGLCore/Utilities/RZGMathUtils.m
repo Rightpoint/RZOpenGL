@@ -11,7 +11,7 @@
 
 @implementation RZGMathUtils
 
-static const GLfloat randPrecision = 0x100000000;
+static const GLfloat randPrecision = MAXFLOAT;
 
 + (GLfloat)clampf: (GLfloat)a WithInclusiveMin: (GLfloat)inclusiveMin InclusiveMax: (GLfloat)inclusiveMax
 {
@@ -29,7 +29,7 @@ static const GLfloat randPrecision = 0x100000000;
 
 + (GLfloat)randomGLfloatBetweenMin:(GLfloat)min Max:(GLfloat)max
 {
-    return ((GLfloat)arc4random() / randPrecision) * (max - min) + min;
+    return ((GLfloat)arc4random_uniform(((max-min)*randPrecision)))/randPrecision+min;
 }
 
 + (GLint)randomGLIntBetweenInclusiveMin:(GLfloat)min InclusiveMax:(GLfloat)max
