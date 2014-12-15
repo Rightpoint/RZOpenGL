@@ -81,6 +81,7 @@ static __inline__ GLKVector4 GLKVector4MakeWithVec3(GLKVector3 vec3)
 - (instancetype)initWithCommandEnum:(RZGCommandEnum) command Target:(GLKVector4)target Duration:(GLfloat)duration IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
 + (instancetype)commandWithEnum:(RZGCommandEnum) command Path:(RZGCommandPath *)path IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
 - (instancetype)initWithCommandEnum:(RZGCommandEnum) command Path:(RZGCommandPath *)path IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
+- (instancetype)dupilicate;
 
 + (NSArray *)arrayFromX:(GLfloat)x Y:(GLfloat)y Z:(GLfloat)z W:(GLfloat)w;
 + (GLKVector4)vectorFromArray:(NSArray*)arr;

@@ -58,4 +58,16 @@
      return GLKVector4Make([(NSNumber *)arr[0] floatValue], [(NSNumber *)arr[1] floatValue],[(NSNumber *)arr[2] floatValue], [(NSNumber *)arr[3] floatValue]);
 }
 
+- (instancetype)dupilicate
+{
+    RZGCommand *command = [[RZGCommand alloc] init];
+    command.commandEnum = self.commandEnum;
+    command.target = self.target;
+    command.duration = self.duration;
+    command.isAbsolute = self.isAbsolute;
+    command.delay = self.delay;
+    command.path = self.path;
+    return command;
+}
+
 @end

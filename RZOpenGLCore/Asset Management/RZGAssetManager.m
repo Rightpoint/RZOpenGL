@@ -45,12 +45,43 @@ static NSMutableDictionary *loadedVaos;
     }
     
     GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithContentsOfFile:path options:options error:&error];
-    
-    if(error != nil)
+     if(error != nil)
     {
         NSLog(@"ERROR LOADING TEXTURE: %@: %@",path,[error debugDescription]);
         return 0;
     }
+    return textureInfo.name;
+}
+
++ (GLuint)loadTextureNamed:(NSString *)name FromUIImage:(UIImage *)image shouldLoadWithMipMapping:(BOOL)mipMappingOn
+{
+    if( (loadedTextures) && [loadedTextures objectForKey:name])
+    {
+        return ((GLKTextureInfo*)[loadedTextures objectForKey:name]).name;
+    }
+    
+    if(!loadedTextures)
+    {
+        loadedTextures = [[NSMutableDictionary alloc] init];
+    }
+    
+    NSMutableDictionary *options= [NSMutableDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:GLKTextureLoaderOriginBottomLeft];
+    
+    if(mipMappingOn)
+    {
+        [options setObject:[NSNumber numberWithBool:YES] forKey:GLKTextureLoaderGenerateMipmaps];
+    }
+    
+    NSError *error;
+     GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithCGImage:image.CGImage options:options error:&error];
+    if ( error ) {
+        if(error != nil)
+        {
+            NSLog(@"ERROR LOADING TEXTURE: %@: %@",name,[error debugDescription]);
+            return 0;
+        }
+    }
+
     return textureInfo.name;
 }
 
@@ -152,8 +183,7 @@ static NSMutableDictionary *loadedVaos;
 		}
 	}
     
-	
-	// Get any element array VBO set in the VAO
+    // Get any element array VBO set in the VAO
 	glGetIntegerv(GL_ELEMENT_ARRAY_BUFFER_BINDING, (GLint*)&bufName);
 	
 	// If there was a element array VBO set in the VAO
@@ -185,6 +215,7 @@ static NSMutableDictionary *loadedVaos;
         [loadedVaos enumerateKeysAndObjectsUsingBlock:^(id key, RZGVaoInfo *obj, BOOL *stop) {
             [self destroyVAO:obj.vaoIndex];
         }];
+        loadedVaos = nil;
     }
     
 }
