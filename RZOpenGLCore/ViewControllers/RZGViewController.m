@@ -89,10 +89,17 @@
 
 - (void)render:(CADisplayLink *)displayLink
 {
-    self.timeSinceLastUpdate = displayLink.timestamp - self.lastTimeStamp;
-    
-    if ( self.timeSinceLastUpdate > 0.2 ) {
+    if ( self.resetTimeStamp ) {
+        self.resetTimeStamp = NO;
         self.timeSinceLastUpdate = 0.166666f;
+    }
+    else {
+        self.timeSinceLastUpdate = displayLink.timestamp - self.lastTimeStamp;
+    }
+    
+    if ( self.timeSinceLastUpdate > 0.1666666f ) {
+        NSLog(@"Frame: %f",self.timeSinceLastUpdate);
+      //  self.timeSinceLastUpdate = 0.166666f;
     }
     
     [self update];

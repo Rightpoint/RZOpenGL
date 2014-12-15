@@ -1,0 +1,1 @@
+../../RZTransitions/RZTransitions/Managers/RZTransitionsManager.h

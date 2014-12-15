@@ -14,7 +14,7 @@
 		<string>https://github.com/Raizlabs/RZOpenGL.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Development Projects/RZOpenGLCoreDevelopment/RZOpenGLCoreDevelopment.xcodeproj/project.xcworkspace</string>
+	<string>Development Projects/RZOpenGLCoreDevelopment/RZOpenGLCoreDevelopment.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>AE1724EA00CE65730262F34740ED3B93941D751F</key>

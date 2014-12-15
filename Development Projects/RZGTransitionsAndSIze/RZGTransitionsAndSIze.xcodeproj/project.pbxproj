@@ -32,9 +32,19 @@
 		8AD21BD51A3F3EA4002EE27A /* RZGScreenToGLConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21BC31A3F3EA4002EE27A /* RZGScreenToGLConverter.m */; };
 		8AD21BD61A3F3EA4002EE27A /* RZGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21BC61A3F3EA4002EE27A /* RZGViewController.m */; };
 		8AD21BD91A3F3F30002EE27A /* UIImage+RZGTextureExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21BD81A3F3F30002EE27A /* UIImage+RZGTextureExtensions.m */; };
+		8AD21BDD1A3F4129002EE27A /* RZGLTransitionMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21BDB1A3F4129002EE27A /* RZGLTransitionMainViewController.m */; };
+		8AD21BDE1A3F4129002EE27A /* RZGLTransitionMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AD21BDC1A3F4129002EE27A /* RZGLTransitionMainViewController.xib */; };
+		8AD21BE11A3F4161002EE27A /* RZGLOpenGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21BE01A3F4161002EE27A /* RZGLOpenGLViewController.m */; };
+		8AD21BE31A3F43F2002EE27A /* purple.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AD21BE21A3F43F2002EE27A /* purple.png */; };
+		8AD21BE51A3F4401002EE27A /* cube.model in Resources */ = {isa = PBXBuildFile; fileRef = 8AD21BE41A3F4401002EE27A /* cube.model */; };
+		8AD21BE91A3F5083002EE27A /* RZGLOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21BE71A3F5083002EE27A /* RZGLOverlayViewController.m */; };
+		8AD21BEA1A3F5083002EE27A /* RZGLOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AD21BE81A3F5083002EE27A /* RZGLOverlayViewController.xib */; };
+		8AD21BEC1A3F53EC002EE27A /* disk.model in Resources */ = {isa = PBXBuildFile; fileRef = 8AD21BEB1A3F53EC002EE27A /* disk.model */; };
+		F05253BA1E7A41539E78F6A0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 230F3374D3904A6B8227C7D0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		230F3374D3904A6B8227C7D0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD21B761A3F3E71002EE27A /* RZGTransitionsAndSIze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RZGTransitionsAndSIze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD21B791A3F3E71002EE27A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8AD21B7B1A3F3E71002EE27A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -44,7 +54,7 @@
 		8AD21B861A3F3E71002EE27A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8AD21B881A3F3E71002EE27A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8AD21B8A1A3F3E71002EE27A /* RZGTransitionsAndSIze-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RZGTransitionsAndSIze-Prefix.pch"; sourceTree = "<group>"; };
-		8AD21B8B1A3F3E71002EE27A /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		8AD21B8B1A3F3E71002EE27A /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8AD21B921A3F3E71002EE27A /* RZGLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZGLAppDelegate.h; sourceTree = "<group>"; };
 		8AD21B931A3F3E71002EE27A /* RZGLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZGLAppDelegate.m; sourceTree = "<group>"; };
 		8AD21B951A3F3E71002EE27A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -81,6 +91,18 @@
 		8AD21BC61A3F3EA4002EE27A /* RZGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGViewController.m; sourceTree = "<group>"; };
 		8AD21BD71A3F3F30002EE27A /* UIImage+RZGTextureExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RZGTextureExtensions.h"; sourceTree = "<group>"; };
 		8AD21BD81A3F3F30002EE27A /* UIImage+RZGTextureExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RZGTextureExtensions.m"; sourceTree = "<group>"; };
+		8AD21BDA1A3F4129002EE27A /* RZGLTransitionMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGLTransitionMainViewController.h; sourceTree = "<group>"; };
+		8AD21BDB1A3F4129002EE27A /* RZGLTransitionMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGLTransitionMainViewController.m; sourceTree = "<group>"; };
+		8AD21BDC1A3F4129002EE27A /* RZGLTransitionMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RZGLTransitionMainViewController.xib; sourceTree = "<group>"; };
+		8AD21BDF1A3F4161002EE27A /* RZGLOpenGLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGLOpenGLViewController.h; sourceTree = "<group>"; };
+		8AD21BE01A3F4161002EE27A /* RZGLOpenGLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGLOpenGLViewController.m; sourceTree = "<group>"; };
+		8AD21BE21A3F43F2002EE27A /* purple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purple.png; sourceTree = "<group>"; };
+		8AD21BE41A3F4401002EE27A /* cube.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = cube.model; sourceTree = "<group>"; };
+		8AD21BE61A3F5083002EE27A /* RZGLOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RZGLOverlayViewController.h; path = RZGTransitionsAndSIze/RZGLOverlayViewController.h; sourceTree = SOURCE_ROOT; };
+		8AD21BE71A3F5083002EE27A /* RZGLOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RZGLOverlayViewController.m; path = RZGTransitionsAndSIze/RZGLOverlayViewController.m; sourceTree = SOURCE_ROOT; };
+		8AD21BE81A3F5083002EE27A /* RZGLOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RZGLOverlayViewController.xib; path = RZGTransitionsAndSIze/RZGLOverlayViewController.xib; sourceTree = SOURCE_ROOT; };
+		8AD21BEB1A3F53EC002EE27A /* disk.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = disk.model; sourceTree = "<group>"; };
+		D0FA7AFD631A4DC8BCC993D7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +114,7 @@
 				8AD21B7C1A3F3E71002EE27A /* CoreGraphics.framework in Frameworks */,
 				8AD21B7E1A3F3E71002EE27A /* UIKit.framework in Frameworks */,
 				8AD21B7A1A3F3E71002EE27A /* Foundation.framework in Frameworks */,
+				F05253BA1E7A41539E78F6A0 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +127,7 @@
 				8AD21B811A3F3E71002EE27A /* RZGTransitionsAndSIze */,
 				8AD21B781A3F3E71002EE27A /* Frameworks */,
 				8AD21B771A3F3E71002EE27A /* Products */,
+				D0FA7AFD631A4DC8BCC993D7 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +146,7 @@
 				8AD21B7B1A3F3E71002EE27A /* CoreGraphics.framework */,
 				8AD21B7D1A3F3E71002EE27A /* UIKit.framework */,
 				8AD21B7F1A3F3E71002EE27A /* QuartzCore.framework */,
+				230F3374D3904A6B8227C7D0 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,6 +171,9 @@
 		8AD21B821A3F3E71002EE27A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8AD21BEB1A3F53EC002EE27A /* disk.model */,
+				8AD21BE41A3F4401002EE27A /* cube.model */,
+				8AD21BE21A3F43F2002EE27A /* purple.png */,
 				8AD21B951A3F3E71002EE27A /* Images.xcassets */,
 			);
 			path = Resources;
@@ -172,6 +200,14 @@
 		8AD21B8D1A3F3E71002EE27A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8AD21BDA1A3F4129002EE27A /* RZGLTransitionMainViewController.h */,
+				8AD21BDB1A3F4129002EE27A /* RZGLTransitionMainViewController.m */,
+				8AD21BDC1A3F4129002EE27A /* RZGLTransitionMainViewController.xib */,
+				8AD21BDF1A3F4161002EE27A /* RZGLOpenGLViewController.h */,
+				8AD21BE01A3F4161002EE27A /* RZGLOpenGLViewController.m */,
+				8AD21BE61A3F5083002EE27A /* RZGLOverlayViewController.h */,
+				8AD21BE71A3F5083002EE27A /* RZGLOverlayViewController.m */,
+				8AD21BE81A3F5083002EE27A /* RZGLOverlayViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -326,9 +362,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AD21B9A1A3F3E71002EE27A /* Build configuration list for PBXNativeTarget "RZGTransitionsAndSIze" */;
 			buildPhases = (
+				3C3472521C6046F8A1CB556B /* Check Pods Manifest.lock */,
 				8AD21B721A3F3E71002EE27A /* Sources */,
 				8AD21B731A3F3E71002EE27A /* Frameworks */,
 				8AD21B741A3F3E71002EE27A /* Resources */,
+				034F5A1C95FE4FC2B2FF4040 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -376,14 +414,52 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AD21BEC1A3F53EC002EE27A /* disk.model in Resources */,
 				8AD21BD21A3F3EA4002EE27A /* RZGDefaultShader.fsh in Resources */,
 				8AD21B871A3F3E71002EE27A /* InfoPlist.strings in Resources */,
+				8AD21BE51A3F4401002EE27A /* cube.model in Resources */,
 				8AD21BD31A3F3EA4002EE27A /* RZGDefaultShader.vsh in Resources */,
+				8AD21BDE1A3F4129002EE27A /* RZGLTransitionMainViewController.xib in Resources */,
 				8AD21B961A3F3E71002EE27A /* Images.xcassets in Resources */,
+				8AD21BEA1A3F5083002EE27A /* RZGLOverlayViewController.xib in Resources */,
+				8AD21BE31A3F43F2002EE27A /* purple.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		034F5A1C95FE4FC2B2FF4040 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C3472521C6046F8A1CB556B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8AD21B721A3F3E71002EE27A /* Sources */ = {
@@ -393,6 +469,7 @@
 				8AD21BD61A3F3EA4002EE27A /* RZGViewController.m in Sources */,
 				8AD21B891A3F3E71002EE27A /* main.m in Sources */,
 				8AD21BCC1A3F3EA4002EE27A /* RZGModel.m in Sources */,
+				8AD21BDD1A3F4129002EE27A /* RZGLTransitionMainViewController.m in Sources */,
 				8AD21BCE1A3F3EA4002EE27A /* RZGOpenGLManager.m in Sources */,
 				8AD21BC81A3F3EA4002EE27A /* RZGModelData.c in Sources */,
 				8AD21BC91A3F3EA4002EE27A /* RZGVaoInfo.m in Sources */,
@@ -402,10 +479,12 @@
 				8AD21B941A3F3E71002EE27A /* RZGLAppDelegate.m in Sources */,
 				8AD21BCD1A3F3EA4002EE27A /* RZGModelController.m in Sources */,
 				8AD21BD11A3F3EA4002EE27A /* RZGShaderManager.m in Sources */,
+				8AD21BE11A3F4161002EE27A /* RZGLOpenGLViewController.m in Sources */,
 				8AD21BC71A3F3EA4002EE27A /* RZGAssetManager.m in Sources */,
 				8AD21BD01A3F3EA4002EE27A /* RZGDefaultShaderSettings.m in Sources */,
 				8AD21BCF1A3F3EA4002EE27A /* RZGPrs.m in Sources */,
 				8AD21BCB1A3F3EA4002EE27A /* RZGCommandPath.m in Sources */,
+				8AD21BE91A3F5083002EE27A /* RZGLOverlayViewController.m in Sources */,
 				8AD21BD91A3F3F30002EE27A /* UIImage+RZGTextureExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +615,7 @@
 		};
 		8AD21B9B1A3F3E71002EE27A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0FA7AFD631A4DC8BCC993D7 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -549,6 +629,7 @@
 		};
 		8AD21B9C1A3F3E71002EE27A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0FA7AFD631A4DC8BCC993D7 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -562,6 +643,7 @@
 		};
 		8AD21B9D1A3F3E71002EE27A /* Enterprise-QA */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0FA7AFD631A4DC8BCC993D7 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -594,6 +676,7 @@
 				8AD21B9D1A3F3E71002EE27A /* Enterprise-QA */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
