@@ -15,6 +15,7 @@
 
 + (GLuint)loadTexture:(NSString*)name ofType:(NSString*)type shouldLoadWithMipMapping:(BOOL)mipMappingOn;
 + (GLuint)loadTextureFromUrl:(NSURL *)url shouldLoadWithMipMapping:(BOOL)mipMappingOn;
++ (GLuint)loadTextureNamed:(NSString *)name FromUIImage:(UIImage *)image shouldLoadWithMipMapping:(BOOL)mipMappingOn;
 + (RZGVaoInfo*)loadVaoInfo:(NSString*)name;
 + (RZGVaoInfo*)loadVaoInfoFromData:(RZGModelData)data AssignName:(NSString*)name;
 + (void)destroyVAO:(GLuint) vaoName;

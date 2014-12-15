@@ -395,6 +395,7 @@
         transformationMatrix = GLKMatrix4Multiply(transformationMatrix, [self.orientation getRotationMatrix]);
     }
      */
+
     transformationMatrix = GLKMatrix4Multiply(transformationMatrix, GLKMatrix4MakeWithQuaternion(_prs.rotationQuaternion));
     GLKMatrix4 modelViewMatrix = GLKMatrix4Multiply(transformationMatrix, GLKMatrix4MakeScale(scale.x, scale.y ,scale.z));
     self.normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(modelViewMatrix), NULL);
@@ -419,6 +420,7 @@
     }
     
     [RZGShaderManager useProgram:self.defaultShaderSettings.programId];
+    
     //set shader uniforms
     [self.defaultShaderSettings setAlpha:self.alpha];
     [self.defaultShaderSettings setDiffuseColor:self.diffuseColor];

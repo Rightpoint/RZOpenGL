@@ -9,14 +9,19 @@
 #import "RZGOpenGLManager.h"
 #import "RZGShaderManager.h"
 #import "RZGDefaultShaderSettings.h"
-//#import "RZGBitmapFontShaderSettings.h"
 #import "RZGScreenToGLConverter.h"
-//#import "RZGColoredPSShaderSettings.h"
 
 static BOOL depthTestEnabled;
 static GLKVector4 lastClearColor;
 
 @interface RZGOpenGLManager()
+
+@property (nonatomic, strong) EAGLContext *context;
+@property (nonatomic, assign) CGRect lastScreenRect;
+@property (nonatomic, assign) CGFloat perspective;
+@property (nonatomic, assign) CGFloat nearZ;
+@property (nonatomic, assign) CGFloat farZ;
+
 @end
 
 @implementation RZGOpenGLManager
@@ -30,7 +35,9 @@ static GLKVector4 lastClearColor;
         return nil;
     }
     
-    glkView.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    
+    glkView.context = self.context;
     if(!glkView.context)
     {
         NSLog(@"ERROR: Failed to create ES context");
@@ -55,6 +62,11 @@ static GLKVector4 lastClearColor;
         size = [UIScreen mainScreen].bounds.size;
     }
     
+    self.perspective = perspective;
+    self.farZ = farZ;
+    self.nearZ = nearZ;
+    self.lastScreenRect = CGRectMake(0, 0, size.width, size.height);
+    
     CGSize screenSize = size;
     
     GLfloat aspect = fabsf(screenSize.width / screenSize.height);
@@ -66,6 +78,26 @@ static GLKVector4 lastClearColor;
     return self;
 }
 
+- (void)updateScreenRect:(CGRect)newScreenRect
+{
+    if ( !CGRectEqualToRect(self.lastScreenRect, newScreenRect) ) {
+        CGSize size = newScreenRect.size;
+        if(CGSizeEqualToSize(CGSizeZero, size))
+        {
+            size = [UIScreen mainScreen].bounds.size;
+        }
+        
+        CGSize screenSize = size;
+        
+        GLfloat aspect = fabsf(screenSize.width / screenSize.height);
+        
+        _projectionMatrix = GLKMatrix4MakePerspective(self.perspective, aspect, self.nearZ, self.farZ);
+        
+        _zConverter = [[RZGScreenToGLConverter alloc] initWithScreenHeight:screenSize.height ScreenWidth:screenSize.width Fov:self.perspective];
+
+    }
+}
+
 -(void)loadDefaultShaderAndSettings
 {
     GLuint programId = [RZGShaderManager loadModelDefaultShader];
@@ -74,8 +106,8 @@ static GLKVector4 lastClearColor;
 
 -(void)loadBitmapFontShaderAndSettings
 {
- //   GLuint programId = [RZGShaderManager loadBitmapFontShader];
- //   self.bitmapFontShaderSettings = [[RZGBitmapFontShaderSettings alloc] initWithProgramId:programId];
+//    GLuint programId = [RZGShaderManager loadBitmapFontShader];
+//    self.bitmapFontShaderSettings = [[RZGBitmapFontShaderSettings alloc] initWithProgramId:programId];
 }
 
 - (void)loadColoredPSShaderAndSettings {
@@ -119,5 +151,13 @@ static GLKVector4 lastClearColor;
     {
         glDeleteProgram(_defaultShaderSettings.programId);
     }
+    _defaultShaderSettings = nil;
+    
+    if ( [EAGLContext currentContext] == self.context ) {
+        [EAGLContext setCurrentContext:nil];
+    }
+    self.context = nil;
+    
+    [RZGShaderManager useProgram:0];
 }
 @end
