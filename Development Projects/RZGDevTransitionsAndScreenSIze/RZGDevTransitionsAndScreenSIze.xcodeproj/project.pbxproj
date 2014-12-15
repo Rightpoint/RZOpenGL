@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A37B71A4F4B4ED29728038B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12583123C59C46979C945D4E /* libPods.a */; };
 		8AD21B0B1A3F33F6002EE27A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD21B0A1A3F33F6002EE27A /* Foundation.framework */; };
 		8AD21B0D1A3F33F6002EE27A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD21B0C1A3F33F6002EE27A /* CoreGraphics.framework */; };
 		8AD21B0F1A3F33F6002EE27A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD21B0E1A3F33F6002EE27A /* UIKit.framework */; };
@@ -15,9 +16,28 @@
 		8AD21B1A1A3F33F6002EE27A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B191A3F33F6002EE27A /* main.m */; };
 		8AD21B251A3F33F6002EE27A /* RZGLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B241A3F33F6002EE27A /* RZGLAppDelegate.m */; };
 		8AD21B271A3F33F6002EE27A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AD21B261A3F33F6002EE27A /* Images.xcassets */; };
+		8AD21B581A3F34AE002EE27A /* RZGAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B321A3F34AE002EE27A /* RZGAssetManager.m */; };
+		8AD21B591A3F34AE002EE27A /* RZGModelData.c in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B331A3F34AE002EE27A /* RZGModelData.c */; };
+		8AD21B5A1A3F34AE002EE27A /* RZGVaoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B361A3F34AE002EE27A /* RZGVaoInfo.m */; };
+		8AD21B5B1A3F34AE002EE27A /* RZGCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B391A3F34AE002EE27A /* RZGCommand.m */; };
+		8AD21B5C1A3F34AE002EE27A /* RZGCommandPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B3B1A3F34AE002EE27A /* RZGCommandPath.m */; };
+		8AD21B5D1A3F34AE002EE27A /* RZGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B401A3F34AE002EE27A /* RZGModel.m */; };
+		8AD21B5E1A3F34AE002EE27A /* RZGModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B421A3F34AE002EE27A /* RZGModelController.m */; };
+		8AD21B5F1A3F34AE002EE27A /* RZGOpenGLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B451A3F34AE002EE27A /* RZGOpenGLManager.m */; };
+		8AD21B601A3F34AE002EE27A /* RZGPrs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B471A3F34AE002EE27A /* RZGPrs.m */; };
+		8AD21B611A3F34AE002EE27A /* RZGDefaultShaderSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B4A1A3F34AE002EE27A /* RZGDefaultShaderSettings.m */; };
+		8AD21B621A3F34AE002EE27A /* RZGShaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B4C1A3F34AE002EE27A /* RZGShaderManager.m */; };
+		8AD21B631A3F34AE002EE27A /* RZGDefaultShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8AD21B4E1A3F34AE002EE27A /* RZGDefaultShader.fsh */; };
+		8AD21B641A3F34AE002EE27A /* RZGDefaultShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8AD21B4F1A3F34AE002EE27A /* RZGDefaultShader.vsh */; };
+		8AD21B651A3F34AE002EE27A /* RZGMathUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B521A3F34AE002EE27A /* RZGMathUtils.m */; };
+		8AD21B661A3F34AE002EE27A /* RZGScreenToGLConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B541A3F34AE002EE27A /* RZGScreenToGLConverter.m */; };
+		8AD21B671A3F34AE002EE27A /* RZGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B571A3F34AE002EE27A /* RZGViewController.m */; };
+		8AD21B6B1A3F34D4002EE27A /* RZGLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD21B691A3F34D4002EE27A /* RZGLMainViewController.m */; };
+		8AD21B6C1A3F34D4002EE27A /* RZGLMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AD21B6A1A3F34D4002EE27A /* RZGLMainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12583123C59C46979C945D4E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD21B071A3F33F6002EE27A /* RZGDevTransitionsAndScreenSIze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RZGDevTransitionsAndScreenSIze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD21B0A1A3F33F6002EE27A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8AD21B0C1A3F33F6002EE27A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -31,6 +51,41 @@
 		8AD21B231A3F33F6002EE27A /* RZGLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZGLAppDelegate.h; sourceTree = "<group>"; };
 		8AD21B241A3F33F6002EE27A /* RZGLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZGLAppDelegate.m; sourceTree = "<group>"; };
 		8AD21B261A3F33F6002EE27A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8AD21B311A3F34AE002EE27A /* RZGAssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGAssetManager.h; sourceTree = "<group>"; };
+		8AD21B321A3F34AE002EE27A /* RZGAssetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGAssetManager.m; sourceTree = "<group>"; };
+		8AD21B331A3F34AE002EE27A /* RZGModelData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RZGModelData.c; sourceTree = "<group>"; };
+		8AD21B341A3F34AE002EE27A /* RZGModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGModelData.h; sourceTree = "<group>"; };
+		8AD21B351A3F34AE002EE27A /* RZGVaoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGVaoInfo.h; sourceTree = "<group>"; };
+		8AD21B361A3F34AE002EE27A /* RZGVaoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGVaoInfo.m; sourceTree = "<group>"; };
+		8AD21B381A3F34AE002EE27A /* RZGCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGCommand.h; sourceTree = "<group>"; };
+		8AD21B391A3F34AE002EE27A /* RZGCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGCommand.m; sourceTree = "<group>"; };
+		8AD21B3A1A3F34AE002EE27A /* RZGCommandPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGCommandPath.h; sourceTree = "<group>"; };
+		8AD21B3B1A3F34AE002EE27A /* RZGCommandPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGCommandPath.m; sourceTree = "<group>"; };
+		8AD21B3D1A3F34AE002EE27A /* RZGCoreHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGCoreHeaders.h; sourceTree = "<group>"; };
+		8AD21B3F1A3F34AE002EE27A /* RZGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGModel.h; sourceTree = "<group>"; };
+		8AD21B401A3F34AE002EE27A /* RZGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGModel.m; sourceTree = "<group>"; };
+		8AD21B411A3F34AE002EE27A /* RZGModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGModelController.h; sourceTree = "<group>"; };
+		8AD21B421A3F34AE002EE27A /* RZGModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGModelController.m; sourceTree = "<group>"; };
+		8AD21B441A3F34AE002EE27A /* RZGOpenGLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGOpenGLManager.h; sourceTree = "<group>"; };
+		8AD21B451A3F34AE002EE27A /* RZGOpenGLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGOpenGLManager.m; sourceTree = "<group>"; };
+		8AD21B461A3F34AE002EE27A /* RZGPrs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGPrs.h; sourceTree = "<group>"; };
+		8AD21B471A3F34AE002EE27A /* RZGPrs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGPrs.m; sourceTree = "<group>"; };
+		8AD21B491A3F34AE002EE27A /* RZGDefaultShaderSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGDefaultShaderSettings.h; sourceTree = "<group>"; };
+		8AD21B4A1A3F34AE002EE27A /* RZGDefaultShaderSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGDefaultShaderSettings.m; sourceTree = "<group>"; };
+		8AD21B4B1A3F34AE002EE27A /* RZGShaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGShaderManager.h; sourceTree = "<group>"; };
+		8AD21B4C1A3F34AE002EE27A /* RZGShaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGShaderManager.m; sourceTree = "<group>"; };
+		8AD21B4E1A3F34AE002EE27A /* RZGDefaultShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = RZGDefaultShader.fsh; sourceTree = "<group>"; };
+		8AD21B4F1A3F34AE002EE27A /* RZGDefaultShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = RZGDefaultShader.vsh; sourceTree = "<group>"; };
+		8AD21B511A3F34AE002EE27A /* RZGMathUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGMathUtils.h; sourceTree = "<group>"; };
+		8AD21B521A3F34AE002EE27A /* RZGMathUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGMathUtils.m; sourceTree = "<group>"; };
+		8AD21B531A3F34AE002EE27A /* RZGScreenToGLConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGScreenToGLConverter.h; sourceTree = "<group>"; };
+		8AD21B541A3F34AE002EE27A /* RZGScreenToGLConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGScreenToGLConverter.m; sourceTree = "<group>"; };
+		8AD21B561A3F34AE002EE27A /* RZGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGViewController.h; sourceTree = "<group>"; };
+		8AD21B571A3F34AE002EE27A /* RZGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGViewController.m; sourceTree = "<group>"; };
+		8AD21B681A3F34D4002EE27A /* RZGLMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZGLMainViewController.h; sourceTree = "<group>"; };
+		8AD21B691A3F34D4002EE27A /* RZGLMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZGLMainViewController.m; sourceTree = "<group>"; };
+		8AD21B6A1A3F34D4002EE27A /* RZGLMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RZGLMainViewController.xib; sourceTree = "<group>"; };
+		FABFD3F64129449BAF81D115 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +97,7 @@
 				8AD21B0D1A3F33F6002EE27A /* CoreGraphics.framework in Frameworks */,
 				8AD21B0F1A3F33F6002EE27A /* UIKit.framework in Frameworks */,
 				8AD21B0B1A3F33F6002EE27A /* Foundation.framework in Frameworks */,
+				4A37B71A4F4B4ED29728038B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +107,11 @@
 		8AD21AFE1A3F33F6002EE27A = {
 			isa = PBXGroup;
 			children = (
+				8AD21B2F1A3F34AE002EE27A /* RZOpenGLCore */,
 				8AD21B121A3F33F6002EE27A /* RZGDevTransitionsAndScreenSIze */,
 				8AD21B091A3F33F6002EE27A /* Frameworks */,
 				8AD21B081A3F33F6002EE27A /* Products */,
+				FABFD3F64129449BAF81D115 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +130,7 @@
 				8AD21B0C1A3F33F6002EE27A /* CoreGraphics.framework */,
 				8AD21B0E1A3F33F6002EE27A /* UIKit.framework */,
 				8AD21B101A3F33F6002EE27A /* QuartzCore.framework */,
+				12583123C59C46979C945D4E /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,6 +180,9 @@
 		8AD21B1E1A3F33F6002EE27A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8AD21B681A3F34D4002EE27A /* RZGLMainViewController.h */,
+				8AD21B691A3F34D4002EE27A /* RZGLMainViewController.m */,
+				8AD21B6A1A3F34D4002EE27A /* RZGLMainViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -155,6 +217,117 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		8AD21B2F1A3F34AE002EE27A /* RZOpenGLCore */ = {
+			isa = PBXGroup;
+			children = (
+				8AD21B301A3F34AE002EE27A /* Asset Management */,
+				8AD21B371A3F34AE002EE27A /* Commands */,
+				8AD21B3C1A3F34AE002EE27A /* Headers */,
+				8AD21B3E1A3F34AE002EE27A /* Models */,
+				8AD21B431A3F34AE002EE27A /* OpenGLManagement */,
+				8AD21B481A3F34AE002EE27A /* ShaderManagement */,
+				8AD21B4D1A3F34AE002EE27A /* Shaders */,
+				8AD21B501A3F34AE002EE27A /* Utilities */,
+				8AD21B551A3F34AE002EE27A /* ViewControllers */,
+			);
+			name = RZOpenGLCore;
+			path = ../../RZOpenGLCore;
+			sourceTree = "<group>";
+		};
+		8AD21B301A3F34AE002EE27A /* Asset Management */ = {
+			isa = PBXGroup;
+			children = (
+				8AD21B311A3F34AE002EE27A /* RZGAssetManager.h */,
+				8AD21B321A3F34AE002EE27A /* RZGAssetManager.m */,
+				8AD21B331A3F34AE002EE27A /* RZGModelData.c */,
+				8AD21B341A3F34AE002EE27A /* RZGModelData.h */,
+				8AD21B351A3F34AE002EE27A /* RZGVaoInfo.h */,
+				8AD21B361A3F34AE002EE27A /* RZGVaoInfo.m */,
+			);
+			path = "Asset Management";
+			sourceTree = "<group>";
+		};
+		8AD21B371A3F34AE002EE27A /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				8AD21B381A3F34AE002EE27A /* RZGCommand.h */,
+				8AD21B391A3F34AE002EE27A /* RZGCommand.m */,
+				8AD21B3A1A3F34AE002EE27A /* RZGCommandPath.h */,
+				8AD21B3B1A3F34AE002EE27A /* RZGCommandPath.m */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		8AD21B3C1A3F34AE002EE27A /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				8AD21B3D1A3F34AE002EE27A /* RZGCoreHeaders.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		8AD21B3E1A3F34AE002EE27A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8AD21B3F1A3F34AE002EE27A /* RZGModel.h */,
+				8AD21B401A3F34AE002EE27A /* RZGModel.m */,
+				8AD21B411A3F34AE002EE27A /* RZGModelController.h */,
+				8AD21B421A3F34AE002EE27A /* RZGModelController.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8AD21B431A3F34AE002EE27A /* OpenGLManagement */ = {
+			isa = PBXGroup;
+			children = (
+				8AD21B441A3F34AE002EE27A /* RZGOpenGLManager.h */,
+				8AD21B451A3F34AE002EE27A /* RZGOpenGLManager.m */,
+				8AD21B461A3F34AE002EE27A /* RZGPrs.h */,
+				8AD21B471A3F34AE002EE27A /* RZGPrs.m */,
+			);
+			path = OpenGLManagement;
+			sourceTree = "<group>";
+		};
+		8AD21B481A3F34AE002EE27A /* ShaderManagement */ = {
+			isa = PBXGroup;
+			children = (
+				8AD21B491A3F34AE002EE27A /* RZGDefaultShaderSettings.h */,
+				8AD21B4A1A3F34AE002EE27A /* RZGDefaultShaderSettings.m */,
+				8AD21B4B1A3F34AE002EE27A /* RZGShaderManager.h */,
+				8AD21B4C1A3F34AE002EE27A /* RZGShaderManager.m */,
+			);
+			path = ShaderManagement;
+			sourceTree = "<group>";
+		};
+		8AD21B4D1A3F34AE002EE27A /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				8AD21B4E1A3F34AE002EE27A /* RZGDefaultShader.fsh */,
+				8AD21B4F1A3F34AE002EE27A /* RZGDefaultShader.vsh */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		8AD21B501A3F34AE002EE27A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8AD21B511A3F34AE002EE27A /* RZGMathUtils.h */,
+				8AD21B521A3F34AE002EE27A /* RZGMathUtils.m */,
+				8AD21B531A3F34AE002EE27A /* RZGScreenToGLConverter.h */,
+				8AD21B541A3F34AE002EE27A /* RZGScreenToGLConverter.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8AD21B551A3F34AE002EE27A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8AD21B561A3F34AE002EE27A /* RZGViewController.h */,
+				8AD21B571A3F34AE002EE27A /* RZGViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,9 +335,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AD21B2B1A3F33F7002EE27A /* Build configuration list for PBXNativeTarget "RZGDevTransitionsAndScreenSIze" */;
 			buildPhases = (
+				5670E3AF96074288B580F4C7 /* Check Pods Manifest.lock */,
 				8AD21B031A3F33F6002EE27A /* Sources */,
 				8AD21B041A3F33F6002EE27A /* Frameworks */,
 				8AD21B051A3F33F6002EE27A /* Resources */,
+				2F15E9ECFC9B4115A916BEC5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,20 +387,71 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AD21B631A3F34AE002EE27A /* RZGDefaultShader.fsh in Resources */,
 				8AD21B181A3F33F6002EE27A /* InfoPlist.strings in Resources */,
+				8AD21B6C1A3F34D4002EE27A /* RZGLMainViewController.xib in Resources */,
+				8AD21B641A3F34AE002EE27A /* RZGDefaultShader.vsh in Resources */,
 				8AD21B271A3F33F6002EE27A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2F15E9ECFC9B4115A916BEC5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5670E3AF96074288B580F4C7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8AD21B031A3F33F6002EE27A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AD21B671A3F34AE002EE27A /* RZGViewController.m in Sources */,
 				8AD21B1A1A3F33F6002EE27A /* main.m in Sources */,
+				8AD21B5D1A3F34AE002EE27A /* RZGModel.m in Sources */,
+				8AD21B5F1A3F34AE002EE27A /* RZGOpenGLManager.m in Sources */,
+				8AD21B6B1A3F34D4002EE27A /* RZGLMainViewController.m in Sources */,
+				8AD21B591A3F34AE002EE27A /* RZGModelData.c in Sources */,
+				8AD21B5A1A3F34AE002EE27A /* RZGVaoInfo.m in Sources */,
+				8AD21B661A3F34AE002EE27A /* RZGScreenToGLConverter.m in Sources */,
+				8AD21B651A3F34AE002EE27A /* RZGMathUtils.m in Sources */,
+				8AD21B5B1A3F34AE002EE27A /* RZGCommand.m in Sources */,
 				8AD21B251A3F33F6002EE27A /* RZGLAppDelegate.m in Sources */,
+				8AD21B5E1A3F34AE002EE27A /* RZGModelController.m in Sources */,
+				8AD21B621A3F34AE002EE27A /* RZGShaderManager.m in Sources */,
+				8AD21B581A3F34AE002EE27A /* RZGAssetManager.m in Sources */,
+				8AD21B611A3F34AE002EE27A /* RZGDefaultShaderSettings.m in Sources */,
+				8AD21B601A3F34AE002EE27A /* RZGPrs.m in Sources */,
+				8AD21B5C1A3F34AE002EE27A /* RZGCommandPath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +581,7 @@
 		};
 		8AD21B2C1A3F33F7002EE27A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FABFD3F64129449BAF81D115 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -368,6 +595,7 @@
 		};
 		8AD21B2D1A3F33F7002EE27A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FABFD3F64129449BAF81D115 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -381,6 +609,7 @@
 		};
 		8AD21B2E1A3F33F7002EE27A /* Enterprise-QA */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FABFD3F64129449BAF81D115 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -413,6 +642,7 @@
 				8AD21B2E1A3F33F7002EE27A /* Enterprise-QA */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

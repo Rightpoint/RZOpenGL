@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8AD21B061A3F33F6002EE27A"
-               BuildableName = "RZGDevTransitionsAndScreenSIze.app"
-               BlueprintName = "RZGDevTransitionsAndScreenSIze"
-               ReferencedContainer = "container:RZGDevTransitionsAndScreenSIze.xcodeproj">
+               BlueprintIdentifier = "066D662F359F44A99EE3970D"
+               BuildableName = "libPods-RZUtils.a"
+               BlueprintName = "Pods-RZUtils"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8AD21B061A3F33F6002EE27A"
-            BuildableName = "RZGDevTransitionsAndScreenSIze.app"
-            BlueprintName = "RZGDevTransitionsAndScreenSIze"
-            ReferencedContainer = "container:RZGDevTransitionsAndScreenSIze.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -48,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8AD21B061A3F33F6002EE27A"
-            BuildableName = "RZGDevTransitionsAndScreenSIze.app"
-            BlueprintName = "RZGDevTransitionsAndScreenSIze"
-            ReferencedContainer = "container:RZGDevTransitionsAndScreenSIze.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -66,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8AD21B061A3F33F6002EE27A"
-            BuildableName = "RZGDevTransitionsAndScreenSIze.app"
-            BlueprintName = "RZGDevTransitionsAndScreenSIze"
-            ReferencedContainer = "container:RZGDevTransitionsAndScreenSIze.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
