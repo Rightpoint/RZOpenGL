@@ -16,6 +16,9 @@
 @property (nonatomic, strong) CADisplayLink *displayLink;
 @property (assign, nonatomic) BOOL resetTimeStamp;
 @property (assign, nonatomic) CGRect lastFrame;
+@property (assign, nonatomic) BOOL pauseAfterDelay;
+@property (assign, nonatomic) double pauseCountDown;
+
 @end
 
 @implementation RZGViewController
@@ -64,6 +67,11 @@
 {
     _paused = paused;
     _isPaused = paused;
+   
+    if ( !paused ) {
+        self.pauseAfterDelay = NO;
+        self.pauseCountDown = 0.0;
+    }
     
     self.displayLink.paused = paused;
 }
@@ -73,20 +81,32 @@
     self.resetTimeStamp = YES;
 }
 
+- (void)pauseAfterDelay:(double)delay
+{
+    self.pauseAfterDelay = YES;
+    self.pauseCountDown = delay;
+}
+
 - (void)render:(CADisplayLink *)displayLink
 {
-    [self update];
+    self.timeSinceLastUpdate = displayLink.timestamp - self.lastTimeStamp;
     
-    if (self.resetTimeStamp) {
-        self.timeSinceLastUpdate = 0;
-        self.resetTimeStamp = NO;
+    if ( self.timeSinceLastUpdate > 0.2 ) {
+        self.timeSinceLastUpdate = 0.166666f;
     }
-    else {
-        self.timeSinceLastUpdate = displayLink.timestamp - self.lastTimeStamp;
-    }
+    
+    [self update];
     
     [self.glkView display];
     self.lastTimeStamp = displayLink.timestamp;
+    
+    if ( self.pauseAfterDelay ) {
+        self.pauseCountDown -= self.timeSinceLastUpdate;
+        if ( self.pauseCountDown <= 0.0f ) {
+            self.pauseAfterDelay = NO;
+            self.paused = YES;
+        }
+    }
 }
 
 - (void)update

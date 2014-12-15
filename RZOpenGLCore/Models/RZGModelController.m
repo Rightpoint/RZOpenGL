@@ -38,6 +38,13 @@
     }
 }
 
+- (void)clearCommandsFromAllModels
+{
+    for ( RZGModel *m in self.mainModelArray ) {
+        [m clearAllCommands];
+    }
+}
+
 - (void)addCommandToAllModels:(RZGCommand *)command
 {
     for(RZGModel *model in self.mainModelArray) {
