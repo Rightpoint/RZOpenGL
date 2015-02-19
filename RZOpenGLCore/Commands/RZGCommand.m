@@ -26,6 +26,8 @@
         _duration = duration;
         _isAbsolute = isAbsolute;
         _delay = delay;
+        _elapsedTime = 0.0f;
+        _easingFunction = RZGLinearInterpolation;
     }
     return self;
 }
@@ -44,6 +46,8 @@
         _path = path;
         _isAbsolute = isAbsolute;
         _delay = delay;
+        _elapsedTime = 0.0f;
+        _easingFunction = RZGLinearInterpolation;
     }
     return self;
 }
@@ -67,6 +71,8 @@
     command.isAbsolute = self.isAbsolute;
     command.delay = self.delay;
     command.path = self.path;
+    command.easingFunction = self.easingFunction;
+    command.elapsedTime = self.elapsedTime;
     return command;
 }
 

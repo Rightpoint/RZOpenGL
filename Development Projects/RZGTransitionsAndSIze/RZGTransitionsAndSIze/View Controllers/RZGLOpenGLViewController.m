@@ -17,26 +17,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.glmgr = [[RZGOpenGLManager alloc] initWithView:self.glkView ScreenSize:self.glViewSize PerspectiveInRadians:GLKMathDegreesToRadians(10.0f) NearZ:0.1f FarZ:100.0f];
+    self.glmgr = [[RZGOpenGLManager alloc] initWithView:self.glkView ScreenSize:self.glViewSize PerspectiveInRadians:GLKMathDegreesToRadians(45.0f) NearZ:0.1f FarZ:100.0f];
     
     [self.glmgr setClearColor:GLKVector4Make(0.0f, 0.0f, 0.0f, 0.0f)];
     self.view.opaque = NO;
 
-    CGFloat mainZ = -50.0f;
+    self.glmgr.projectionMatrix = GLKMatrix4Translate(self.glmgr.projectionMatrix, -0.5f, 0.0f, 0.0);
+    
+    CGFloat mainZ = -10.0f;
     
     CGFloat xPos = 0.0f;
     CGFloat xAdj = 0.1f;
+    CGFloat yPos = 0.0f;
     
-    int nObjects = 50;
+    int nObjects = 1;
     
     for (int i = 0; i < nObjects; ++i ){
-        RZGModel *cube = [[RZGModel alloc] initWithModelFileName:@"disk" UseDefaultSettingsInManager:self.glmgr];
+        RZGModel *cube = [[RZGModel alloc] initWithModelFileName:@"cube" UseDefaultSettingsInManager:self.glmgr];
+      //  cube.projection = GLKMatrix4Translate(self.glmgr.projectionMatrix, xPos, yPos, 0.0);
         cube.texture0Id = [RZGAssetManager loadTexture:@"purple" ofType:@"png" shouldLoadWithMipMapping:NO];
         cube.prs.pz = mainZ;
         cube.prs.px = xPos;
+        cube.prs.py = yPos;
         xPos += xAdj;
         
-        [cube.prs setRotationConstantToVector:GLKVector3Make(0.0f, 1.0f, 0.0f)];
+  //      [cube.prs setRotationConstantToVector:GLKVector3Make(0.0f, 1.0f, 0.0f)];
         
         [self.modelController addModel:cube];
     }

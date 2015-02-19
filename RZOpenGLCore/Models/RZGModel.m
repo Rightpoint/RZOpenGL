@@ -186,6 +186,42 @@
                 }
             }
             break;
+            // SHADOWMAX //
+        case kRZGCommand_shadowMax:
+            if(command.duration == 0.0f)
+            {
+                self.shadowMax = command.target.x;
+                command.isFinished = YES;
+                return;
+            }
+            else
+            {
+                if(!command.isStarted)
+                {
+                    if(command.isAbsolute)
+                    {
+                        command.step = GLKVector4MakeWith1f((command.target.x - self.shadowMax)/command.duration);
+                    }
+                    else
+                    {
+                        command.step = GLKVector4MakeWith1f(command.target.x/command.duration);
+                        command.target = GLKVector4MakeWith1f(command.target.x+self.shadowMax);
+                    }
+                    command.isStarted = YES;
+                }
+                
+                command.duration -= time;
+                self.shadowMax += command.step.x * time;
+                if(command.duration <= 0.0f)
+                {
+                    self.shadowMax = command.target.x;
+                    if ( command.completionBlock ) {
+                        command.completionBlock();
+                    }
+                    command.isFinished = YES;
+                }
+            }
+            break;
         
         // VISIBILITY //
         case kRZGCommand_visible:
@@ -222,13 +258,15 @@
                 }
                 else
                 {
-                    command.step = GLKVector4Make((command.target.x - self.prs.px) / command.duration, (command.target.y - self.prs.py) / command.duration, (command.target.z - self.prs.pz) / command.duration, 0.0f);
+                    command.startingValue = GLKVector4MakeWith3f(self.prs.position.x, self.prs.position.y, self.prs.position.z);
+                    command.distance = GLKVector4Make((command.target.x - self.prs.px), (command.target.y - self.prs.py), (command.target.z - self.prs.pz), 0.0f);
+                    
                 }
             }
 
-            command.duration -= time;
+            command.elapsedTime += time;
             
-            if(command.duration <= 0.0f)
+            if(command.elapsedTime >= command.duration)
             {
                 self.prs.position = GLKVector3Make(command.target.x, command.target.y, command.target.z);
                 if ( command.completionBlock ) {
@@ -238,7 +276,10 @@
             }
             else
             {
-                self.prs.position = GLKVector3Make(self.prs.px + command.step.x * time, self.prs.py + command.step.y * time, self.prs.pz + command.step.z * time);
+                float p = command.elapsedTime / command.duration;
+                self.prs.position = GLKVector3Make(command.startingValue.x + command.easingFunction(p) * command.distance.x,
+                                                   command.startingValue.y + command.easingFunction(p) * command.distance.y,
+                                                   command.startingValue.z + command.easingFunction(p) * command.distance.z);
             }
             break;
             
@@ -341,17 +382,19 @@
                 if(!command.isAbsolute)
                 {
                     command.step = GLKVector4Make(command.target.x / command.duration, command.target.y / command.duration, command.target.z / command.duration, 0.0f);
-                    command.target = GLKVector4Make(command.target.x + self.prs.px, command.target.y + self.prs.py, command.target.z + self.prs.pz, 0.0f);
+                    command.target = GLKVector4Make(command.target.x + self.prs.scale.x, command.target.y + self.prs.scale.y, command.target.z + self.prs.scale.z, 0.0f);
                 }
                 else
                 {
-                    command.step = GLKVector4Make((command.target.x - self.prs.px) / command.duration, (command.target.y - self.prs.py) / command.duration, (command.target.z - self.prs.pz) / command.duration, 0.0f);
+                    command.startingValue = GLKVector4MakeWith3f(self.prs.scale.x, self.prs.scale.y, self.prs.scale.z);
+                    command.distance = GLKVector4Make((command.target.x - self.prs.scale.x), (command.target.y - self.prs.scale.y), (command.target.z - self.prs.scale.z), 0.0f);
+                    
                 }
             }
             
-            command.duration -= time;
+            command.elapsedTime += time;
             
-            if(command.duration <= 0.0f)
+            if(command.elapsedTime >= command.duration)
             {
                 self.prs.scale = GLKVector3Make(command.target.x, command.target.y, command.target.z);
                 if ( command.completionBlock ) {
@@ -361,9 +404,13 @@
             }
             else
             {
-                self.prs.scale = GLKVector3Make(self.prs.px + command.step.x * time, self.prs.py + command.step.y * time, self.prs.pz + command.step.z * time);
+                float p = command.elapsedTime / command.duration;
+                self.prs.scale = GLKVector3Make(command.startingValue.x + command.easingFunction(p) * command.distance.x,
+                                                   command.startingValue.y + command.easingFunction(p) * command.distance.y,
+                                                   command.startingValue.z + command.easingFunction(p) * command.distance.z);
             }
             break;
+            
             
         default:
             break;
@@ -387,8 +434,9 @@
         newPosition.y -= _worldPrs.py;
         newPosition.z -= _worldPrs.pz;
     }
-    transformationMatrix = GLKMatrix4Translate(transformationMatrix, newPosition.x, newPosition.y, newPosition.z);
     
+    transformationMatrix = GLKMatrix4Translate(transformationMatrix, newPosition.x, newPosition.y, newPosition.z);
+    //GLKMatrix4 projection = GLKMatrix4Translate(_projection, newPosition.x, newPosition.y, 0.0f);
     /*
     if(_orientation)
     {

@@ -23,8 +23,8 @@
     // Do any additional setup after loading the view from its nib.
     
     RZGLOpenGLViewController *ogVC = [[RZGLOpenGLViewController alloc] init];
-    ogVC.glViewSize = CGSizeMake(100.0f, 100.0f);
-    ogVC.view.frame = CGRectMake(0, 50, 100.0f, 100.0f);
+    ogVC.glViewSize = [UIScreen mainScreen].bounds.size;
+    ogVC.view.frame = [UIScreen mainScreen].bounds;
     [self.view addSubview:ogVC.view];
     
     RZZoomBlurAnimationController *blurAnimationController = [[RZZoomBlurAnimationController alloc] init];

@@ -12,9 +12,9 @@
 @class RZGCommandPath;
 
 typedef void (^RZGCommandCompletionBlockType)();
+typedef GLfloat (*RZGEasingFunction)(GLfloat);
 
-typedef NS_ENUM(NSInteger, RZGCommandEnum)
-{
+typedef enum : NSUInteger {
     kRZGCommand_alpha,
     kRZGCommand_visible,
     kRZGCommand_rotateTo,
@@ -24,8 +24,9 @@ typedef NS_ENUM(NSInteger, RZGCommandEnum)
     kRZGCommand_setConstantRotation,
     kRZGCommand_moveTo,
     kRZGCommand_moveAlongPath,
-    kRZGCommand_font_alternatingSplit
-};
+    kRZGCommand_font_alternatingSplit,
+    kRZGCommand_shadowMax
+} RZGCommandEnum;
 
 static __inline__ GLKVector4 GLKVector4MakeWithBool(BOOL boolValue)
 {
@@ -63,6 +64,31 @@ static __inline__ GLKVector4 GLKVector4MakeWithVec3(GLKVector3 vec3)
     return v;
 }
 
+static __inline__ GLfloat RZGLinearInterpolation(GLfloat p)
+{
+    return p;
+}
+
+static __inline__ GLfloat RZQuadraticEaseIn(GLfloat p)
+{
+    return p*p;
+}
+
+static __inline__ GLfloat RZQuadraticEaseOut(GLfloat p)
+{
+    return -(p * (p - 2));
+}
+
+static __inline__ GLfloat RZQuadraticEaseInOut(GLfloat p)
+{
+    if ( p < 0.5f ) {
+        return 2 * p * p;
+    }
+    else {
+        return ( -2.0f * p * p ) + ( 4.0f * p ) - 1;
+    }
+}
+
 
 @interface RZGCommand : NSObject
 
@@ -70,8 +96,12 @@ static __inline__ GLKVector4 GLKVector4MakeWithVec3(GLKVector3 vec3)
 @property (nonatomic, assign) GLKVector4 target;
 @property (nonatomic, assign) GLKVector4 step;
 @property (nonatomic, assign) GLfloat duration;
+@property (nonatomic, assign) GLfloat elapsedTime;
 @property (nonatomic, assign) GLfloat delay;
 @property (nonatomic, assign) BOOL isAbsolute;
+@property (nonatomic, assign) RZGEasingFunction easingFunction;
+@property (nonatomic, assign) GLKVector4 startingValue;
+@property (nonatomic, assign) GLKVector4 distance;
 @property (nonatomic, assign) BOOL isStarted;
 @property (nonatomic, assign) BOOL isFinished;
 @property (nonatomic, strong) RZGCommandPath *path;

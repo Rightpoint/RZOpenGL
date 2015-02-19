@@ -38,7 +38,6 @@
 @property (strong, nonatomic) NSMutableArray *commands;
 @property (strong, nonatomic) NSMutableArray *finishedCommands;
 
-
 - (instancetype) initWithModelFileName:(NSString*)modelFileName;
 - (instancetype) initWithModelFileName:(NSString*)modelFileName UseDefaultSettingsInManager:(RZGOpenGLManager*)manager;
 - (void)setProjection:(GLKMatrix4)projection;

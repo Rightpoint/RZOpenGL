@@ -45,6 +45,17 @@
     }
 }
 
+- (BOOL)allModelsAreFreeOfCommands
+{
+    for ( RZGModel *model in self.mainModelArray ) {
+        if ( model.commands.count > 0 ) {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
 - (void)addCommandToAllModels:(RZGCommand *)command
 {
     for(RZGModel *model in self.mainModelArray) {

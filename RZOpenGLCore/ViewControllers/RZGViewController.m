@@ -16,8 +16,8 @@
 @property (nonatomic, strong) CADisplayLink *displayLink;
 @property (assign, nonatomic) BOOL resetTimeStamp;
 @property (assign, nonatomic) CGRect lastFrame;
-@property (assign, nonatomic) BOOL pauseAfterDelay;
 @property (assign, nonatomic) double pauseCountDown;
+@property (assign, nonatomic) BOOL singleUpdateAndDrawRequested;
 
 @end
 
@@ -32,6 +32,8 @@
     
     self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render:)];
     [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    
+    self.framesPerSecond = 60;
     
     self.timeSinceLastUpdate = 0.0;
     self.lastTimeStamp = self.displayLink.timestamp;
@@ -58,19 +60,25 @@
     return windowSize;
 }
 
+- (void)enableScissorWithRect:(CGRect)scissorRect
+{
+    glScissor(scissorRect.origin.x, scissorRect.origin.y, CGRectGetWidth(scissorRect), CGRectGetHeight(scissorRect));
+    glEnable(GL_SCISSOR_TEST);
+}
+
 - (void)setFramesPerSecond:(NSInteger)framesPerSecond
 {
     self.displayLink.frameInterval = 60 / framesPerSecond;
+    _framesPerSecond = framesPerSecond;
 }
 
 - (void)setPaused:(BOOL)paused
 {
     _paused = paused;
     _isPaused = paused;
-   
+    
     if ( !paused ) {
-        self.pauseAfterDelay = NO;
-        self.pauseCountDown = 0.0;
+        self.resetTimeStamp = YES;
     }
     
     self.displayLink.paused = paused;
@@ -81,38 +89,38 @@
     self.resetTimeStamp = YES;
 }
 
-- (void)pauseAfterDelay:(double)delay
+- (void)singleUpdateAndDraw
 {
-    self.pauseAfterDelay = YES;
-    self.pauseCountDown = delay;
+    self.paused = NO;
+    self.singleUpdateAndDrawRequested = YES;
 }
 
 - (void)render:(CADisplayLink *)displayLink
 {
     if ( self.resetTimeStamp ) {
         self.resetTimeStamp = NO;
-        self.timeSinceLastUpdate = 0.166666f;
+        self.timeSinceLastUpdate = 1 / self.framesPerSecond;
     }
     else {
         self.timeSinceLastUpdate = displayLink.timestamp - self.lastTimeStamp;
-    }
-    
-    if ( self.timeSinceLastUpdate > 0.1666666f ) {
-        NSLog(@"Frame: %f",self.timeSinceLastUpdate);
-      //  self.timeSinceLastUpdate = 0.166666f;
     }
     
     [self update];
     
     [self.glkView display];
     self.lastTimeStamp = displayLink.timestamp;
-    
-    if ( self.pauseAfterDelay ) {
-        self.pauseCountDown -= self.timeSinceLastUpdate;
-        if ( self.pauseCountDown <= 0.0f ) {
-            self.pauseAfterDelay = NO;
-            self.paused = YES;
+
+    if ( !self.singleUpdateAndDrawRequested && (self.pauseIfModelsAreFreeOfCommands && [self.modelController allModelsAreFreeOfCommands]) ) {
+        self.paused = YES;
+        if ( self.blockToExecuteWhenModelsAreFreeOfCommands ) {
+            self.blockToExecuteWhenModelsAreFreeOfCommands();
+            self.blockToExecuteWhenModelsAreFreeOfCommands = nil;
         }
+    }
+    
+    if ( self.singleUpdateAndDrawRequested ) {
+        self.paused = YES;
+        self.singleUpdateAndDrawRequested = NO;
     }
 }
 

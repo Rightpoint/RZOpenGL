@@ -19,6 +19,7 @@
 - (void)removeAllModels;
 - (void)addCommandToAllModels:(RZGCommand *)command;
 - (void)clearCommandsFromAllModels;
+- (BOOL)allModelsAreFreeOfCommands;
 - (void)updateWithTime:(CFTimeInterval)time;
 - (void)draw;
 

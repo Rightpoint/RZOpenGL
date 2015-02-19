@@ -73,7 +73,6 @@
 
 - (BOOL)screenPoint:(CGPoint)point intersectsModel:(RZGModel *)model
 {
-    
     CGPoint convertedPoint = [self convertScreenCoordsX:point.x Y:point.y ProjectedZ:model.prs.pz];
     return [self convertedPoint:convertedPoint intersectsModel:model];
 }

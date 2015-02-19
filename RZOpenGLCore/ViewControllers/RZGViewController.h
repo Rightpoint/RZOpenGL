@@ -17,12 +17,15 @@
 @property (assign, nonatomic, readonly) CFTimeInterval timeSinceLastUpdate;
 @property (assign, nonatomic, readonly) BOOL isPaused;
 @property (assign, nonatomic) BOOL paused;
+@property (assign, nonatomic) BOOL pauseIfModelsAreFreeOfCommands;
 @property (assign, nonatomic) NSInteger framesPerSecond;
+@property (copy, nonatomic) void (^blockToExecuteWhenModelsAreFreeOfCommands)(void);
 
+- (void)enableScissorWithRect:(CGRect)scissorRect;
 - (void)update;
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect;
 - (CGSize)sizeForMainWindowOnLoad;
 - (void)resetTimeStamps;
-- (void)pauseAfterDelay:(double)delay;
+- (void)singleUpdateAndDraw;
 - (void)unload;
 @end

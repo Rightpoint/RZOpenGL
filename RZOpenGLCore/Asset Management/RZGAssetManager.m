@@ -50,6 +50,9 @@ static NSMutableDictionary *loadedVaos;
         NSLog(@"ERROR LOADING TEXTURE: %@: %@",path,[error debugDescription]);
         return 0;
     }
+    
+    [loadedTextures setValue:textureInfo forKey:name];
+    
     return textureInfo.name;
 }
 
@@ -81,6 +84,8 @@ static NSMutableDictionary *loadedVaos;
             return 0;
         }
     }
+    
+    [loadedTextures setValue:textureInfo forKey:name];
 
     return textureInfo.name;
 }
@@ -89,7 +94,8 @@ static NSMutableDictionary *loadedVaos;
 {
     if((loadedTextures) && [loadedTextures objectForKey:url])
     {
-        return ((GLKTextureInfo*)[loadedTextures objectForKey:url]).name;
+    
+        return ((GLKTextureInfo*)[loadedTextures objectForKey:url.absoluteString]).name;
     }
     
     if(!loadedTextures)
@@ -111,6 +117,10 @@ static NSMutableDictionary *loadedVaos;
         NSLog(@"ERROR LOADING TEXTURE: %@: %@",url,[error debugDescription]);
         return 0;
     }
+    
+    [loadedTextures setValue:textureInfo forKey:url.absoluteString];
+    
+    
     return textureInfo.name;
 }
 
